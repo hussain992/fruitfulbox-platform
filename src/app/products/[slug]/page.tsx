@@ -1,10 +1,10 @@
-"use client";
+// "use client";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Head from "next/head";
 import React, { use } from "react";
+import OrderButton from "@/components/OrderComponents";
 
 const productData = {
 	"devgad-mangoes": {
@@ -78,26 +78,9 @@ const productData = {
 // }
 const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ params }) => {
 	const resolvedParams = use(params);
-	// const [slug, setSlug] = React.useState<string>();
-	// useEffect(() =>{
-	// 	async function fetchSlug() {
-	// 		const { slug } = await params;
-	// 		setSlug(slug);
-	// 	}
-	// 	fetchSlug();
-	// }, [params] )
-	// const { slug } = params;
 	const product = productData[resolvedParams.slug as keyof typeof productData];	
-	// const product = productData[slug];
 	console.log('product', product, params)
 	if (!product) return notFound();
-	const handleWhatsAppOrder = () => {
-		const message = `Hi, I'm interested in buying:\n\n🍎 ${product.title}\n💰 Price: ${product.price}`;
-		const encodedMessage = encodeURIComponent(message);
-		const phoneNumber = "917558535953"; // Replace with your number
-		const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-		window.open(whatsappUrl, "_blank");
-	};
 	return (
 		<>
 			<Head>
@@ -131,13 +114,10 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ pa
 								<li key={i}>{benefit}</li>
 							))}
 						</ul>
-						<Button
-							onClick={handleWhatsAppOrder}
-							className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md shadow"
-						>
-							Order on WhatsApp
-						</Button>
-						{/* <Button className="w-full md:w-auto">Add to Cart</Button> */}
+						<OrderButton
+							title={product.title}
+							price={product.price}
+						/>
 					</div>
 				</div>
 
