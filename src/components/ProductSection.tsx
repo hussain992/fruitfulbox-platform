@@ -31,26 +31,26 @@ const FruitProducts = [
 	// 	description: "Freshness in every bite and The ultimate crisp and juicy experience."
 	// }
 ];
-const products = [
-	{
-		image: "/images/fruit-1.jpg",
-		title: "Tropical Mix",
-		description: "A juicy blend of mangoes, pineapples & passionfruit."
-	},
-	{
-		image: "/images/apple.jpeg",
-		title: "Berry Box",
-		description: "Fresh strawberries, blueberries & raspberries."
-	},
-	{
-		image: "/images/fruit-box-3.pn",
-		title: "Citrus Boost",
-		description: "Oranges, lemons, and grapefruit for your daily zing!"
-	}
-];
+// const products1 = [
+// 	{
+// 		image: "/images/fruit-1.jpg",
+// 		title: "Tropical Mix",
+// 		description: "A juicy blend of mangoes, pineapples & passionfruit."
+// 	},
+// 	{
+// 		image: "/images/apple.jpeg",
+// 		title: "Berry Box",
+// 		description: "Fresh strawberries, blueberries & raspberries."
+// 	},
+// 	{
+// 		image: "/images/fruit-box-3.pn",
+// 		title: "Citrus Boost",
+// 		description: "Oranges, lemons, and grapefruit for your daily zing!"
+// 	}
+// ];
 
 export default function ProductSection({ title }: ProductSectionProps) {
-	let products = FruitProducts;
+	const products = FruitProducts;
 	return (
 		<section className="py-16 px-4 bg-white">
 			<h2 className="text-3xl font-bold text-center mb-10">{title}</h2>

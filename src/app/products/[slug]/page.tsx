@@ -112,12 +112,12 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 								<li key={i}>{benefit}</li>
 							))}
 						</ul>
-						<button
+						<Button
 							onClick={handleWhatsAppOrder}
 							className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md shadow"
 						>
 							Order on WhatsApp
-						</button>
+						</Button>
 						{/* <Button className="w-full md:w-auto">Add to Cart</Button> */}
 					</div>
 				</div>
