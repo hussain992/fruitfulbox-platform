@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Head from "next/head";
+import React, { use } from "react";
 
 const productData = {
 	"devgad-mangoes": {
@@ -66,10 +67,28 @@ const productData = {
 		stock: 20,
 		reviews: []
 	}
+	
+	
 };
 
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
-	const product = productData[params.slug as keyof typeof productData];
+// type ProductSlug = keyof typeof productData;
+
+// interface Props {
+// 	params: { slug: string }; // Corrected parameter type
+// }
+const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ params }) => {
+	const resolvedParams = use(params);
+	// const [slug, setSlug] = React.useState<string>();
+	// useEffect(() =>{
+	// 	async function fetchSlug() {
+	// 		const { slug } = await params;
+	// 		setSlug(slug);
+	// 	}
+	// 	fetchSlug();
+	// }, [params] )
+	// const { slug } = params;
+	const product = productData[resolvedParams.slug as keyof typeof productData];	
+	// const product = productData[slug];
 	console.log('product', product, params)
 	if (!product) return notFound();
 	const handleWhatsAppOrder = () => {
@@ -87,7 +106,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 				<meta property="og:title" content={`${product.title} – Fruitful Box`} />
 				<meta property="og:description" content={`Order premium ${product.title} now via WhatsApp!`} />
 				<meta property="og:image" content={product.image} />
-				<meta property="og:url" content={`https://fruitfulbox.vercel.app/products/${params.slug}`} />
+				<meta property="og:url" content={`https://fruitfulbox.vercel.app/products/${resolvedParams.slug}`} />
 			</Head>
 			<main className="max-w-5xl mx-auto py-16 px-4">
 				<div className="grid md:grid-cols-2 gap-10 items-start">
@@ -142,4 +161,6 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 			</main>
 		</>
 	);
+	
 }
+export default ProductDetailPage;
