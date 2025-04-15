@@ -16,7 +16,11 @@ const productData = {
 			"Boosts immunity",
 			"Supports digestion"
 		],
-		price: "₹999/dozen",
+		// price: "₹999/dozen",
+		price: {
+			original: "₹999",
+			discounted: "₹799/dozen"
+		  },
 		stock: 12,
 		reviews: [
 			{ name: "Anita", text: "Best mangoes I’ve had this season!" },
@@ -32,7 +36,11 @@ const productData = {
 			"Boosts immunity",
 			"Supports digestion"
 		],
-		price: "₹449/dozen",
+		price: {
+			original: "₹449",
+			discounted: "₹399/dozen"
+		  },
+		// price: "₹449/dozen",
 		stock: 12,
 		reviews: [
 			// { name: "Anita", text: "Best mangoes I’ve had this season!" },
@@ -48,7 +56,11 @@ const productData = {
 			"Heart-healthy fats",
 			"Rich in potassium"
 		],
-		price: "₹499/6 pcs",
+		// price: "₹499/6 pcs",
+		price: {
+			original: "",
+			discounted: "₹499/6 pcs",
+		  },
 		stock: 8,
 		reviews: [
 			{ name: "Sara", text: "Perfect texture for guac!" }
@@ -63,12 +75,16 @@ const productData = {
 			"High in antioxidants",
 			"Promotes gut health"
 		],
-		price: "₹249/kg",
+		price: {
+			original: "",
+			discounted: "₹249/kg",
+		  },
+		// price: "₹249/kg",
 		stock: 20,
 		reviews: []
 	}
-	
-	
+
+
 };
 
 // type ProductSlug = keyof typeof productData;
@@ -78,7 +94,7 @@ const productData = {
 // }
 const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ params }) => {
 	const resolvedParams = use(params);
-	const product = productData[resolvedParams.slug as keyof typeof productData];	
+	const product = productData[resolvedParams.slug as keyof typeof productData];
 	console.log('product', product, params)
 	if (!product) return notFound();
 	return (
@@ -103,7 +119,11 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ pa
 					<div>
 						<h1 className="text-4xl font-bold mb-4">{product.title}</h1>
 						<p className="text-lg text-gray-700 mb-4">{product.description}</p>
-						<p className="text-xl font-semibold text-green-700 mb-2">{product.price}</p>
+						{/* <p className="text-xl font-semibold text-green-700 mb-2">{product.price}</p> */}
+						<div className="mb-2">
+							<span className="text-lg text-gray-500 line-through mr-2">{product.price.original}</span>
+							<span className="text-xl font-bold text-green-700">{product.price.discounted}</span>
+						</div>
 						<p className={`text-sm mb-4 ${product.stock > 0 ? "text-green-600" : "text-red-500"}`}>
 							{/* {product.stock > 0 ? `${product.stock} in stock` : "Out of stock"} */}
 							{"In stock"}
@@ -116,7 +136,7 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ pa
 						</ul>
 						<OrderButton
 							title={product.title}
-							price={product.price}
+							price={product.price.discounted? product.price.discounted : product.price.original}
 						/>
 					</div>
 				</div>
@@ -141,6 +161,6 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ pa
 			</main>
 		</>
 	);
-	
+
 }
 export default ProductDetailPage;
