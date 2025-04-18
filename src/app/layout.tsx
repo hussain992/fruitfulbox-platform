@@ -28,7 +28,7 @@ export default function RootLayout({
         <meta name="description" content="Taste the freshest seasonal fruits – mangoes, avocados, and more. Order online and get them delivered at your doorstep!" />
         <meta name="keywords" content="fruit delivery, mangoes, avocados, Devgad mangoes, fresh fruits online, Fruitful Box" />
         <meta name="author" content="Fruitful Box" />
-
+        <meta name="google-site-verification" content="googled16bf3948af1ec7b.html" />
         {/* Open Graph / Social */}
         <meta property="og:title" content="Fruitful Box – Premium Seasonal Fruits Delivered" />
         <meta property="og:description" content="Order fresh Devgad mangoes, avocados, and more. Quick WhatsApp ordering. Delivered to your door!" />
