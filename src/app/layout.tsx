@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.png',
   },
+  other: {
+    'google-site-verification': 'Bzee-pKoCg_cOupVkgj87r5wuR_hpxS7NGKCE6UHvLo',
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +31,7 @@ export default function RootLayout({
         <meta name="description" content="Taste the freshest seasonal fruits – mangoes, avocados, and more. Order online and get them delivered at your doorstep!" />
         <meta name="keywords" content="fruit delivery, mangoes, avocados, Devgad mangoes, fresh fruits online, Fruitful Box" />
         <meta name="author" content="Fruitful Box" />
-        <meta name="google-site-verification" content="Bzee-pKoCg_cOupVkgj87r5wuR_hpxS7NGKCE6UHvLo" />
+        {/* <meta name="google-site-verification" content="Bzee-pKoCg_cOupVkgj87r5wuR_hpxS7NGKCE6UHvLo" /> */}
         {/* Open Graph / Social */}
         <meta property="og:title" content="Fruitful Box – Premium Seasonal Fruits Delivered" />
         <meta property="og:description" content="Order fresh Devgad mangoes, avocados, and more. Quick WhatsApp ordering. Delivered to your door!" />
