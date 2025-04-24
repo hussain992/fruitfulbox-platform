@@ -17,8 +17,8 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex space-x-6">
-          {/* <Link href="/about" className="text-gray-700 hover:text-pink-600">About</Link>
-          <Link href="/products" className="text-gray-700 hover:text-pink-600">Products</Link> */}
+          {/* <Link href="/about" className="text-gray-700 hover:text-pink-600">About</Link>*/}
+          <Link href="/products" className="text-gray-700 hover:text-pink-600">Products</Link> 
           {/* <Link href="/subscribe" className="text-gray-700 hover:text-pink-600">Subscribe</Link> */}
         </nav>
 
@@ -36,8 +36,9 @@ export default function Header() {
             transition={{ duration: 0.3 }}
             className="md:hidden px-4 pb-4 space-y-2 bg-white shadow"
           >
-            {/* <Link href="/about" className="block text-gray-700 hover:text-pink-600">About</Link>
-            <Link href="/products" className="block text-gray-700 hover:text-pink-600">Products</Link> */}
+            <hr/>
+            {/* <Link href="/about" className="block text-gray-700 hover:text-pink-600">About</Link>*/}
+            <Link href="/products" className="block text-gray-700 hover:text-pink-600">Products</Link> 
             {/* <Link href="/subscribe" className="block text-gray-700 hover:text-pink-600">Subscribe</Link> */}
           </motion.div>
         )}

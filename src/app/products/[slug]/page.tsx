@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import React, { use } from "react";
-import OrderButton from "@/components/OrderComponents";
+import OrderDetails from "@/components/OrderComponents";
 import { productData } from "@/lib/products";
 
 
@@ -28,7 +28,7 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ pa
 				<meta property="og:image" content={product.image} />
 				<meta property="og:url" content={`https://fruitfulbox.vercel.app/products/${resolvedParams.slug}`} />
 			</Head>
-			<main className="max-w-5xl mx-auto py-16 px-4">
+			<main className="max-w-5xl mx-auto py-6 sm:py-16 px-4">
 				<div className="grid md:grid-cols-2 gap-10 items-start">
 					<Image
 						src={product.image}
@@ -55,9 +55,9 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ pa
 								<li key={i}>{benefit}</li>
 							))}
 						</ul>
-						<OrderButton
+						<OrderDetails
 							title={product.title}
-							price={product.price.discounted? product.price.discounted : product.price.original}
+							price={product.price.discounted ? product.price.discounted : product.price.original}
 						/>
 					</div>
 				</div>

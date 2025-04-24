@@ -11,8 +11,8 @@ const ProductListPage = () => {
             key={slug}
             slug={slug}
             title={product.title}
-            image={product.image}
-            price={product.price}
+            image={product.image} 
+            // price={product.price}
           />
         ))}
       </div>
