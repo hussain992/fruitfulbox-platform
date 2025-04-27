@@ -31,7 +31,7 @@ export default function ProductCard({ image, title, description, slug }: Product
     src={image}
     alt={title}
     fill
-    className="object-cover"
+    className="object-contain rounded-xl"
     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   />
 </div>

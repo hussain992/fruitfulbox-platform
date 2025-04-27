@@ -8,8 +8,8 @@ export default function Home() {
       <HeroSection />
       {/* Add more sections here */}
         {/* Add product cards or other content here */}
+        <ProductSection title="Our Fruit Boxes 📦"/>   
         <ProductSection title="Our Products 🍇"/>
-        {/* <ProductSection title="Our Fruit Boxes 📦"/>    */}
     </>
   );
 }

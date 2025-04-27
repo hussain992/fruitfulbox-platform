@@ -6,6 +6,7 @@ import Head from "next/head";
 import React, { use } from "react";
 import OrderDetails from "@/components/OrderComponents";
 import { productData } from "@/lib/products";
+import { boxData } from "@/lib/boxData";
 
 
 // type ProductSlug = keyof typeof productData;
@@ -15,7 +16,8 @@ import { productData } from "@/lib/products";
 // }
 const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ params }) => {
 	const resolvedParams = use(params);
-	const product = productData[resolvedParams.slug as keyof typeof productData];
+	const product = resolvedParams.slug == 'delight-box' ? boxData[resolvedParams.slug as keyof typeof boxData] : productData[resolvedParams.slug as keyof typeof productData];
+
 	console.log('product', product, params)
 	if (!product) return notFound();
 	return (
@@ -51,7 +53,7 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ pa
 
 						</p>
 						<ul className="list-disc list-inside text-sm text-green-700 mb-6">
-							{product.benefits.map((benefit, i) => (
+							{product?.benefits?.map((benefit, i) => (
 								<li key={i}>{benefit}</li>
 							))}
 						</ul>
@@ -62,7 +64,7 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ pa
 					</div>
 				</div>
 
-				{product.reviews.length > 0 && (
+				{product?.reviews && product.reviews?.length > 0 && (
 					<div className="mt-12 border-t pt-8">
 						<h2 className="text-2xl font-bold mb-4">Customer Reviews</h2>
 						<div className="space-y-4">
@@ -77,7 +79,7 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ pa
 				)}
 
 				<div className="mt-12 text-center">
-					<Link href="/" className="text-blue-600 hover:underline">← Back to Products</Link>
+					<Link href="/products" className="text-blue-600 hover:underline">← Back to Products</Link>
 				</div>
 			</main>
 		</>

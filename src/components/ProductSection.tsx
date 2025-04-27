@@ -4,7 +4,14 @@ interface ProductSectionProps {
 	title?: string;
 
 }
-
+const boxProducts = [
+	{
+		slug: "delight-box",
+		image: "/images/Delight-box.png",
+		title: "Delight Box",
+		description: "A box full of 3 Mangoes, 6 Chickoo, and 3 Pomegranates."
+	},
+];
 const FruitProducts = [
 	{
 		slug: "devgad-mangoes",
@@ -50,7 +57,7 @@ const FruitProducts = [
 // ];
 
 export default function ProductSection({ title }: ProductSectionProps) {
-	const products = FruitProducts;
+	const products = title == 'Our Fruit Boxes 📦'? boxProducts : FruitProducts;
 	return (
 		<section className="py-16 px-4 bg-white">
 			<h2 className="text-3xl font-bold text-center mb-10">{title}</h2>
