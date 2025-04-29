@@ -92,7 +92,27 @@ export const productData = {
 		reviews: [
 			{ name: "Meera", text: "Super fresh and sweet — highly recommend!" }
 		]
-	}
+	},
+	"chickoo": {
+	title: "Fresh Chikoo (Sapodilla)",
+	image: "/images/chickoo-fruit.png", // make sure to save and reference the correct path
+	description: "Sweet and grainy sapodillas (Chikoo) picked ripe for natural flavor. Great for smoothies, snacks, or as-is.",
+	benefits: [
+		"Good source of dietary fiber",
+		"Boosts energy naturally",
+		"Rich in antioxidants and vitamins"
+	],
+	price: {
+		original: "",
+		discounted: "₹149/kg",
+	},
+	// price: "₹299/kg",
+	// originalPrice: "₹349/kg", // if you show discounts
+	stock: 10,
+	reviews: [
+		{ name: "Nikhil", text: "Soft and super sweet. Loved it!" }
+	]
+}
 };
 
 export type Product = typeof productData[keyof typeof productData];
