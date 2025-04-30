@@ -103,8 +103,8 @@ export const productData = {
 		"Rich in antioxidants and vitamins"
 	],
 	price: {
-		original: "",
-		discounted: "₹149/kg",
+		original: "₹149/kg",
+		discounted: "₹119/kg",
 	},
 	// price: "₹299/kg",
 	// originalPrice: "₹349/kg", // if you show discounts
