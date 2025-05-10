@@ -85,8 +85,8 @@ export const productData = {
 			"Boosts immunity"
 		],
 		price: {
-			original: "₹299/kg",
-			discounted: "₹249/kg",
+			original: "₹249/kg",
+			discounted: "₹179/kg",
 		},
 		stock: 10,
 		reviews: [
@@ -104,7 +104,7 @@ export const productData = {
 	],
 	price: {
 		original: "₹119/kg",
-		discounted: "₹89/kg",
+		discounted: "₹99/kg",
 	},
 	// price: "₹299/kg",
 	// originalPrice: "₹349/kg", // if you show discounts
