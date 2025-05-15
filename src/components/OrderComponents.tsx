@@ -3,6 +3,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { getNextDeliveryDates } from "@/lib/utils";
+import { AddressDialog } from "./AddressDialog";
 
 interface Props {
   title: string;
@@ -11,10 +12,24 @@ interface Props {
 
 const OrderDetails: React.FC<Props> = ({ title, price }) => {
   const [selectedDate, setSelectedDate] = React.useState("");
+  const [address, setAddress] = React.useState({
+    flatNo: "",
+    wing: "",
+    society: "",
+  });
+  const [open, setOpen] = React.useState(false); // State to control the dialog open/close
+  
   const deliveryOptions = getNextDeliveryDates();
-
   const handleWhatsAppOrder = () => {
-    const message = `Hi, I'm interested in buying:\n\n🍎 ${title}\n💰 Price: ${price} ${selectedDate ? `\n📅 Preferred Delivery: ${selectedDate}` : ""}`;
+    // console.log('address', address, Object.entries(address), JSON.stringify(address));
+    if (address.flatNo == "") {
+      console.log("Please enter your address.");
+      setOpen(true);
+      return;
+    }
+    const message = `Hi, I'm interested in buying:\n\n🍎 ${title}\n💰 Price: ${price} 
+    ${selectedDate ? `\n📅 Preferred Delivery: ${selectedDate}` : ""} 
+    ${address? `\n🏠 Address: Flat no ${address.flatNo}, ${address.wing && address.wing} wing, ${address.society && address.society}`:  ""}`;
     // const message = `Hi, I'm interested in buying:\n\n🍎 ${product.title}\n💰 Price: ${product.price}${
     //   product.originalPrice ? ` (Original: ${product.originalPrice})` : ""
     // }${selectedDate ? `\n📅 Preferred Delivery: ${selectedDate}` : ""}`;
@@ -39,6 +54,7 @@ const OrderDetails: React.FC<Props> = ({ title, price }) => {
         ))}
       </select>
     </div>
+      <AddressDialog getAddress={(addr) => setAddress(addr)} defaultOpen={open} />
     {/* Sticky Order Button for Mobile */}
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white px-4 py-3 border-t shadow-lg">
       <Button
