@@ -17,8 +17,6 @@ import { boxData } from "@/lib/boxData";
 const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({ params }) => {
 	const resolvedParams = use(params);
 	const product = resolvedParams.slug == 'delight-box' ? boxData[resolvedParams.slug as keyof typeof boxData] : productData[resolvedParams.slug as keyof typeof productData];
-
-	console.log('product', product, params)
 	if (!product) return notFound();
 	return (
 		<>

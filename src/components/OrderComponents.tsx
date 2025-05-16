@@ -2,8 +2,8 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { getNextDeliveryDates } from "@/lib/utils";
-import { AddressDialog } from "./AddressDialog";
+import { DetailsDialog } from "./DetailsDialog";
+import { useCaptureUTM } from "@/hooks/useCaptureUTM";
 
 interface Props {
   title: string;
@@ -11,28 +11,25 @@ interface Props {
 }
 
 const OrderDetails: React.FC<Props> = ({ title, price }) => {
-  const [selectedDate, setSelectedDate] = React.useState("");
-  const [address, setAddress] = React.useState({
+  const [userDetails, setUserDetails] = React.useState({
+    selectedDate: "",
     flatNo: "",
     wing: "",
     society: "",
   });
   const [open, setOpen] = React.useState(false); // State to control the dialog open/close
-  
-  const deliveryOptions = getNextDeliveryDates();
+  useCaptureUTM();
   const handleWhatsAppOrder = () => {
-    // console.log('address', address, Object.entries(address), JSON.stringify(address));
-    if (address.flatNo == "") {
-      console.log("Please enter your address.");
+    if (userDetails.flatNo == "") {
+      console.log("Please enter your userDetails.");
       setOpen(true);
       return;
     }
+    const addr = `\n🏠 Address: Flat no ${userDetails.flatNo}, ${userDetails.wing} ${userDetails.wing?"wing,": ""} ${userDetails.society && userDetails.society}`
+    // https://fruitfulbox.com/products/devgad-mangoes?utm_source=instagram&utm_medium=social&utm_campaign=mango_launch
+    const source = localStorage.getItem("utm_source") || "direct";
     const message = `Hi, I'm interested in buying:\n\n🍎 ${title}\n💰 Price: ${price} 
-    ${selectedDate ? `\n📅 Preferred Delivery: ${selectedDate}` : ""} 
-    ${address? `\n🏠 Address: Flat no ${address.flatNo}, ${address.wing && address.wing} wing, ${address.society && address.society}`:  ""}`;
-    // const message = `Hi, I'm interested in buying:\n\n🍎 ${product.title}\n💰 Price: ${product.price}${
-    //   product.originalPrice ? ` (Original: ${product.originalPrice})` : ""
-    // }${selectedDate ? `\n📅 Preferred Delivery: ${selectedDate}` : ""}`;
+      ${userDetails.selectedDate ? `\n📅 Preferred Delivery: ${userDetails.selectedDate}` : ""} ${addr && addr} ${source}`;
     const encodedMessage = encodeURIComponent(message);
     const phoneNumber = "917558535953";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -41,20 +38,9 @@ const OrderDetails: React.FC<Props> = ({ title, price }) => {
 
   return (<>
     <div className="mb-4">
-      <label htmlFor="deliveryDate" className="block text-sm font-medium text-gray-700 mb-1">Select Delivery Date:</label>
-      <select
-        id="deliveryDate"
-        value={selectedDate}
-        onChange={(e) => setSelectedDate(e.target.value)}
-        className="border border-gray-300 rounded-md px-3 py-2 w-45"
-      >
-        <option value="">Choose a date</option>
-        {deliveryOptions.map((date, index) => (
-          <option key={index} value={date}>{date}</option>
-        ))}
-      </select>
+      
     </div>
-      <AddressDialog getAddress={(addr) => setAddress(addr)} defaultOpen={open} />
+      <DetailsDialog getDetails={(details) => setUserDetails(details)} defaultOpen={open} />
     {/* Sticky Order Button for Mobile */}
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white px-4 py-3 border-t shadow-lg">
       <Button
