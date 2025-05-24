@@ -28,7 +28,7 @@ const OrderDetails: React.FC<Props> = ({ title, price }) => {
     const addr = `\n🏠 Address: Flat no ${userDetails.flatNo}, ${userDetails.wing} ${userDetails.wing?"wing,": ""} ${userDetails.society && userDetails.society}`
     // https://fruitfulbox.com/products/devgad-mangoes?utm_source=instagram&utm_medium=social&utm_campaign=mango_launch
     const source = localStorage.getItem("utm_source") || "direct";
-    const message = `Hi, I'm interested in buying:\n\n🍎 ${title}\n💰 Price: ${price} 
+    const message = `Hi, I'm interested in buying:\n\n🥭 ${title}\n💰 Price: ${price} 
       ${userDetails.selectedDate ? `\n📅 Preferred Delivery: ${userDetails.selectedDate}` : ""} ${addr && addr} ${source}`;
     const encodedMessage = encodeURIComponent(message);
     const phoneNumber = "917558535953";

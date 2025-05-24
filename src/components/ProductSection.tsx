@@ -14,23 +14,36 @@ const boxProducts = [
 ];
 const FruitProducts = [
 	{
-		slug: "devgad-mangoes",
-		image: "/images/mangoes-fruit.png",
-		title: "Devgad Alphonso Mangoes",
-		description: "A Taste of Maharashtra.Taste the legacy from Devgad's orchards."
+		slug: "kesar-mangoes",
+		image: "/images/kesar-mangoes.jpg",
+		title: "Kesar Mangoes",
+		description: "Juicy, aromatic Kesar mangoes known for their rich flavor and vibrant color. Perfect for summer indulgence."
 	},
+	{
+		slug: "indian-plum",
+		image: "/images/plum-fruit.png",
+		title: "Plum (Indian)",
+		description: "Plum is a juicy fruit with a sweet and tart flavor, perfect for snacking or baking."
+	},
+	// {
+	// 	slug: "devgad-mangoes",
+	// 	image: "/images/mangoes-fruit.png",
+	// 	title: "Devgad Alphonso Mangoes",
+	// 	description: "A Taste of Maharashtra.Taste the legacy from Devgad's orchards."
+	// },
 	{
 		slug: "alphanso-mangoes",
 		image: "/images/mango-karnataka.png",
 		title: "karnataka Mangoes (karnataka)",
 		description: "It is an exquisite mango Sweet, succulent, flavoursome."
 	},
-	{
-		slug: "avocados",
-		image: "/images/avocado-fruit.webp",
-		title: "Avocado",
-		description: "Dive into the creamy, dreamy world of avocados"
-	},
+
+	// {
+	// 	slug: "avocados",
+	// 	image: "/images/avocado-fruit.webp",
+	// 	title: "Avocado",
+	// 	description: "Dive into the creamy, dreamy world of avocados"
+	// },
 	// {
 	// 	slug: "pears",
 	// 	image: "/images/pear-fruit-1.png",

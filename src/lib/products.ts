@@ -1,4 +1,27 @@
 export const productData = {
+  "kesar-mangoes": {
+    id: "kesar-mango",
+    title: "Kesar Mango",
+    description:
+      "Juicy, aromatic Kesar mangoes known for their rich flavor and vibrant color. Perfect for summer indulgence.",
+    price:{
+      original: '299/2kg',
+      discounted: '249/2kg',
+    },
+    // weight: "1 dozen (approx. 3.5kg)",
+    image: "/images/Kesar-Mangoes.jpg", // Adjust the path if different
+    available: true,
+    stock: 12,
+    // deliveryDays: ["Wednesday", "Saturday", "Sunday"],
+    benefits: [
+      "Rich in Vitamin A and C",
+      "Boosts immunity",
+      "Great for desserts and juices",
+    ],
+    reviews: [
+      { name: "Raj", text: "Sweet and juicy, perfect for summer." },
+    ],
+  },
   "devgad-mangoes": {
     title: "Devgad Alphanso Mangoes",
     image: "/images/mangoes-fruit.png",
