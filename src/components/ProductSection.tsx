@@ -15,7 +15,7 @@ const boxProducts = [
 const FruitProducts = [
 	{
 		slug: "kesar-mangoes",
-		image: "/images/kesar-mangoes.jpg",
+		image: "/images/Kesar-Mangoes.jpg",
 		title: "Kesar Mangoes",
 		description: "Juicy, aromatic Kesar mangoes known for their rich flavor and vibrant color. Perfect for summer indulgence."
 	},
