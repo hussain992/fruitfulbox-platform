@@ -44,6 +44,8 @@ export const DetailsDialog = ({
     }
   }, [defaultOpen]);
   const deliveryOptions = getNextDeliveryDates();
+  // const deliveryOptions: unknown[] = [];
+
 
   const handleSubmit = () => {
     console.log({ flatNo, wing, society });

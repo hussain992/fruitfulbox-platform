@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+// import { ProductTag } from "./ProductTag";
 
 interface ProductCardProps {
   image: string;
@@ -32,6 +33,7 @@ export default function ProductCard({
 
         {/* // className=" sm:h-45 lg:h-50 mx-auto mb-4" width={imgWidth} height={imgHeight} /> */}
         <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl mb-4">
+          {/* <ProductTag label="Best Seller" color="green" /> */}
           <Image
             src={image}
             alt={title}
