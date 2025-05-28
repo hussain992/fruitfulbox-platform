@@ -1,12 +1,37 @@
 export const productData = {
+  litchi: {
+    id: "litchi",
+    title: "Fresh Litchi",
+    image: "/images/litchi.png", // adjust path if different
+    price: {
+      original: "399/kg",
+      discounted: "349/kg",
+    },
+    stock: 12,
+    weight: "500g",
+    description:
+      "Juicy and aromatic fresh litchis, handpicked for premium quality and taste.",
+    benefits: [
+      "Rich in Vitamin C",
+      "Boosts immunity",
+      "Hydrates and cools the body",
+    ],
+    tags: ["new-arrival"],
+    availability: ["wednesday", "saturday", "sunday"],
+    isAvailable: true,
+    reviews: [
+      { name: "Aisha", text: "Best litchis I've ever tasted! So fresh." },
+      { name: "Rahul", text: "Perfectly sweet and juicy. Highly recommend!" },
+    ],
+  },
   "kesar-mangoes": {
     id: "kesar-mango",
     title: "Kesar Mango",
     description:
       "Juicy, aromatic Kesar mangoes known for their rich flavor and vibrant color. Perfect for summer indulgence.",
-    price:{
-      original: '299/2kg',
-      discounted: '249/2kg',
+    price: {
+      original: "299/2kg",
+      discounted: "249/2kg",
     },
     // weight: "1 dozen (approx. 3.5kg)",
     image: "/images/Kesar-Mangoes.jpg", // Adjust the path if different
@@ -18,9 +43,7 @@ export const productData = {
       "Boosts immunity",
       "Great for desserts and juices",
     ],
-    reviews: [
-      { name: "Raj", text: "Sweet and juicy, perfect for summer." },
-    ],
+    reviews: [{ name: "Raj", text: "Sweet and juicy, perfect for summer." }],
   },
   "devgad-mangoes": {
     title: "Devgad Alphanso Mangoes",
