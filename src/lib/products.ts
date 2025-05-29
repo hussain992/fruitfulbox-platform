@@ -1,4 +1,26 @@
 export const productData = {
+  "sweet-lime": {
+  id: "sweet-lime",
+  title: "Sweet Lime (Mosambi)",
+  description: "Sweet Lime (Mosambi) is known for its refreshing and mild citrus flavor. Packed with Vitamin C and hydration, it is perfect for juicing and snacking.",
+  price: {
+      original: "179/kg",
+      discounted: "129/kg",
+    },
+  image: "/images/sweet-lime-fruit.png",
+  tags: ["new-arrival"],
+  isAvailable: true,
+  benefits: [
+    "Rich in Vitamin C, boosts immunity",
+    "Excellent for hydration and detox",
+    "Helps in digestion and improves skin health"
+  ],
+  stock:12,
+  reviews: [
+    { name: "Aarav", text: "Best sweet lime I've ever had! So refreshing." },
+    { name: "Saanvi", text: "Perfect for making fresh juice. Highly recommend!" }
+  ]
+},
   litchi: {
     id: "litchi",
     title: "Fresh Litchi",
@@ -127,7 +149,7 @@ export const productData = {
     ],
     price: {
       original: "₹249/kg",
-      discounted: "₹179/kg",
+      discounted: "₹199/kg",
     },
     stock: 10,
     reviews: [

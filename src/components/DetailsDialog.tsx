@@ -100,7 +100,7 @@ export const DetailsDialog = ({
               placeholder="e.g. B"
             />
           </div>
-          <div className="grid gap-2">
+          <div className="grid col-span-6 gap-2">
             <Label htmlFor="society">Society Name</Label>
             <Input
               id="society"
