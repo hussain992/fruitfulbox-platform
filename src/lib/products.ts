@@ -4,8 +4,8 @@ export const productData = {
   title: "Sweet Lime (Mosambi)",
   description: "Sweet Lime (Mosambi) is known for its refreshing and mild citrus flavor. Packed with Vitamin C and hydration, it is perfect for juicing and snacking.",
   price: {
-      original: "179/kg",
-      discounted: "129/kg",
+      original: "279/2kg",
+      discounted: "229/2kg",
     },
   image: "/images/sweet-lime-fruit.png",
   tags: ["new-arrival"],
@@ -52,8 +52,8 @@ export const productData = {
     description:
       "Juicy, aromatic Kesar mangoes known for their rich flavor and vibrant color. Perfect for summer indulgence.",
     price: {
-      original: "299/2kg",
-      discounted: "249/2kg",
+      original: "249/2kg",
+      discounted: "229/2kg",
     },
     // weight: "1 dozen (approx. 3.5kg)",
     image: "/images/Kesar-Mangoes.jpg", // Adjust the path if different
