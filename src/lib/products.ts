@@ -1,11 +1,45 @@
 export const productData = {
+  "jamun": {
+  id: 'jamun',
+  title: 'Jamun',
+  description:
+    'Jamun, also known as black plum, is a seasonal summer fruit known for its deep purple color and sweet-tart flavor. Rich in antioxidants and great for digestion and blood sugar control.',
+  // price: 129,
+  // originalPrice: 159,
+  price: {
+      original: "₹149/2kg",
+      discounted: "₹119/250g",
+    },
+  // unit: '250g (Approx. 15-20 pcs)',
+  image: '/images/jamun.png',
+  tags: ['seasonal', 'new-arrival'],
+  isAvailable: true,
+  benefits: [
+    'Helps manage blood sugar levels',
+    'Rich in Vitamin C and antioxidants',
+    'Supports digestion and oral health'
+  ],
+  stock:12,
+  reviews: [
+    {
+      name: 'Neha R.',
+      text: 'Absolutely fresh and juicy! Loved the quality.',
+      rating: 5
+    },
+    {
+      name: 'Amit P.',
+      text: 'Perfectly packed and delivered. Will buy again!',
+      rating: 4
+    }
+  ]
+},
   "sweet-lime": {
   id: "sweet-lime",
   title: "Sweet Lime (Mosambi)",
   description: "Sweet Lime (Mosambi) is known for its refreshing and mild citrus flavor. Packed with Vitamin C and hydration, it is perfect for juicing and snacking.",
   price: {
-      original: "279/2kg",
-      discounted: "229/2kg",
+      original: "₹279/2kg",
+      discounted: "₹229/2kg",
     },
   image: "/images/sweet-lime-fruit.png",
   tags: ["new-arrival"],
