@@ -1,10 +1,10 @@
 import ProductCard from "@/components/ProductCard";
 import {productData as products, Product} from "@/lib/products"; // assuming you export your common product data here
-import useStore, { IsearchSlice } from "@/lib/store";
+// import useStore, { IsearchSlice } from "@/lib/store";
 
 const ProductListPage = () => {
-  const {search} = useStore((state: IsearchSlice) => state);
-  console.log("Search term:", search);
+  // const {search} = useStore((state: IsearchSlice) => state);
+  // console.log("Search term:", search);
   return (
     <main className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">Our Fruits</h1>
