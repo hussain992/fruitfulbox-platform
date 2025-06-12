@@ -14,10 +14,10 @@ const boxProducts = [
 ];
 const FruitProducts = [
 	{
-		slug: "kesar-mangoes",
-		image: "/images/Kesar-Mangoes.jpg",
-		title: "Kesar Mangoes",
-		description: "Juicy, aromatic Kesar mangoes known for their rich flavor and vibrant color. Perfect for summer indulgence."
+		slug:"jamun",
+		image: "/images/jamun.png",
+		title: "Jamun",
+		description: 'Jamun, also known as black plum, is a seasonal summer fruit known for its deep purple color and sweet-tart flavor. Rich in antioxidants and great for digestion and blood sugar control.'
 	},
 	{
 		slug: "indian-plum",
@@ -25,25 +25,13 @@ const FruitProducts = [
 		title: "Plum (Indian)",
 		description: "Plum is a juicy fruit with a sweet and tart flavor, perfect for snacking or baking."
 	},
-	// {
-	// 	slug: "devgad-mangoes",
-	// 	image: "/images/mangoes-fruit.png",
-	// 	title: "Devgad Alphonso Mangoes",
-	// 	description: "A Taste of Maharashtra.Taste the legacy from Devgad's orchards."
-	// },
+	
 	{
-		slug: "alphanso-mangoes",
-		image: "/images/mango-karnataka.png",
-		title: "karnataka Mangoes (karnataka)",
-		description: "It is an exquisite mango Sweet, succulent, flavoursome."
+		slug: "litchi",
+		image: "/images/litchi.png",
+		title: "Fresh Litchi",
+		description: "Juicy and aromatic fresh litchis, handpicked for premium quality and taste.",
 	},
-
-	// {
-	// 	slug: "avocados",
-	// 	image: "/images/avocado-fruit.webp",
-	// 	title: "Avocado",
-	// 	description: "Dive into the creamy, dreamy world of avocados"
-	// },
 	// {
 	// 	slug: "pears",
 	// 	image: "/images/pear-fruit-1.png",

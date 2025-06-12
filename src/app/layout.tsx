@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  metadataBase: new URL("https://fruitfulbox.vercel.app/"),
   other: {
     "google-site-verification": "Bzee-pKoCg_cOupVkgj87r5wuR_hpxS7NGKCE6UHvLo",
   },

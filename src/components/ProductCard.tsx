@@ -24,7 +24,7 @@ export default function ProductCard({
   // const imgHeight = type === 'full'? 300: 200;; // Set a fixed height for the image
   return (
     <Link href={`/products/${slug}`}>
-      <div className="bg-orange-100 p-3 mx-0 md:p-6 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:bg-yellow-200">
+      <div className="bg-lime-100 p-3 mx-0 md:p-6 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:bg-amber-100">
         {/* <Image src={image} alt={title} 
       fill
       className="object-cover rounded-xl"
@@ -42,7 +42,7 @@ export default function ProductCard({
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
-        <h3 className=" text-sm md:text-lg font-bold line-clamp-2 h-10 sm:h-13">
+        <h3 className=" text-md md:text-lg font-bold line-clamp-2 h-10 sm:h-13">
           {title}
         </h3>
         {description && (
