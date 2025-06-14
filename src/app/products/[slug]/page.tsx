@@ -1,5 +1,5 @@
 // "use client";
-import { notFound } from "next/navigation";
+// import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
@@ -21,7 +21,7 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({
     resolvedParams.slug == "delight-box"
       ? boxData[resolvedParams.slug as keyof typeof boxData]
       : productData[resolvedParams.slug as keyof typeof productData];
-  if (!product) return notFound();
+  // if (!product) return notFound();
   return (
     <>
       <Head>

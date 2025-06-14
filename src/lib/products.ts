@@ -1,60 +1,64 @@
 export const productData = {
-  "jamun": {
-  id: 'jamun',
-  title: 'Jamun',
-  description:
-    'Jamun, also known as black plum, is a seasonal summer fruit known for its deep purple color and sweet-tart flavor. Rich in antioxidants and great for digestion and blood sugar control.',
-  // price: 129,
-  // originalPrice: 159,
-  price: {
+  jamun: {
+    id: "jamun",
+    title: "Jamun",
+    description:
+      "Jamun, also known as black plum, is a seasonal summer fruit known for its deep purple color and sweet-tart flavor. Rich in antioxidants and great for digestion and blood sugar control.",
+    // price: 129,
+    // originalPrice: 159,
+    price: {
       original: "₹149/2kg",
       discounted: "₹119/250g",
     },
-  // unit: '250g (Approx. 15-20 pcs)',
-  image: '/images/jamun.png',
-  tags: ['seasonal', 'new-arrival'],
-  isAvailable: true,
-  benefits: [
-    'Helps manage blood sugar levels',
-    'Rich in Vitamin C and antioxidants',
-    'Supports digestion and oral health'
-  ],
-  stock:12,
-  reviews: [
-    {
-      name: 'Neha R.',
-      text: 'Absolutely fresh and juicy! Loved the quality.',
-      rating: 5
-    },
-    {
-      name: 'Amit P.',
-      text: 'Perfectly packed and delivered. Will buy again!',
-      rating: 4
-    }
-  ]
-},
+    // unit: '250g (Approx. 15-20 pcs)',
+    image: "/images/jamun.png",
+    tags: ["seasonal", "new-arrival"],
+    isAvailable: true,
+    benefits: [
+      "Helps manage blood sugar levels",
+      "Rich in Vitamin C and antioxidants",
+      "Supports digestion and oral health",
+    ],
+    stock: 12,
+    reviews: [
+      {
+        name: "Neha R.",
+        text: "Absolutely fresh and juicy! Loved the quality.",
+        rating: 5,
+      },
+      {
+        name: "Amit P.",
+        text: "Perfectly packed and delivered. Will buy again!",
+        rating: 4,
+      },
+    ],
+  },
   "sweet-lime": {
-  id: "sweet-lime",
-  title: "Sweet Lime (Mosambi)",
-  description: "Sweet Lime (Mosambi) is known for its refreshing and mild citrus flavor. Packed with Vitamin C and hydration, it is perfect for juicing and snacking.",
-  price: {
+    id: "sweet-lime",
+    title: "Sweet Lime (Mosambi)",
+    description:
+      "Sweet Lime (Mosambi) is known for its refreshing and mild citrus flavor. Packed with Vitamin C and hydration, it is perfect for juicing and snacking.",
+    price: {
       original: "₹279/2kg",
       discounted: "₹229/2kg",
     },
-  image: "/images/sweet-lime-fruit.png",
-  tags: ["new-arrival"],
-  isAvailable: true,
-  benefits: [
-    "Rich in Vitamin C, boosts immunity",
-    "Excellent for hydration and detox",
-    "Helps in digestion and improves skin health"
-  ],
-  stock:12,
-  reviews: [
-    { name: "Aarav", text: "Best sweet lime I've ever had! So refreshing." },
-    { name: "Saanvi", text: "Perfect for making fresh juice. Highly recommend!" }
-  ]
-},
+    image: "/images/sweet-lime-fruit.png",
+    tags: ["new-arrival"],
+    isAvailable: true,
+    benefits: [
+      "Rich in Vitamin C, boosts immunity",
+      "Excellent for hydration and detox",
+      "Helps in digestion and improves skin health",
+    ],
+    stock: 12,
+    reviews: [
+      { name: "Aarav", text: "Best sweet lime I've ever had! So refreshing." },
+      {
+        name: "Saanvi",
+        text: "Perfect for making fresh juice. Highly recommend!",
+      },
+    ],
+  },
   litchi: {
     id: "litchi",
     title: "Fresh Litchi",
@@ -102,6 +106,7 @@ export const productData = {
     reviews: [{ name: "Raj", text: "Sweet and juicy, perfect for summer." }],
   },
   "devgad-mangoes": {
+    id: "devgad-mangoes",
     title: "Devgad Alphanso Mangoes",
     image: "/images/mangoes-fruit.png",
     description:
@@ -123,6 +128,7 @@ export const productData = {
     ],
   },
   "alphanso-mangoes": {
+    id: "alphanso-mangoes",
     title: "Alphanso Mangoes (karnataka)",
     image: "/images/mango-karnataka.png",
     description:
@@ -144,6 +150,7 @@ export const productData = {
     ],
   },
   avocados: {
+    id: "avocados",
     title: "Fresh Avocados",
     image: "/images/avocado-fruit.webp",
     description:
@@ -158,6 +165,7 @@ export const productData = {
     reviews: [{ name: "Sara", text: "Perfect texture for guac!" }],
   },
   pears: {
+    id: "pears",
     title: "Green Pears",
     image: "/images/pear-fruit-1.png",
     description:
@@ -172,6 +180,7 @@ export const productData = {
     reviews: [],
   },
   pomegranate: {
+    id: "pomegranate",
     title: "Fresh Pomegranates",
     image: "/images/Vibrant Pomegranate.png", // Ensure this is in public/images
     description:
@@ -191,6 +200,7 @@ export const productData = {
     ],
   },
   chickoo: {
+    id: "chickoo",
     title: "Fresh Chikoo (Sapodilla)",
     image: "/images/chickoo-fruit.png", // make sure to save and reference the correct path
     description:
@@ -210,6 +220,7 @@ export const productData = {
     reviews: [{ name: "Nikhil", text: "Soft and super sweet. Loved it!" }],
   },
   "indian-plum": {
+    id: "plum",
     title: "Plum (indian)",
     image: "/images/plum-fruit.png",
     description:
