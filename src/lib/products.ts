@@ -21,12 +21,12 @@ export const productData = {
   reviews: [
     {
       name: 'Priya M.',
-      comment: 'Fresh and juicy peaches! Loved the taste.',
+      text: 'Fresh and juicy peaches! Loved the taste.',
       rating: 5
     },
     {
       name: 'Anil K.',
-      comment: 'Great for making smoothies, will order again.',
+      text: 'Great for making smoothies, will order again.',
       rating: 4
     }
   ]
