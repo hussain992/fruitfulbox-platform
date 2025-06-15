@@ -1,4 +1,36 @@
 export const productData = {
+  peach: {
+  id: 'peach',
+  title: 'Peach',
+  description:
+    'Juicy and semi-ripe peaches perfect for snacking or desserts. Rich in vitamins A and C, and known for their sweet, refreshing taste.',
+  price: {
+      original: "₹299/1kg",
+      discounted: "₹249/1kg",
+    },
+  unit: '500g (Approx. 3-4 pcs)',
+  image: '/images/peaches.png', // make sure your image is saved at this path
+  tags: ['new-arrival'],
+  isAvailable: true,
+  benefits: [
+    'Rich in vitamins A and C',
+    'Good source of dietary fiber',
+    'Supports skin health and hydration'
+  ],
+  stock: 12,
+  reviews: [
+    {
+      user: 'Priya M.',
+      comment: 'Fresh and juicy peaches! Loved the taste.',
+      rating: 5
+    },
+    {
+      user: 'Anil K.',
+      comment: 'Great for making smoothies, will order again.',
+      rating: 4
+    }
+  ]
+},
   jamun: {
     id: "jamun",
     title: "Jamun",
