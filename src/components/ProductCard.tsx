@@ -38,7 +38,7 @@ export default function ProductCard({
         <div className="relative w-full aspect-1/1 overflow-hidden rounded-xl mb-2 sm:mb-4">
           {/* <ProductTag label="Best Seller" color="green" /> */}
 
-          {isAvailable === false && <span className="absolute top-2 right-0 left-0 bg-red-600 text-white text-xs px-2 py-1 rounded shadow-md z-10">
+          {isAvailable === false && <span className="absolute top-0 right-0 left-0 bg-red-600 text-white text-xs px-2 py-1 rounded shadow-md z-10">
             Out of Stock
           </span>}
           <Image
