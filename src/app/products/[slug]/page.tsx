@@ -82,6 +82,7 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({
                   ? product.price.discounted
                   : product.price.original
               }
+              isAvailable={product.isAvailable}
             />
           </div>
         </div>

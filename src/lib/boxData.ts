@@ -4,6 +4,7 @@ export const boxData = {
 		image: "/images/Delight-box.png",
 		description: "A box full of 3 Mangoes, 6 Chickoo, and 3 Pomegranates.",
 		benefits: [],
+		isAvailable: true,
 		// price: "₹999/dozen",
 		price: {
 			original: "₹349",

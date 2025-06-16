@@ -127,7 +127,7 @@ export const productData = {
     },
     // weight: "1 dozen (approx. 3.5kg)",
     image: "/images/Kesar-Mangoes.jpg", // Adjust the path if different
-    available: true,
+    isAvailable: false,
     stock: 12,
     // deliveryDays: ["Wednesday", "Saturday", "Sunday"],
     benefits: [
@@ -148,7 +148,7 @@ export const productData = {
       "Boosts immunity",
       "Supports digestion",
     ],
-    // price: "₹999/dozen",
+    isAvailable:false,
     price: {
       original: "₹999",
       discounted: "₹799/dozen",
@@ -170,6 +170,7 @@ export const productData = {
       "Boosts immunity",
       "Supports digestion",
     ],
+    isAvailable: false,
     price: {
       original: "₹449",
       discounted: "₹399/dozen",
@@ -181,7 +182,7 @@ export const productData = {
       // { name: "Rahul", text: "Juicy and flavorful — will order again." }
     ],
   },
-  avocados: {
+  "avocados": {
     id: "avocados",
     title: "Fresh Avocados",
     image: "/images/avocado-fruit.webp",
@@ -194,12 +195,13 @@ export const productData = {
       discounted: "₹499/6 pcs",
     },
     stock: 8,
+    isAvailable: true,  
     reviews: [{ name: "Sara", text: "Perfect texture for guac!" }],
   },
-  pears: {
+  "pears": {
     id: "pears",
     title: "Green Pears",
-    image: "/images/pear-fruit-1.png",
+    image: "/images/pear.png",
     description:
       "Crisp and sweet green pears — naturally grown and full of hydration. Excellent as a snack or dessert topper.",
     benefits: ["Low calorie", "High in antioxidants", "Promotes gut health"],
@@ -207,11 +209,12 @@ export const productData = {
       original: "",
       discounted: "₹249/kg",
     },
+    isAvailable: true,
     // price: "₹249/kg",
     stock: 20,
     reviews: [],
   },
-  pomegranate: {
+  "pomegranate": {
     id: "pomegranate",
     title: "Fresh Pomegranates",
     image: "/images/Vibrant Pomegranate.png", // Ensure this is in public/images
@@ -226,12 +229,13 @@ export const productData = {
       original: "₹249/kg",
       discounted: "₹199/kg",
     },
+    isAvailable: true,
     stock: 10,
     reviews: [
       { name: "Meera", text: "Super fresh and sweet — highly recommend!" },
     ],
   },
-  chickoo: {
+  "chickoo": {
     id: "chickoo",
     title: "Fresh Chikoo (Sapodilla)",
     image: "/images/chickoo-fruit.png", // make sure to save and reference the correct path
@@ -242,12 +246,11 @@ export const productData = {
       "Boosts energy naturally",
       "Rich in antioxidants and vitamins",
     ],
+    isAvailable: true,
     price: {
       original: "₹119/kg",
       discounted: "₹99/kg",
     },
-    // price: "₹299/kg",
-    // originalPrice: "₹349/kg", // if you show discounts
     stock: 10,
     reviews: [{ name: "Nikhil", text: "Soft and super sweet. Loved it!" }],
   },
@@ -258,8 +261,6 @@ export const productData = {
     description:
       "Sweet and tangy Indian Plums, also known as Ber, are packed with flavor and nutrients. A perfect traditional snack enjoyed across India.",
     benefits: ["Boosts immunity", "Rich in Vitamin C", "Aids digestion"],
-    // price: "₹199",
-    // originalPrice: "₹249",
     price: {
       original: "₹199/500g",
       discounted: "₹149/500g",
@@ -270,6 +271,8 @@ export const productData = {
       { name: "Meera", text: "Took me back to childhood! So fresh and tasty." },
       { name: "Ravi", text: "Excellent quality and packaging." },
     ],
+    isAvailable: true,
+    // Add SEO metadata for the product
     seo: {
       title: "Buy Indian Plum (Ber) Online - Fresh & Tangy",
       description:

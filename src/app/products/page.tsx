@@ -15,6 +15,7 @@ const ProductListPage = () => {
             slug={slug}
             title={product.title}
             image={product.image} 
+            isAvailable={product.isAvailable}
             // price={product.price}
           />
         ))}
