@@ -1,9 +1,9 @@
 // app/sitemap.xml/route.ts
 
-import { productData } from '../../lib/products'; // adjust as per your path
+import { productData } from '../lib/products'; // adjust as per your path
 import type { MetadataRoute } from 'next'
 
-export async function GET (): Promise<MetadataRoute.Sitemap> {
+export default function GET (): MetadataRoute.Sitemap {
   const baseUrl = 'https://fruitfulbox.vercel.app'; // Replace with real domain or use env
 
   const staticRoutes = ['', '/products'];
