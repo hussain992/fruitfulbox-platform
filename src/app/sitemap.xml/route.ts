@@ -3,7 +3,7 @@
 import { productData } from '../../lib/products'; // adjust as per your path
 
 export async function GET() {
-  const baseUrl = 'https://yourdomain.com'; // Replace with real domain or use env
+  const baseUrl = 'https://fruitfulbox.vercel.app'; // Replace with real domain or use env
 
   const staticRoutes = ['', '/products', '/about'];
 const productArr = (Object.keys(productData) as Array<keyof typeof productData>).map(key => ({ key: key, value: productData[key] }));
