@@ -68,7 +68,7 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
       </div>
       <Button
         onClick={handleWhatsAppOrder}
-        disabled={!isAvailable}
+        disabled={!isAvailable || (new Date() > new Date("2025-06-26"))}
         className="hidden ml-4 md:inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md shadow"
       >
         {buttonTitle}

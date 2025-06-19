@@ -7,6 +7,7 @@ import React, { use } from "react";
 import OrderDetails from "@/components/OrderComponents";
 import { productData } from "@/lib/products";
 import { boxData } from "@/lib/boxData";
+import ServiceNotice from "@/components/ServiceNotice";
 
 // type ProductSlug = keyof typeof productData;
 
@@ -41,6 +42,7 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({
           content={`https://fruitfulbox.vercel.app/products/${resolvedParams.slug}`}
         />
       </Head>
+          <ServiceNotice />
       <main className="max-w-5xl mx-auto py-6 sm:py-16 px-4">
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <Image
