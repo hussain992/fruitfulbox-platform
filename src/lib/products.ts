@@ -1,36 +1,65 @@
 export const productData = {
+  pairi: {
+    id: "pairi-mangoes",
+    title: "Pairi Mangoes (Payari)",
+    description:
+      "Pairi Mangoes are known for their vibrant aroma and tangy-sweet flavor. These early-season mangoes are perfect for juice lovers and mango purists.",
+    // price: 399,
+    // originalPrice: 449,
+    price: {
+      original: "₹249/2kg",
+      discounted: "₹179/2kg",
+    },
+    unit: "Dozen (Approx. 12 pcs)",
+    image: "/images/pairi-mango.png", // make sure this image is available
+    tags: ["seasonal"],
+    stock: 12,
+    isAvailable: true,
+    benefits: [
+      "High in Vitamin C",
+      "Excellent for juicing",
+      "Boosts energy and hydration",
+    ],
+    reviews: [
+      {
+        name: "Amit",
+        text: "Loved the tangy sweetness! Really juicy and fresh.",
+      },
+      { name: "Neha", text: "Best mangoes for making aamras!" },
+    ],
+  },
   peach: {
-  id: 'peach',
-  title: 'Peach',
-  description:
-    'Juicy and semi-ripe peaches perfect for snacking or desserts. Rich in vitamins A and C, and known for their sweet, refreshing taste.',
-  price: {
+    id: "peach",
+    title: "Peach",
+    description:
+      "Juicy and semi-ripe peaches perfect for snacking or desserts. Rich in vitamins A and C, and known for their sweet, refreshing taste.",
+    price: {
       original: "₹299/1kg",
       discounted: "₹249/1kg",
     },
-  unit: '500g (Approx. 3-4 pcs)',
-  image: '/images/peaches.png', // make sure your image is saved at this path
-  tags: ['new-arrival'],
-  isAvailable: true,
-  benefits: [
-    'Rich in vitamins A and C',
-    'Good source of dietary fiber',
-    'Supports skin health and hydration'
-  ],
-  stock: 12,
-  reviews: [
-    {
-      name: 'Priya M.',
-      text: 'Fresh and juicy peaches! Loved the taste.',
-      rating: 5
-    },
-    {
-      name: 'Anil K.',
-      text: 'Great for making smoothies, will order again.',
-      rating: 4
-    }
-  ]
-},
+    unit: "500g (Approx. 3-4 pcs)",
+    image: "/images/peaches.png", // make sure your image is saved at this path
+    tags: ["new-arrival"],
+    isAvailable: true,
+    benefits: [
+      "Rich in vitamins A and C",
+      "Good source of dietary fiber",
+      "Supports skin health and hydration",
+    ],
+    stock: 12,
+    reviews: [
+      {
+        name: "Priya M.",
+        text: "Fresh and juicy peaches! Loved the taste.",
+        rating: 5,
+      },
+      {
+        name: "Anil K.",
+        text: "Great for making smoothies, will order again.",
+        rating: 4,
+      },
+    ],
+  },
   jamun: {
     id: "jamun",
     title: "Jamun",
@@ -148,7 +177,7 @@ export const productData = {
       "Boosts immunity",
       "Supports digestion",
     ],
-    isAvailable:false,
+    isAvailable: false,
     price: {
       original: "₹999",
       discounted: "₹799/dozen",
@@ -182,7 +211,7 @@ export const productData = {
       // { name: "Rahul", text: "Juicy and flavorful — will order again." }
     ],
   },
-  "avocados": {
+  avocados: {
     id: "avocados",
     title: "Fresh Avocados",
     image: "/images/avocado-fruit.webp",
@@ -195,10 +224,10 @@ export const productData = {
       discounted: "₹499/6 pcs",
     },
     stock: 8,
-    isAvailable: true,  
+    isAvailable: true,
     reviews: [{ name: "Sara", text: "Perfect texture for guac!" }],
   },
-  "pears": {
+  pears: {
     id: "pears",
     title: "Green Pears",
     image: "/images/pear.png",
@@ -214,7 +243,7 @@ export const productData = {
     stock: 20,
     reviews: [],
   },
-  "pomegranate": {
+  pomegranate: {
     id: "pomegranate",
     title: "Fresh Pomegranates",
     image: "/images/Vibrant Pomegranate.png", // Ensure this is in public/images
@@ -235,7 +264,7 @@ export const productData = {
       { name: "Meera", text: "Super fresh and sweet — highly recommend!" },
     ],
   },
-  "chickoo": {
+  chickoo: {
     id: "chickoo",
     title: "Fresh Chikoo (Sapodilla)",
     image: "/images/chickoo-fruit.png", // make sure to save and reference the correct path
