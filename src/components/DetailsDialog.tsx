@@ -22,37 +22,79 @@ interface UserDetails {
   wing: string;
   society: string;
 }
-export const DetailsDialog = ({
-  getDetails,
-  defaultOpen,
-}: {
+interface DetailsDialogProps {
   getDetails: (address: UserDetails) => void;
   defaultOpen: boolean;
+}
+
+export const DetailsDialog: React.FC<DetailsDialogProps> = ({
+  getDetails,
+  defaultOpen,
 }) => {
-  const [flatNo, setFlatNo] = useState("");
-  const [wing, setWing] = useState("");
-  const [society, setSociety] = useState("");
-  const [selectedDate, setSelectedDate] = React.useState("");
+  // State to hold user details
+  const [userDetails, setUserDetails] = React.useState({
+    selectedDate: "",
+    flatNo: "",
+    wing: "",
+    society: "",
+  });
+  const [hasError, setHasError] = React.useState(false);
+  // const [selectedDate, setSelectedDate] = React.useState("");
   const [open, setOpen] = useState(false); // State to control the dialog open/close
+
+
+  React.useEffect(() => {
+    if (defaultOpen) 
+      setOpen(true);
+  }, [defaultOpen]);
 
   const handleOpenChange = () => {
     if (open) setOpen(false);
   };
-  React.useEffect(() => {
-    if (defaultOpen) {
-      setOpen(true);
-    }
-  }, [defaultOpen]);
   const deliveryOptions = getNextDeliveryDates();
-  // const deliveryOptions: unknown[] = [];
 
-
-  const handleSubmit = () => {
-    console.log({ flatNo, wing, society });
-    getDetails({ selectedDate, flatNo, wing, society });
-    // You can send this data to an API or store in state
+  const handleSubmit = () => {  
+    if (!userDetails.selectedDate || !userDetails.flatNo || !userDetails.wing || !userDetails.society) {
+      console.log("Please fill in all fields.");
+      setHasError(true);
+      setOpen(true);
+      return;
+    }
+    getDetails(userDetails);
   };
-  // console.log('defaultOpen', defaultOpen, open);
+
+  const deliveryDateComponent = () => {
+    return (
+      <>
+        <Label htmlFor="Select Delivery Date">Select Delivery Date:</Label>
+        <select
+          id="deliveryDate"
+          value={userDetails.selectedDate}
+          onChange={(e) =>
+            setUserDetails((prev) => ({
+              ...prev,
+              selectedDate: e.target.value,
+            }))
+          }
+          className="border border-gray-300 rounded-md px-3 py-2 w-full"
+        >
+          <option value="">Choose a date</option>
+          {deliveryOptions.map((date, index) => (
+            <option key={index} value={date}>
+              {date}
+            </option>
+          ))}
+        </select>
+      </>
+    );
+  };
+
+  if (!deliveryOptions || deliveryOptions.length === 0) {
+    return <div>No delivery dates available</div>;
+  }
+
+  const fields = [{name: "flatNo", label: "Flat No."}, {name: "wing", label: "Wing"}, {name: "society", label: "Society Name"}];
+
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger
@@ -67,49 +109,26 @@ export const DetailsDialog = ({
         <DialogHeader>
           <DialogTitle>Enter Your Delivery Details</DialogTitle>
         </DialogHeader>
-        <Label htmlFor="Select Delivery Date">Select Delivery Date:</Label>
-        <select
-          id="deliveryDate"
-          value={selectedDate}
-          onChange={(e) => setSelectedDate(e.target.value)}
-          className="border border-gray-300 rounded-md px-3 py-2 w-full"
-        >
-          <option value="">Choose a date</option>
-          {deliveryOptions.map((date, index) => (
-            <option key={index} value={date}>
-              {date}
-            </option>
-          ))}
-        </select>
+        {deliveryDateComponent()}
         <div className="grid gap-4 py-2">
-          <div className="grid col-span-6 gap-2">
-            <Label htmlFor="flatNo">Flat No.</Label>
-            <Input
-              id="flatNo"
-              value={flatNo}
-              onChange={(e) => setFlatNo(e.target.value)}
-              placeholder="e.g. 203"
-            />
-          </div>
-          <div className="grid col-span-6 gap-2">
-            <Label htmlFor="wing">Wing</Label>
-            <Input
-              id="wing"
-              value={wing}
-              onChange={(e) => setWing(e.target.value)}
-              placeholder="e.g. B"
-            />
-          </div>
-          <div className="grid col-span-6 gap-2">
-            <Label htmlFor="society">Society Name</Label>
-            <Input
-              id="society"
-              value={society}
-              onChange={(e) => setSociety(e.target.value)}
-              placeholder="e.g. Green Meadows"
-            />
-          </div>
+          {fields.map((field) => (
+            <div key={field.name} className="grid col-span-6 gap-2">
+              <Label htmlFor={field.name}>{field.label}</Label>
+              <Input
+                id={field.name}
+                value={userDetails[field.name as keyof typeof userDetails]}
+                onChange={(e) =>
+                  setUserDetails((prev) => ({
+                    ...prev,
+                    [field.name]: e.target.value,
+                  }))
+                }
+                placeholder={`e.g. ${field.label}`}
+              />
+            </div>
+          ))}
         </div>
+        {hasError && <div className="text-red">Please fill in all fields.</div>}
         <DialogFooter>
           <DialogClose asChild>
             <Button onClick={handleSubmit}>Save</Button>

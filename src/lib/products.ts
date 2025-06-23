@@ -14,7 +14,7 @@ export const productData = {
     image: "/images/pairi-mango.png", // make sure this image is available
     tags: ["seasonal"],
     stock: 12,
-    isAvailable: true,
+    isAvailable: false,
     benefits: [
       "High in Vitamin C",
       "Excellent for juicing",

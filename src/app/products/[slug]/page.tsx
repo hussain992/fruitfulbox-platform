@@ -56,22 +56,23 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({
             <h1 className="text-4xl font-bold mb-4">{product.title}</h1>
             <p className="text-lg text-gray-700 mb-4">{product.description}</p>
             {/* <p className="text-xl font-semibold text-green-700 mb-2">{product.price}</p> */}
-            <div className="mb-2">
-              <span className="text-lg text-gray-500 line-through mr-2">
-                {product.price.original}
-              </span>
-              <span className="text-xl font-bold text-green-700">
-                {product.price.discounted}
-              </span>
-            </div>
-            <p
-              className={`text-sm mb-4 ${
-                product.stock > 0 ? "text-green-600" : "text-red-500"
+            {product.isAvailable && <>
+              <div className="mb-2">
+                <span className="text-lg text-gray-500 line-through mr-2">
+                  {product.price.original}
+                </span>
+                <span className="text-xl font-bold text-green-700">
+                  {product.price.discounted}
+                </span>
+              </div>
+              <p
+                className={`text-sm mb-4 ${
+                  product.stock > 0 ? "text-green-600" : "text-red-500"
               }`}
             >
               {/* {product.stock > 0 ? `${product.stock} in stock` : "Out of stock"} */}
               {"In stock"}
-            </p>
+            </p></>}
             <ul className="list-disc list-inside text-sm text-green-700 mb-6">
               {product?.benefits?.map((benefit, i) => (
                 <li key={i}>{benefit}</li>
