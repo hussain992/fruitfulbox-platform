@@ -35,7 +35,15 @@ export async function generateMetadata(
     openGraph: {
       title: `${product.title} – Fruitful Box`,
       description: `Order premium ${product.title} now via WhatsApp!`,
-      images: [`https://fruitfulbox.vercel.app${product.image}`],
+      images: [
+        {
+          // image extension can be anything like jpg, png, webp, etc.
+          url: `https://fruitfulbox.vercel.app${product.image}`,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      siteName: 'Fruitful Box',
       url: `https://fruitfulbox.vercel.app/products/${params.slug}`,
       type: 'website',
     },
