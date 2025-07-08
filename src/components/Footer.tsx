@@ -14,7 +14,7 @@ export default function Footer() {
         </div>
         <div className="flex justify-center space-x-4">
           <a
-            href="https://www.instagram.com/yourprofile"
+            href="https://www.instagram.com/fruitfulboxpune"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
