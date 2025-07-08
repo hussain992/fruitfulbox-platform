@@ -37,6 +37,7 @@ export async function generateMetadata(
       description: `Order premium ${product.title} now via WhatsApp!`,
       images: [`https://fruitfulbox.vercel.app${product.image}`],
       url: `https://fruitfulbox.vercel.app/products/${params.slug}`,
+      type: 'website',
     },
   };
 }
