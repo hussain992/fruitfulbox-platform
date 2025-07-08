@@ -2,18 +2,45 @@
 // import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import Head from "next/head";
 import React, { use } from "react";
 import OrderDetails from "@/components/OrderComponents";
 import { productData } from "@/lib/products";
 import { boxData } from "@/lib/boxData";
 import ServiceNotice from "@/components/ServiceNotice";
+import type { Metadata } from 'next' 
 
 // type ProductSlug = keyof typeof productData;
 
 // interface Props {
 // 	params: { slug: string }; // Corrected parameter type
 // }
+
+
+// 2️⃣ Metadata function
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+): Promise<Metadata> {
+  const product = productData[params.slug as keyof typeof productData];
+
+  if (!product) {
+    return {
+      title: "Product not found | Fruitful Box",
+      description: "This product does not exist on Fruitful Box.",
+    };
+  }
+
+  return {
+    title: `${product.title} – Buy Now | Fruitful Box`,
+    description: `Buy fresh ${product.title} online. Premium quality from Fruitful Box.`,
+    openGraph: {
+      title: `${product.title} – Fruitful Box`,
+      description: `Order premium ${product.title} now via WhatsApp!`,
+      images: [`https://fruitfulbox.vercel.app${product.image}`],
+      url: `https://fruitfulbox.vercel.app/products/${params.slug}`,
+    },
+  };
+}
+
 const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({
   params,
 }) => {
@@ -25,24 +52,7 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({
   // if (!product) return notFound();
   return (
     <>
-      <Head>
-        <title>{product.title} – Buy Now | Fruitful Box</title>
-        <meta
-          name="description"
-          content={`Buy fresh ${product.title} online. Premium quality from Fruitful Box.`}
-        />
-        <meta property="og:title" content={`${product.title} – Fruitful Box`} />
-        <meta
-          property="og:description"
-          content={`Order premium ${product.title} now via WhatsApp!`}
-        />
-        <meta property="og:image" content={product.image} />
-        <meta
-          property="og:url"
-          content={`https://fruitfulbox.vercel.app/products/${resolvedParams.slug}`}
-        />
-      </Head>
-          <ServiceNotice />
+      <ServiceNotice />
       <main className="max-w-5xl mx-auto py-6 sm:py-16 px-4">
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <Image
@@ -56,23 +66,26 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({
             <h1 className="text-4xl font-bold mb-4">{product.title}</h1>
             <p className="text-lg text-gray-700 mb-4">{product.description}</p>
             {/* <p className="text-xl font-semibold text-green-700 mb-2">{product.price}</p> */}
-            {product.isAvailable && <>
-              <div className="mb-2">
-                <span className="text-lg text-gray-500 line-through mr-2">
-                  {product.price.original}
-                </span>
-                <span className="text-xl font-bold text-green-700">
-                  {product.price.discounted}
-                </span>
-              </div>
-              <p
-                className={`text-sm mb-4 ${
-                  product.stock > 0 ? "text-green-600" : "text-red-500"
-              }`}
-            >
-              {/* {product.stock > 0 ? `${product.stock} in stock` : "Out of stock"} */}
-              {"In stock"}
-            </p></>}
+            {product.isAvailable && (
+              <>
+                <div className="mb-2">
+                  <span className="text-lg text-gray-500 line-through mr-2">
+                    {product.price.original}
+                  </span>
+                  <span className="text-xl font-bold text-green-700">
+                    {product.price.discounted}
+                  </span>
+                </div>
+                <p
+                  className={`text-sm mb-4 ${
+                    product.stock > 0 ? "text-green-600" : "text-red-500"
+                  }`}
+                >
+                  {/* {product.stock > 0 ? `${product.stock} in stock` : "Out of stock"} */}
+                  {"In stock"}
+                </p>
+              </>
+            )}
             <ul className="list-disc list-inside text-sm text-green-700 mb-6">
               {product?.benefits?.map((benefit, i) => (
                 <li key={i}>{benefit}</li>
