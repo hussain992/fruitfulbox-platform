@@ -63,7 +63,7 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white px-4 py-3 border-t shadow-lg">
         <Button
           onClick={handleWhatsAppOrder}
-          disabled={!isAvailable || new Date() > new Date("2025-06-26")}
+          disabled={!isAvailable || new Date() < new Date("2025-06-26")}
           className="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md shadow"
         >
           {buttonTitle}
@@ -71,7 +71,7 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
       </div>
       <Button
         onClick={handleWhatsAppOrder}
-        disabled={!isAvailable || new Date() > new Date("2025-06-26")}
+        disabled={!isAvailable || new Date() < new Date("2025-06-26")}
         className="hidden ml-4 md:inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md shadow"
       >
         {buttonTitle}

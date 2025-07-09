@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 
 export default function ServiceNotice() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     const today = new Date();
