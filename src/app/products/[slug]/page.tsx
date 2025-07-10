@@ -11,17 +11,18 @@ import type { Metadata } from 'next'
 
 // type ProductSlug = keyof typeof productData;
 
-// interface Props {
-// 	params: { slug: string }; // Corrected parameter type
-// }
+interface Props {
+	params: { slug: string }; // Corrected parameter type
+}
 
 
 // 2️⃣ Metadata function
 export async function generateMetadata(
-  { params }: { params: { slug: string } }
+  { params }:  Props
 ): Promise<Metadata> {
-  const product = productData[params.slug as keyof typeof productData];
-
+  const slug = (await params).slug
+  const product = productData[slug as keyof typeof productData];
+  
   if (!product) {
     return {
       title: "Product not found | Fruitful Box",
@@ -44,7 +45,7 @@ export async function generateMetadata(
         },
       ],
       siteName: 'Fruitful Box',
-      url: `https://fruitfulbox.vercel.app/products/${params.slug}`,
+      url: `https://fruitfulbox.vercel.app/products/${slug}`,
       type: 'website',
     },
   };

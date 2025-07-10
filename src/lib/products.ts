@@ -158,6 +158,7 @@ export const productData = {
     image: "/images/Kesar-Mangoes.jpg", // Adjust the path if different
     isAvailable: false,
     stock: 12,
+    tags: ["seasonal", "new-arrival"],
     // deliveryDays: ["Wednesday", "Saturday", "Sunday"],
     benefits: [
       "Rich in Vitamin A and C",
@@ -183,6 +184,7 @@ export const productData = {
       discounted: "₹799/dozen",
     },
     stock: 12,
+    tags: ["seasonal", "new-arrival"],
     reviews: [
       { name: "Anita", text: "Best mangoes I’ve had this season!" },
       { name: "Rahul", text: "Juicy and flavorful — will order again." },
@@ -200,6 +202,7 @@ export const productData = {
       "Supports digestion",
     ],
     isAvailable: false,
+    tags: ["seasonal", "new-arrival"],
     price: {
       original: "₹449",
       discounted: "₹399/dozen",
@@ -219,6 +222,7 @@ export const productData = {
       "Creamy Hass avocados sourced fresh. Great for toast, guacamole, or smoothies. Packed with healthy fats and nutrients.",
     benefits: ["High in fiber", "Heart-healthy fats", "Rich in potassium"],
     // price: "₹499/6 pcs",
+    tags: ["new-arrival"],
     price: {
       original: "",
       discounted: "₹499/6 pcs",
@@ -238,6 +242,7 @@ export const productData = {
       original: "",
       discounted: "₹249/kg",
     },
+    tags: ["new-arrival"],
     isAvailable: true,
     // price: "₹249/kg",
     stock: 20,
@@ -254,6 +259,7 @@ export const productData = {
       "Supports heart health",
       "Boosts immunity",
     ],
+    tags: ["seasonal", "new-arrival"],
     price: {
       original: "₹249/kg",
       discounted: "₹199/kg",
@@ -275,6 +281,7 @@ export const productData = {
       "Boosts energy naturally",
       "Rich in antioxidants and vitamins",
     ],
+    tags: ["seasonal", "new-arrival"],
     isAvailable: true,
     price: {
       original: "₹119/kg",
@@ -294,6 +301,7 @@ export const productData = {
       original: "₹199/500g",
       discounted: "₹149/500g",
     },
+    tags: ["seasonal", "traditional"],
     stock: 15,
     deliveryDates: ["Wednesday", "Saturday", "Sunday"],
     reviews: [
@@ -315,7 +323,41 @@ export const productData = {
       ],
     },
   },
+  "mix-fruits": {
+    id: "cut-mix-fruit",
+    title: "Cut Mixed Fruits Box",
+    description:
+      "A ready-to-eat mix of seasonal fruits. Freshly cut and packed on order.",
+    price: {
+      original: "₹199",
+      discounted: "₹149/400g",
+    },
+    unit: "400g box",
+    image: "/images/mix-fruits.png",
+    tags: ["cut-fruit", "new-arrival"],
+    isAvailable: true,
+    stock: 20,
+    benefits: ["Ready to eat", "No mess", "High in vitamins"],
+    reviews: [{ name: "Ayesha", text: "So convenient for busy mornings!" }],
+  },
 };
 
-export type Product = (typeof productData)[keyof typeof productData];
+// export type Product = (typeof productData)[keyof typeof productData];
+export type Product = {
+  id: string;
+  title: string;
+  description: string;
+  price: {
+    original: string;
+    discounted: string;
+  };
+  unit?: string;
+  image: string;
+  tags?: string[];
+  stock?: number;
+  isAvailable: boolean;
+  benefits?: string[];
+  reviews?: { name: string; text: string; rating?: number }[];
+};
+
 export type ProductSlug = keyof typeof productData;

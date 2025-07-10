@@ -19,6 +19,7 @@ export default function Header() {
 
         <nav className="hidden md:flex space-x-6">
           {/* <Link href="/about" className="text-gray-700 hover:text-pink-600">About</Link>*/}
+          <Link href="/cut-fruits" className="hover:text-orange-500">Cut Fruits</Link>
           <Link href="/products" className="text-gray-700 hover:text-pink-600">Products</Link> 
           {/* <Link href="/subscribe" className="text-gray-700 hover:text-pink-600">Subscribe</Link> */}
         </nav>
@@ -42,6 +43,7 @@ export default function Header() {
             <hr/>
 
             {/* <Link href="/about" className="block text-gray-700 hover:text-pink-600">About</Link>*/}
+          <Link href="/cut-fruits" className="hover:text-orange-500">Cut Fruits</Link>
             <Link href="/products" className="block text-gray-700 hover:text-pink-600">Products</Link> 
             {/* <Link href="/subscribe" className="block text-gray-700 hover:text-pink-600">Subscribe</Link> */}
           </motion.div>
