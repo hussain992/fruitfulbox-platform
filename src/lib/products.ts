@@ -68,8 +68,8 @@ export const productData = {
     // price: 129,
     // originalPrice: 159,
     price: {
-      original: "₹149/500gm",
-      discounted: "₹119/500g",
+      original: "₹249/500gm",
+      discounted: "₹229/500g",
     },
     // unit: '250g (Approx. 15-20 pcs)',
     image: "/images/jamun.png",
