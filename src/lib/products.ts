@@ -298,8 +298,8 @@ export const productData = {
       "Sweet and tangy Indian Plums, also known as Ber, are packed with flavor and nutrients. A perfect traditional snack enjoyed across India.",
     benefits: ["Boosts immunity", "Rich in Vitamin C", "Aids digestion"],
     price: {
-      original: "₹199/500g",
-      discounted: "₹149/500g",
+      original: "₹299/kg",
+      discounted: "₹249/kg",
     },
     tags: ["seasonal", "traditional"],
     stock: 15,
