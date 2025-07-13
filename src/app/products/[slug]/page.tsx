@@ -7,7 +7,7 @@ import OrderDetails from "@/components/OrderComponents";
 import { productData } from "@/lib/products";
 import { boxData } from "@/lib/boxData";
 import ServiceNotice from "@/components/ServiceNotice";
-import type { Metadata } from 'next' 
+import type { Metadata } from 'next' ;
 
 // type ProductSlug = keyof typeof productData;
 

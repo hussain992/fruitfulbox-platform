@@ -139,7 +139,7 @@ export const productData = {
     ],
     tags: ["new-arrival"],
     availability: ["wednesday", "saturday", "sunday"],
-    isAvailable: true,
+    isAvailable: false,
     reviews: [
       { name: "Aisha", text: "Best litchis I've ever tasted! So fresh." },
       { name: "Rahul", text: "Perfectly sweet and juicy. Highly recommend!" },
@@ -225,7 +225,7 @@ export const productData = {
     tags: ["new-arrival"],
     price: {
       original: "",
-      discounted: "₹499/6 pcs",
+      discounted: "₹349/3 pcs",
     },
     stock: 8,
     isAvailable: true,
