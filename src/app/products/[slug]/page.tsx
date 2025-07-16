@@ -35,7 +35,7 @@ export async function generateMetadata(
     description: `Buy fresh ${product.title} online in Pune. ${product.description}`,
     openGraph: {
       title: `${product.title} – Fruitful Box`,
-      description: `Order premium ${product.title} now via WhatsApp!`,
+      description: `Order premium ${product.title} now via WhatsApp in Pune. ${product.description}`,
       images: [
         {
           // image extension can be anything like jpg, png, webp, etc.
