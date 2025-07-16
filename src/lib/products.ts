@@ -323,8 +323,8 @@ export const productData = {
       ],
     },
   },
-  "mix-fruits": {
-    id: "cut-mix-fruit",
+  "cut-fruits": {
+    id: "cut-fruits",
     title: "Cut Mixed Fruits Box",
     description:
       "A ready-to-eat mix of seasonal fruits. Freshly cut and packed on order.",
