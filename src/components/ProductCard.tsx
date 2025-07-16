@@ -26,7 +26,7 @@ export default function ProductCard({
   // const imgHeight = type === 'full'? 300: 200;; // Set a fixed height for the image
   // console.log('isAvailable === false',isAvailable === false, isAvailable)
   return (
-    <Link href={`/products/${slug}`}>
+    <Link rel="canonical" href={`/products/${slug}`}>
       <div className="bg-lime-100 p-3 mx-0 md:p-6 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:bg-amber-100">
         {/* <Image src={image} alt={title} 
       fill
