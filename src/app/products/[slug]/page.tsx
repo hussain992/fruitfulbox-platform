@@ -32,7 +32,7 @@ export async function generateMetadata(
 
   return {
     title: `${product.title} – Buy Now | Fruitful Box`,
-    description: `Buy fresh ${product.title} online. Premium quality from Fruitful Box.`,
+    description: `Buy fresh ${product.title} online in Pune. ${product.description}`,
     openGraph: {
       title: `${product.title} – Fruitful Box`,
       description: `Order premium ${product.title} now via WhatsApp!`,
@@ -115,7 +115,7 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({
 
         {product?.reviews && product.reviews?.length > 0 && (
           <div className="mt-12 border-t pt-8">
-            <h2 className="text-2xl font-bold mb-4">Customer Reviews</h2>
+            <h3 className="font-bold mb-4">Customer Reviews</h3>
             <div className="space-y-4">
               {product.reviews.map((review, i) => (
                 <div key={i} className="bg-gray-100 p-4 rounded-md shadow-sm">

@@ -84,8 +84,8 @@ export default function Hero() {
         <Image
           src="/images/hero-fruit-pattern.png"
           alt="Fruit Pattern"
-          layout="fill"
-          objectFit="cover"
+          fill
+          className="object-cover"
           priority
         />
       </div>
