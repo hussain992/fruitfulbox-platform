@@ -9,12 +9,12 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fruitful Box",
-  description: "Delivering Fresh Fruits to Your Doorstep",
+  title: "Fruitful Box – Premium Seasonal Fruits Delivered",
+  description: "Delivering Fresh Fruits to Your Doorstep. Taste the freshest seasonal fruits – plum, peach, cut fruits and more. Order online and get them delivered at your doorstep!",
   icons: {
     icon: "/favicon.png",
   },
-  metadataBase: new URL("https://fruitfulbox.vercel.app/"),
+  metadataBase: new URL("https://fruitfulbox.vercel.app"),
   other: {
     "google-site-verification": "Bzee-pKoCg_cOupVkgj87r5wuR_hpxS7NGKCE6UHvLo",
   },
