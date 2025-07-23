@@ -1,3 +1,21 @@
+/**
+ * A comprehensive collection of product details for the FruitfulBox platform.
+ *
+ * Each product entry contains metadata such as title, description, pricing, availability, benefits, tags, reviews, and image paths.
+ * Some products may include additional fields like delivery dates, SEO metadata, or unit information.
+ *
+ * @remarks
+ * - Pricing is represented either as a string or an object with `original` and `discounted` fields.
+ * - Availability is indicated by `isAvailable` and, for some products, specific delivery days.
+ * - Reviews are user-generated and may include ratings.
+ * - Image paths should correspond to files in the public/images directory.
+ *
+ * @example
+ * ```typescript
+ * const mango = productData['pairi'];
+ * console.log(mango.title); // "Pairi Mangoes (Payari)"
+ * ```
+ */
 export const productData = {
   pairi: {
     id: "pairi-mangoes",
@@ -26,6 +44,71 @@ export const productData = {
         text: "Loved the tangy sweetness! Really juicy and fresh.",
       },
       { name: "Neha", text: "Best mangoes for making aamras!" },
+    ],
+  },
+  pears: {
+    id: "pears",
+    title: "Green Pears",
+    image: "/images/pear.png",
+    description:
+      "Crisp and sweet green pears — naturally grown and full of hydration. Excellent as a snack or dessert topper.",
+    benefits: ["Low calorie", "High in antioxidants", "Promotes gut health"],
+    price: {
+      original: "",
+      discounted: "₹249/kg",
+    },
+    tags: ["new-arrival"],
+    isAvailable: true,
+    // price: "₹249/kg",
+    stock: 20,
+    reviews: [],
+  },
+  pomegranate: {
+    id: "pomegranate",
+    title: "Fresh Pomegranates",
+    image: "/images/Vibrant Pomegranate.png", // Ensure this is in public/images
+    description:
+      "Juicy, ruby-red pomegranates bursting with antioxidants. Handpicked for freshness and flavor.",
+    benefits: [
+      "Rich in antioxidants",
+      "Supports heart health",
+      "Boosts immunity",
+    ],
+    tags: ["seasonal", "new-arrival"],
+    price: {
+      original: "₹249/kg",
+      discounted: "₹199/kg",
+    },
+    isAvailable: true,
+    stock: 10,
+    reviews: [
+      { name: "Meera", text: "Super fresh and sweet — highly recommend!" },
+    ],
+  },
+  "sweet-lime": {
+    id: "sweet-lime",
+    title: "Sweet Lime (Mosambi)",
+    description:
+      "Sweet Lime (Mosambi) is known for its refreshing and mild citrus flavor. Packed with Vitamin C and hydration, it is perfect for juicing and snacking.",
+    price: {
+      original: "₹279/2kg",
+      discounted: "₹229/2kg",
+    },
+    image: "/images/sweet-lime-fruit.png",
+    tags: ["new-arrival"],
+    isAvailable: true,
+    benefits: [
+      "Rich in Vitamin C, boosts immunity",
+      "Excellent for hydration and detox",
+      "Helps in digestion and improves skin health",
+    ],
+    stock: 12,
+    reviews: [
+      { name: "Aarav", text: "Best sweet lime I've ever had! So refreshing." },
+      {
+        name: "Saanvi",
+        text: "Perfect for making fresh juice. Highly recommend!",
+      },
     ],
   },
   peach: {
@@ -60,7 +143,7 @@ export const productData = {
       },
     ],
   },
-  jamun: {
+  "jamun": {
     id: "jamun",
     title: "Jamun",
     description:
@@ -91,32 +174,6 @@ export const productData = {
         name: "Amit P.",
         text: "Perfectly packed and delivered. Will buy again!",
         rating: 4,
-      },
-    ],
-  },
-  "sweet-lime": {
-    id: "sweet-lime",
-    title: "Sweet Lime (Mosambi)",
-    description:
-      "Sweet Lime (Mosambi) is known for its refreshing and mild citrus flavor. Packed with Vitamin C and hydration, it is perfect for juicing and snacking.",
-    price: {
-      original: "₹279/2kg",
-      discounted: "₹229/2kg",
-    },
-    image: "/images/sweet-lime-fruit.png",
-    tags: ["new-arrival"],
-    isAvailable: true,
-    benefits: [
-      "Rich in Vitamin C, boosts immunity",
-      "Excellent for hydration and detox",
-      "Helps in digestion and improves skin health",
-    ],
-    stock: 12,
-    reviews: [
-      { name: "Aarav", text: "Best sweet lime I've ever had! So refreshing." },
-      {
-        name: "Saanvi",
-        text: "Perfect for making fresh juice. Highly recommend!",
       },
     ],
   },
@@ -231,45 +288,6 @@ export const productData = {
     isAvailable: true,
     reviews: [{ name: "Sara", text: "Perfect texture for guac!" }],
   },
-  pears: {
-    id: "pears",
-    title: "Green Pears",
-    image: "/images/pear.png",
-    description:
-      "Crisp and sweet green pears — naturally grown and full of hydration. Excellent as a snack or dessert topper.",
-    benefits: ["Low calorie", "High in antioxidants", "Promotes gut health"],
-    price: {
-      original: "",
-      discounted: "₹249/kg",
-    },
-    tags: ["new-arrival"],
-    isAvailable: true,
-    // price: "₹249/kg",
-    stock: 20,
-    reviews: [],
-  },
-  pomegranate: {
-    id: "pomegranate",
-    title: "Fresh Pomegranates",
-    image: "/images/Vibrant Pomegranate.png", // Ensure this is in public/images
-    description:
-      "Juicy, ruby-red pomegranates bursting with antioxidants. Handpicked for freshness and flavor.",
-    benefits: [
-      "Rich in antioxidants",
-      "Supports heart health",
-      "Boosts immunity",
-    ],
-    tags: ["seasonal", "new-arrival"],
-    price: {
-      original: "₹249/kg",
-      discounted: "₹199/kg",
-    },
-    isAvailable: true,
-    stock: 10,
-    reviews: [
-      { name: "Meera", text: "Super fresh and sweet — highly recommend!" },
-    ],
-  },
   chickoo: {
     id: "chickoo",
     title: "Fresh Chikoo (Sapodilla)",
@@ -313,7 +331,7 @@ export const productData = {
     seo: {
       title: "Buy Indian Plum (Ber) Online - Fresh & Tangy",
       description:
-        "Shop fresh Indian Plums (Ber) online at Fruitful Box. Sweet, tangy, and rich in nutrients. Available for delivery on weekends. Order now!",
+        "Shop fresh Indian Plums (Ber) online at Fruitful Box. Sweet, tangy, and rich in nutrients. Available for delivery on weekends. Order now! ",
       keywords: [
         "Indian Plum",
         "Ber",

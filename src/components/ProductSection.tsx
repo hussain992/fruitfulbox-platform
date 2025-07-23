@@ -8,29 +8,28 @@ const boxProducts = [
 	{
 		slug: "delight-box",
 		image: "/images/Delight-box.png",
-		title: "Delight Box",
-		description: "A box full of 3 Mangoes, 6 Chickoo, and 3 Pomegranates."
+		title: "Delight Box 📦",
+		description: "A box full of 3 Pears, 6 Chickoo, and 3 Pomegranates."
 	},
 ];
 const FruitProducts = [
-	{
-		slug:"jamun",
-		image: "/images/jamun.png",
-		title: "Jamun",
-		description: 'Jamun, also known as black plum, is a seasonal summer fruit known for its deep purple color and sweet-tart flavor. Rich in antioxidants and great for digestion and blood sugar control.'
-	},
 	{
 		slug: "indian-plum",
 		image: "/images/plum-fruit.png",
 		title: "Plum (Indian)",
 		description: "Plum is a juicy fruit with a sweet and tart flavor, perfect for snacking or baking."
-	},
-	
+	},	
 	{
-		slug: "litchi",
-		image: "/images/litchi.png",
-		title: "Fresh Litchi",
-		description: "Juicy and aromatic fresh litchis, handpicked for premium quality and taste.",
+		slug: "pears",
+		image: "/images/pear.png",
+		title: "Green Pear",
+		description: "Crisp and sweet green pears — naturally grown and full of hydration. Excellent as a snack or dessert topper."
+	},
+	{
+		slug:"jamun",
+		image: "/images/jamun.png",
+		title: "Jamun",
+		description: 'Jamun, also known as black plum, is a seasonal summer fruit known for its deep purple color and sweet-tart flavor. Rich in antioxidants and great for digestion and blood sugar control.'
 	},
 	// {
 	// 	slug: "pears",
