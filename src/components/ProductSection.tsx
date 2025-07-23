@@ -12,6 +12,14 @@ const boxProducts = [
 		description: "A box full of 3 Pears, 6 Chickoo, and 3 Pomegranates."
 	},
 ];
+const cutProducts = [
+	{
+		slug: "cut-fruits",
+		image: "/images/mix-fruits.png",
+		title: "Cut Fruits 🥭",
+		description: "Freshly cut mangoes, avocados, and more. Perfect for snacking or adding to your meals."	
+	}
+]
 const FruitProducts = [
 	{
 		slug: "indian-plum",
@@ -57,7 +65,12 @@ const FruitProducts = [
 // ];
 
 export default function ProductSection({ title }: ProductSectionProps) {
-	const products = title == 'Our Fruit Boxes 📦'? boxProducts : FruitProducts;
+	const products =
+    title == "Our Fruit Boxes 📦"
+      ? boxProducts
+      : title == "Fresh Cut Fruits 🥭"
+      ? cutProducts
+      : FruitProducts;
 	return (
 		<section className="py-16 px-4 bg-white">
 			<h2 className="text-3xl font-bold text-center mb-10">{title}</h2>
