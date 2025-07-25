@@ -117,8 +117,8 @@ export const productData = {
     description:
       "Juicy and semi-ripe peaches perfect for snacking or desserts. Rich in vitamins A and C, and known for their sweet, refreshing taste.",
     price: {
-      original: "₹299/1kg",
-      discounted: "₹249/1kg",
+      original: "₹249/1kg",
+      discounted: "₹199/1kg",
     },
     unit: "500g (Approx. 3-4 pcs)",
     image: "/images/peaches.png", // make sure your image is saved at this path
