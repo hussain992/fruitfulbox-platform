@@ -175,12 +175,12 @@ export const productData = {
     {
       name: "Ayesha K.",
       rating: 5,
-      comment: "Super fresh and sweet! Will order again."
+      text: "Super fresh and sweet! Will order again."
     },
     {
       name: "Ravi M.",
       rating: 4,
-      comment: "Good quality, though a couple were slightly bruised."
+      text: "Good quality, though a couple were slightly bruised."
     }
   ]
   },
