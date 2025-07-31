@@ -143,6 +143,47 @@ export const productData = {
       },
     ],
   },
+  "apple":{
+    id:"apple", 
+  title: "Apple",
+  benefits: [
+    "Rich in fiber and vitamin C",    
+    "Supports heart health",
+    "Aids in weight management",
+  ],
+  slug: "apple",
+  image: "/images/apple.png", // Adjust as needed
+  price: {
+      original: "₹299/kg",
+      discounted: "₹279/kg",
+    },
+  discountPrice: 100,
+  unit: "1kg",
+  category: "fruit",
+  isAvailable: true,
+  isCutFruit: false,
+  description: "Sweet, crisp, and juicy red apples – perfect for daily snacking and nutrition.",
+  nutrition: {
+    calories: "52 kcal (per 100g)",
+    sugar: "10g",
+    fiber: "2.4g",
+    carbs: "14g"
+  },
+  stock:12,
+  tags: ["new-arrival", "healthy-snack"],
+  reviews: [
+    {
+      name: "Ayesha K.",
+      rating: 5,
+      comment: "Super fresh and sweet! Will order again."
+    },
+    {
+      name: "Ravi M.",
+      rating: 4,
+      comment: "Good quality, though a couple were slightly bruised."
+    }
+  ]
+  },
   "jamun": {
     id: "jamun",
     title: "Jamun",
