@@ -54,8 +54,8 @@ export const productData = {
       "Crisp and sweet green pears — naturally grown and full of hydration. Excellent as a snack or dessert topper.",
     benefits: ["Low calorie", "High in antioxidants", "Promotes gut health"],
     price: {
-      original: "",
-      discounted: "₹249/kg",
+      original: "₹199/kg",
+      discounted: "₹179/kg",
     },
     tags: ["new-arrival"],
     isAvailable: true,
