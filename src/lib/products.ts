@@ -225,8 +225,8 @@ export const productData = {
   description: "Freshly peeled pomegranate served in a hygienic clear container, ready to eat and perfect for a quick, healthy snack.",
   image: "/images/peeled-pomegranate.png", // Update path as per your folder structure
    price: {
-      original: "₹149/kg",
-      discounted: "₹129/kg",
+      original: "₹149/250g",
+      discounted: "₹129/250g",
     },
   weight: "200g",
   stock: 15,
