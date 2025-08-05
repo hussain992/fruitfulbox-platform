@@ -198,7 +198,7 @@ export const productData = {
     // unit: '250g (Approx. 15-20 pcs)',
     image: "/images/jamun.png",
     tags: ["seasonal", "new-arrival"],
-    isAvailable: true,
+    isAvailable: false,
     benefits: [
       "Helps manage blood sugar levels",
       "Rich in Vitamin C and antioxidants",
@@ -218,6 +218,46 @@ export const productData = {
       },
     ],
   },
+  "Peeled-Pomegranate":{
+  id: "peeled-pomegranate",
+  title: "Peeled Pomegranate",
+  category: "Cut Fruits",
+  description: "Freshly peeled pomegranate served in a hygienic clear container, ready to eat and perfect for a quick, healthy snack.",
+  image: "/images/peeled-pomegranate.png", // Update path as per your folder structure
+   price: {
+      original: "₹149/kg",
+      discounted: "₹129/kg",
+    },
+  weight: "200g",
+  stock: 15,
+  benefits: [
+    "Rich in antioxidants",
+    "Supports heart health",
+    "Convenient and ready to eat"
+  ],
+  isAvailable: true,
+  tags: ["pomegranate", "cut fruit", "peeled", "ready to eat"],
+  nutrition: {
+    calories: 83,
+    sugar: "13g",
+    fiber: "4g",
+    vitaminC: "17% DV"
+  },
+  reviews: [
+  {
+    name: "Amit",
+    rating: 5,
+    text: "Super fresh and sweet. Loved the packaging too!",
+    date: "2025-08-01"
+  },
+  {
+    name: "Neha",
+    rating: 4,
+    text: "Really convenient, saved a lot of time.",
+    date: "2025-07-25"
+  }
+]
+},
   litchi: {
     id: "litchi",
     title: "Fresh Litchi",

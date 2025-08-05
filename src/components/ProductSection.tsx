@@ -2,7 +2,6 @@ import ProductCard from "./ProductCard";
 
 interface ProductSectionProps {
 	title?: string;
-
 }
 const boxProducts = [
 	{
@@ -33,12 +32,12 @@ const FruitProducts = [
 		title: "Green Pear",
 		description: "Crisp and sweet green pears — naturally grown and full of hydration. Excellent as a snack or dessert topper."
 	},
-	{
-		slug:"jamun",
-		image: "/images/jamun.png",
-		title: "Jamun",
-		description: 'Jamun, also known as black plum, is a seasonal summer fruit known for its deep purple color and sweet-tart flavor. Rich in antioxidants and great for digestion and blood sugar control.'
-	},
+	// {
+	// 	slug:"jamun",
+	// 	image: "/images/jamun.png",
+	// 	title: "Jamun",
+	// 	description: 'Jamun, also known as black plum, is a seasonal summer fruit known for its deep purple color and sweet-tart flavor. Rich in antioxidants and great for digestion and blood sugar control.'
+	// },
 	// {
 	// 	slug: "pears",
 	// 	image: "/images/pear-fruit-1.png",
