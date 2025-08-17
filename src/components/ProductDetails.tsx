@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import OrderDetails from "@/components/OrderComponents";
 // import fruits from "@/lib/fruits.json";
-// import { boxData } from "@/lib/boxData";
 import ServiceNotice from "@/components/ServiceNotice";
 // import type { Metadata } from "next";
 

@@ -1,29 +1,18 @@
-import path from "path";
-import fs from "fs";
 import ServiceNotice from "@/components/ServiceNotice";
 import ProductCard from "@/components/ProductCard";
-import { Usable, use } from "react";
+import { use } from "react";
+import { getProductsByCategory } from "@/lib/utils";
 
-const ProductListPage = ({
+const ProductListPage: React.FC<{ params: Promise<{ category: string, slug: string }> }> = ({
   params,
-}: {
-  params: Usable<{ category: string; }>;
 }) => {
-  const resolvedParams = use<{ category: string }>(params);
+  const resolvedParams = use(params);
   const { category } = resolvedParams;
-  const filePath = path.join(process.cwd(), "src", "lib", `${category}.json`);
-  let products = [];
-  try {
-    const fileContents = fs.readFileSync(filePath, "utf8");
-    products = JSON.parse(fileContents);
-  } catch (e) {
-    console.error(`Error reading file for category ${category}:`, e);
-    return <div>Category not found.</div>;
-  }
+  const products = use(getProductsByCategory(category));
 
   // const product = products.find((p: { slug: string }) => p.slug === slug);
   // if (!product) return <div>Product not found.</div>;
-  console.log("this.page called", resolvedParams);
+  // console.log("this.page called", resolvedParams);
   console.log("products", products);
   
   const sortedProducts = products.sort((a: { isAvailable: boolean; }, b: { isAvailable: boolean; }) =>
