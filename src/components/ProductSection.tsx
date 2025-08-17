@@ -1,6 +1,7 @@
 import boxes from '@/lib/boxes.json';
-import cutFruits from '@/lib/cut_fruits.json';	
+import cut_fruits from '@/lib/cut_fruits.json';	
 import fruits from '@/lib/fruits.json';
+import jams from '@/lib/jams.json';
 import ProductCard from './ProductCard';
 interface ProductSectionProps {
 	title?: string;
@@ -66,12 +67,18 @@ interface ProductSectionProps {
 // ];
 
 export default function ProductSection({ title }: ProductSectionProps) {
+	const category =
+		title?.includes("Fruit Boxes") ? "boxes" :
+		title?.includes("Cut Fruits") ? "cut_fruits" :
+		title?.includes("Jams") ? "jams" :
+		"fruits";
+
 	const products = (
-		title === "Our Fruit Boxes 📦" ? boxes :
-		title === "Fresh Cut Fruits 🥭" ? cutFruits :
+		category === "boxes" ? boxes :
+		category === "cut_fruits" ? cut_fruits :
+		category === "jams" ? jams :
 		fruits
 	).filter(product => product.isAvailable && product.tags.includes("trending"));
-	// products.forEach(item => item.isAvailable)
 	return (
 		<section className="py-8 px-4 bg-white">
 			<h2 className="text-3xl font-bold text-center mb-6">{title}</h2>
@@ -84,7 +91,7 @@ export default function ProductSection({ title }: ProductSectionProps) {
 						description={product.description}
 						slug={product.slug}
 						isAvailable={product.isAvailable}
-						category=""
+						category={category}
 					/>
 				))}
 			</div>
