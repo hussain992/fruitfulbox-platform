@@ -10,23 +10,52 @@ import logo from "../../public/images/logo.png";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const links = [
+    { href: "/cut_fruits", label: "Cut Fruits" },
+    { href: "/fruits", label: "Fruits" },
+    { href: "/jams", label: "Jams" },
+    { href: "/boxes", label: "Boxes" },
+
+    // { href: "/subscribe", label: "Subscribe" },
+    // { href: "/about", label: "About" }, 
+  ];
+
+  const menu = () => {
+    return (
+      <>
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="block text-gray-700 hover:text-orange-500"
+          >
+            {link.label}
+          </Link>
+        ))}
+    </>
+    );
+  };
+
   return (
     <header className="bg-white shadow sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/">
-          <Image className="h-12 w-30 object-contain" src={logo} alt="Fruitful Box Logo" />
+          <Image
+            className="h-12 w-30 object-contain"
+            src={logo}
+            alt="Fruitful Box Logo"
+          />
         </Link>
 
         <nav className="hidden md:flex space-x-6">
-          {/* <Link href="/about" className="text-gray-700 hover:text-pink-600">About</Link>*/}
-          <Link href="/cut-fruits" className="hover:text-orange-500">Cut Fruits</Link>
-          <Link href="/products" className="text-gray-700 hover:text-pink-600">Products</Link> 
-          {/* <Link href="/subscribe" className="text-gray-700 hover:text-pink-600">Subscribe</Link> */}
+          {menu()}
         </nav>
         {/* <SearchBar /> */}
-
         {/* Hamburger menu for mobile */}
-        <button className="md:hidden text-red-600" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          className="md:hidden text-red-600"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
@@ -40,12 +69,8 @@ export default function Header() {
             transition={{ duration: 0.3 }}
             className="md:hidden px-4 pb-4 space-y-2 bg-white shadow"
           >
-            <hr/>
-
-            {/* <Link href="/about" className="block text-gray-700 hover:text-pink-600">About</Link>*/}
-          <Link href="/cut-fruits" className="hover:text-orange-500">Cut Fruits</Link>
-            <Link href="/products" className="block text-gray-700 hover:text-pink-600">Products</Link> 
-            {/* <Link href="/subscribe" className="block text-gray-700 hover:text-pink-600">Subscribe</Link> */}
+            <hr />
+            {menu()}
           </motion.div>
         )}
       </AnimatePresence>

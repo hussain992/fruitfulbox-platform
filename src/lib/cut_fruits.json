@@ -1,0 +1,65 @@
+[
+  {
+    "id": "mix-fruits",
+    "slug": "mix-fruits",
+    "title": "Cut Mixed Fruits Box",
+    "description": "A ready-to-eat mix of seasonal fruits. Freshly cut and packed on order.",
+    "price": {
+      "original": "₹199",
+      "discounted": "₹149/400g"
+    },
+    "unit": "400g box",
+    "image": "/images/mix-fruits.png",
+    "tags": ["cut-fruit", "new-arrival","trending"],
+    "isAvailable": true,
+    "stock": 20,
+    "benefits": ["Ready to eat", "No mess", "High in vitamins"],
+    "reviews": [
+      {
+        "user": "Ayesha",
+        "comment": "So convenient for busy mornings!"
+      }
+    ]
+  },
+  {
+    "id": "peeled-pomegranate",
+    "slug": "peeled-pomegranate",
+    "title": "Peeled Pomegranate",
+    "category": "Cut Fruits",
+    "description": "Freshly peeled pomegranate served in a hygienic clear container, ready to eat and perfect for a quick, healthy snack.",
+    "image": "/images/peeled-pomegranate.png",
+    "price": {
+      "original": "₹149/250g",
+      "discounted": "₹129/250g"
+    },
+    "weight": "200g",
+    "stock": 15,
+    "benefits": [
+      "Rich in antioxidants",
+      "Supports heart health",
+      "Convenient and ready to eat"
+    ],
+    "isAvailable": true,
+    "tags": ["trending", "cut fruit", "peeled", "ready to eat"],
+    "nutrition": {
+      "calories": 83,
+      "sugar": "13g",
+      "fiber": "4g",
+      "vitaminC": "17% DV"
+    },
+    "reviews": [
+      {
+        "user": "Amit",
+        "rating": 5,
+        "comment": "Super fresh and sweet. Loved the packaging too!",
+        "date": "2025-08-01"
+      },
+      {
+        "user": "Neha",
+        "rating": 4,
+        "comment": "Really convenient, saved a lot of time.",
+        "date": "2025-07-25"
+      }
+    ]
+  }
+]

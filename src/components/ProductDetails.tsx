@@ -2,63 +2,70 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import React, { use } from "react";
 import OrderDetails from "@/components/OrderComponents";
-import { productData } from "@/lib/products";
-import { boxData } from "@/lib/boxData";
+// import fruits from "@/lib/fruits.json";
+// import { boxData } from "@/lib/boxData";
 import ServiceNotice from "@/components/ServiceNotice";
-import type { Metadata } from 'next' ;
+// import type { Metadata } from "next";
 
 // type ProductSlug = keyof typeof productData;
 
-interface Props {
-	params: { slug: string }; // Corrected parameter type
-}
-
-
 // 2️⃣ Metadata function
-export async function generateMetadata(
-  { params }:  Props
-): Promise<Metadata> {
-  const slug = (await params).slug
-  const product = productData[slug as keyof typeof productData];
-  
-  if (!product) {
-    return {
-      title: "Product not found | Fruitful Box",
-      description: "This product does not exist on Fruitful Box.",
-    };
-  }
+// export async function generateMetadata(product): Promise<Metadata> {
+//   const slug = (await params).slug;
+//   const product = productData[slug as keyof typeof productData];
 
-  return {
-    title: `${product.title} – Buy Now | Fruitful Box`,
-    description: `Buy fresh ${product.title} online in Pune. ${product.description}`,
-    openGraph: {
-      title: `${product.title} – Fruitful Box`,
-      description: `Order premium ${product.title} now via WhatsApp in Pune. ${product.description}`,
-      images: [
-        {
-          // image extension can be anything like jpg, png, webp, etc.
-          url: `https://fruitfulbox.vercel.app${product.image}`,
-          width: 1200,
-          height: 630,
-        },
-      ],
-      siteName: 'Fruitful Box',
-      url: `https://fruitfulbox.vercel.app/products/${slug}`,
-      type: 'website',
-    },
+//   if (!product) {
+//     return {
+//       title: "Product not found | Fruitful Box",
+//       description: "This product does not exist on Fruitful Box.",
+//     };
+//   }
+
+//   return {
+//     title: `${product.title} – Buy Now | Fruitful Box`,
+//     description: `Buy fresh ${product.title} online in Pune. ${product.description}`,
+//     openGraph: {
+//       title: `${product.title} – Fruitful Box`,
+//       description: `Order premium ${product.title} now via WhatsApp in Pune. ${product.description}`,
+//       images: [
+//         {
+//           // image extension can be anything like jpg, png, webp, etc.
+//           url: `https://fruitfulbox.vercel.app${product.image}`,
+//           width: 1200,
+//           height: 630,
+//         },
+//       ],
+//       siteName: "Fruitful Box",
+//       url: `https://fruitfulbox.vercel.app/products/${slug}`,
+//       type: "website",
+//     },
+//   };
+// }
+
+interface Product {
+  image: string;
+  title: string;
+  description: string;
+  isAvailable: boolean;
+  price: {
+    original: string;
+    discounted?: string;
   };
+  stock: number;
+  benefits?: string[];
+  reviews?: { user: string; comment: string }[];
 }
 
-const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({
-  params,
+const ProductDetails: React.FC<{ product: Product }> = ({
+  product
 }) => {
-  const resolvedParams = use(params);
-  const product =
-    resolvedParams.slug == "delight-box"
-      ? boxData[resolvedParams.slug as keyof typeof boxData]
-      : productData[resolvedParams.slug as keyof typeof productData];
+    console.log('product details ', product);
+//   const resolvedParams = use(params);
+//   const product =
+//     resolvedParams.slug == "delight-box"
+//       ? boxData[resolvedParams.slug as keyof typeof boxData]
+//       : productData[resolvedParams.slug as keyof typeof productData];
   if (!product) return notFound();
   return (
     <>
@@ -119,8 +126,8 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({
             <div className="space-y-4">
               {product.reviews.map((review, i) => (
                 <div key={i} className="bg-gray-100 p-4 rounded-md shadow-sm">
-                  <p className="font-semibold">{review.name}</p>
-                  <p className="text-sm text-gray-700">{review.text}</p>
+                  <p className="font-semibold">{review.user}</p>
+                  <p className="text-sm text-gray-700">{review.comment}</p>
                 </div>
               ))}
             </div>
@@ -136,4 +143,4 @@ const ProductDetailPage: React.FC<{ params: Promise<{ slug: string }> }> = ({
     </>
   );
 };
-export default ProductDetailPage;
+export default ProductDetails;

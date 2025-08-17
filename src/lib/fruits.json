@@ -1,0 +1,407 @@
+[
+  {
+    "id": "pairi-mangoes",
+    "title": "Pairi Mangoes (Payari)",
+    "description": "Pairi Mangoes are known for their vibrant aroma and tangy-sweet flavor. These early-season mangoes are perfect for juice lovers and mango purists.",
+    "price": {
+      "original": "₹249/2kg",
+      "discounted": "₹179/2kg"
+    },
+    "slug": "pairi",
+    "unit": "Dozen (Approx. 12 pcs)",
+    "image": "/images/pairi-mango.png",
+    "tags": ["seasonal"],
+    "stock": 12,
+    "isAvailable": false,
+    "benefits": [
+      "High in Vitamin C",
+      "Excellent for juicing",
+      "Boosts energy and hydration"
+    ],
+    "reviews": [
+      {
+        "user": "Amit",
+        "comment": "Loved the tangy sweetness! Really juicy and fresh."
+      },
+      {
+        "user": "Neha",
+        "comment": "Best mangoes for making aamras!"
+      }
+    ]
+  },
+  {
+    "id": "pears",
+    "slug": "pears",
+    "title": "Green Pears",
+    "image": "/images/pear.png",
+    "description": "Crisp and sweet green pears — naturally grown and full of hydration. Excellent as a snack or dessert topper.",
+    "benefits": ["Low calorie", "High in antioxidants", "Promotes gut health"],
+    "price": {
+      "original": "₹199/kg",
+      "discounted": "₹179/kg"
+    },
+    "tags": ["new-arrival", "trending"],
+    "isAvailable": true,
+    "stock": 20,
+    "reviews": [
+      {
+        "user": "Riya",
+        "comment": "So juicy and sweet! Perfect for my kids."
+      },
+      {
+        "user": "Rahul",
+        "comment": "Great quality, will order again."
+      }, 
+      {
+        "user": "Anita",
+        "comment": "Best pears I've had in a while!"
+      }
+    ]
+  },
+  {
+    "id": "pomegranate",
+    "slug": "pomegranate",
+    "title": "Fresh Pomegranates",
+    "image": "/images/Vibrant Pomegranate.png",
+    "description": "Juicy, ruby-red pomegranates bursting with antioxidants. Handpicked for freshness and flavor.",
+    "benefits": [
+      "Rich in antioxidants",
+      "Supports heart health",
+      "Boosts immunity"
+    ],
+    "tags": ["seasonal", "new-arrival", "trending"],
+    "price": {
+      "original": "₹249/kg",
+      "discounted": "₹199/kg"
+    },
+    "isAvailable": true,
+    "stock": 10,
+    "reviews": [
+      {
+        "user": "Meera",
+        "comment": "Super fresh and sweet — highly recommend!"
+      }
+    ]
+  },
+  {
+    "id": "sweet-lime",
+    "slug": "sweet-lime",
+    "title": "Sweet Lime (Mosambi)",
+    "description": "Sweet Lime (Mosambi) is known for its refreshing and mild citrus flavor. Packed with Vitamin C and hydration, it is perfect for juicing and snacking.",
+    "price": {
+      "original": "₹279/2kg",
+      "discounted": "₹229/2kg"
+    },
+    "image": "/images/sweet-lime-fruit.png",
+    "tags": ["new-arrival"],
+    "isAvailable": true,
+    "benefits": [
+      "Rich in Vitamin C, boosts immunity",
+      "Excellent for hydration and detox",
+      "Helps in digestion and improves skin health"
+    ],
+    "stock": 12,
+    "reviews": [
+      {
+        "user": "Aarav",
+        "comment": "Best sweet lime I've ever had! So refreshing."
+      },
+      {
+        "user": "Saanvi",
+        "comment": "Perfect for making fresh juice. Highly recommend!"
+      }
+    ]
+  },
+  {
+    "id": "peach",
+    "slug": "peach",
+    "title": "Peach",
+    "description": "Juicy and semi-ripe peaches perfect for snacking or desserts. Rich in vitamins A and C, and known for their sweet, refreshing taste.",
+    "price": {
+      "original": "₹249/1kg",
+      "discounted": "₹199/1kg"
+    },
+    "unit": "500g (Approx. 3-4 pcs)",
+    "image": "/images/peaches.png",
+    "tags": ["new-arrival"],
+    "isAvailable": true,
+    "benefits": [
+      "Rich in vitamins A and C",
+      "Good source of dietary fiber",
+      "Supports skin health and hydration"
+    ],
+    "stock": 12,
+    "reviews": [
+      {
+        "user": "Priya M.",
+        "comment": "Fresh and juicy peaches! Loved the taste.",
+        "rating": 5
+      },
+      {
+        "user": "Anil K.",
+        "comment": "Great for making smoothies, will order again.",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "id": "apple",
+    "slug": "apple",
+    "title": "Apple",
+    "benefits": [
+      "Rich in fiber and vitamin C",
+      "Supports heart health",
+      "Aids in weight management"
+    ],
+    "image": "/images/apple.png",
+    "price": {
+      "original": "₹299/kg",
+      "discounted": "₹279/kg"
+    },
+    "discountPrice": 100,
+    "unit": "1kg",
+    "category": "fruit",
+    "isAvailable": true,
+    "isCutFruit": false,
+    "description": "Sweet, crisp, and juicy red apples – perfect for daily snacking and nutrition.",
+    "nutrition": {
+      "calories": "52 kcal (per 100g)",
+      "sugar": "10g",
+      "fiber": "2.4g",
+      "carbs": "14g"
+    },
+    "stock": 12,
+    "tags": ["new-arrival", "healthy-snack", "trending"],
+    "reviews": [
+      {
+        "user": "Ayesha K.",
+        "rating": 5,
+        "comment": "Super fresh and sweet! Will order again."
+      },
+      {
+        "user": "Ravi M.",
+        "rating": 4,
+        "comment": "Good quality, though a couple were slightly bruised."
+      }
+    ]
+  },
+  {
+    "id": "jamun",
+    "slug": "jamun",
+    "title": "Jamun",
+    "description": "Jamun, also known as black plum, is a seasonal summer fruit known for its deep purple color and sweet-tart flavor. Rich in antioxidants and great for digestion and blood sugar control.",
+    "price": {
+      "original": "₹249/kg",
+      "discounted": "₹229/kg"
+    },
+    "image": "/images/jamun.png",
+    "tags": ["seasonal", "new-arrival"],
+    "isAvailable": false,
+    "benefits": [
+      "Helps manage blood sugar levels",
+      "Rich in Vitamin C and antioxidants",
+      "Supports digestion and oral health"
+    ],
+    "stock": 12,
+    "reviews": [
+      {
+        "user": "Neha R.",
+        "comment": "Absolutely fresh and juicy! Loved the quality.",
+        "rating": 5
+      },
+      {
+        "user": "Amit P.",
+        "comment": "Perfectly packed and delivered. Will buy again!",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "id": "litchi",
+    "slug": "litchi",
+    "title": "Fresh Litchi",
+    "image": "/images/litchi.png",
+    "price": {
+      "original": "399/kg",
+      "discounted": "349/kg"
+    },
+    "stock": 12,
+    "weight": "500g",
+    "description": "Juicy and aromatic fresh litchis, handpicked for premium quality and taste.",
+    "benefits": [
+      "Rich in Vitamin C",
+      "Boosts immunity",
+      "Hydrates and cools the body"
+    ],
+    "tags": ["new-arrival"],
+    "availability": ["wednesday", "saturday", "sunday"],
+    "isAvailable": false,
+    "reviews": [
+      {
+        "user": "Aisha",
+        "comment": "Best litchis I've ever tasted! So fresh."
+      },
+      {
+        "user": "Rahul",
+        "comment": "Perfectly sweet and juicy. Highly recommend!"
+      }
+    ]
+  },
+  {
+    "id": "kesar-mango",
+    "slug": "kesar-mango",
+    "title": "Kesar Mango",
+    "description": "Juicy, aromatic Kesar mangoes known for their rich flavor and vibrant color. Perfect for summer indulgence.",
+    "price": {
+      "original": "249/2kg",
+      "discounted": "229/2kg"
+    },
+    "image": "/images/Kesar-Mangoes.jpg",
+    "isAvailable": false,
+    "stock": 12,
+    "tags": ["seasonal", "new-arrival"],
+    "benefits": [
+      "Rich in Vitamin A and C",
+      "Boosts immunity",
+      "Great for desserts and juices"
+    ],
+    "reviews": [
+      {
+        "user": "Raj",
+        "comment": "Sweet and juicy, perfect for summer."
+      }
+    ]
+  },
+  {
+    "id": "devgad-mangoes",
+    "slug": "devgad-mangoes",
+    "title": "Devgad Alphanso Mangoes",
+    "image": "/images/mangoes-fruit.png",
+    "description": "Devgad Alphonso mangoes are sourced at semi-ripe stage and naturally ripened for unmatched taste. Perfectly sweet, aromatic, and juicy.",
+    "benefits": [
+      "Rich in Vitamin A & C",
+      "Boosts immunity",
+      "Supports digestion"
+    ],
+    "isAvailable": false,
+    "price": {
+      "original": "₹999",
+      "discounted": "₹799/dozen"
+    },
+    "stock": 12,
+    "tags": ["seasonal", "new-arrival"],
+    "reviews": [
+      {
+        "user": "Anita",
+        "comment": "Best mangoes I’ve had this season!"
+      },
+      {
+        "user": "Rahul",
+        "comment": "Juicy and flavorful — will order again."
+      }
+    ]
+  },
+  {
+    "id": "alphanso-mangoes",
+    "slug": "alphanso-mangoes",
+    "title": "Alphanso Mangoes (karnataka)",
+    "image": "/images/mango-karnataka.png",
+    "description": "Naturally sweet and deliciously juicy! 🥭 Badami Mangoes are Karnataka’s golden treasure. Perfectly ripened for a royal summer bite! 👑",
+    "benefits": [
+      "Rich in Vitamin A & C",
+      "Boosts immunity",
+      "Supports digestion"
+    ],
+    "isAvailable": false,
+    "tags": ["seasonal", "new-arrival"],
+    "price": {
+      "original": "₹449",
+      "discounted": "₹399/dozen"
+    },
+    "stock": 12,
+    "reviews": []
+  },
+  {
+    "id": "avocados",
+    "slug": "avocados",
+    "title": "Fresh Avocados",
+    "image": "/images/avocado-fruit.webp",
+    "description": "Creamy Hass avocados sourced fresh. Great for toast, guacamole, or smoothies. Packed with healthy fats and nutrients.",
+    "benefits": ["High in fiber", "Heart-healthy fats", "Rich in potassium"],
+    "tags": ["new-arrival"],
+    "price": {
+      "original": "",
+      "discounted": "₹349/3 pcs"
+    },
+    "stock": 8,
+    "isAvailable": true,
+    "reviews": [
+      {
+        "user": "Sara",
+        "comment": "Perfect commenture for guac!"
+      }
+    ]
+  },
+ {
+    "id": "chickoo",
+    "slug": "chickoo",
+    "title": "Fresh Chikoo (Sapodilla)",
+    "image": "/images/chickoo-fruit.png",
+    "description": "Sweet and grainy sapodillas (Chikoo) picked ripe for natural flavor. Great for smoothies, snacks, or as-is.",
+    "benefits": [
+      "Good source of dietary fiber",
+      "Boosts energy naturally",
+      "Rich in antioxidants and vitamins"
+    ],
+    "tags": ["seasonal", "new-arrival"],
+    "isAvailable": true,
+    "price": {
+      "original": "₹119/kg",
+      "discounted": "₹99/kg"
+    },
+    "stock": 10,
+    "reviews": [
+      {
+        "user": "Nikhil",
+        "comment": "Soft and super sweet. Loved it!"
+      }
+    ]
+  },
+  {
+    "id": "plum",
+    "slug": "plum",
+    "title": "Plum (indian)",
+    "image": "/images/plum-fruit.png",
+    "description": "Sweet and tangy Indian Plums, also known as Ber, are packed with flavor and nutrients. A perfect traditional snack enjoyed across India.",
+    "benefits": ["Boosts immunity", "Rich in Vitamin C", "Aids digestion"],
+    "price": {
+      "original": "₹299/kg",
+      "discounted": "₹249/kg"
+    },
+    "tags": ["seasonal", "trending"],
+    "stock": 15,
+    "deliveryDates": ["Wednesday", "Saturday", "Sunday"],
+    "reviews": [
+      {
+        "user": "Meera",
+        "comment": "Took me back to childhood! So fresh and tasty."
+      },
+      {
+        "user": "Ravi",
+        "comment": "Excellent quality and packaging."
+      }
+    ],
+    "isAvailable": true,
+    "seo": {
+      "title": "Buy Indian Plum (Ber) Online - Fresh & Tangy",
+      "description": "Shop fresh Indian Plums (Ber) online at Fruitful Box. Sweet, tangy, and rich in nutrients. Available for delivery on weekends. Order now! ",
+      "keywords": [
+        "Indian Plum",
+        "Ber",
+        "Buy Ber Online",
+        "Fresh Indian Fruit",
+        "Traditional Indian Fruits"
+      ]
+    }
+  }
+]

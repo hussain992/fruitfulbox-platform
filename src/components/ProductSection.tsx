@@ -1,50 +1,52 @@
-import ProductCard from "./ProductCard";
-
+import boxes from '@/lib/boxes.json';
+import cutFruits from '@/lib/cut_fruits.json';	
+import fruits from '@/lib/fruits.json';
+import ProductCard from './ProductCard';
 interface ProductSectionProps {
 	title?: string;
 }
-const boxProducts = [
-	{
-		slug: "delight-box",
-		image: "/images/Delight-box.png",
-		title: "Delight Box 📦",
-		description: "A box full of 3 Pears, 6 Chickoo, and 3 Pomegranates."
-	},
-];
-const cutProducts = [
-	{
-		slug: "cut-fruits",
-		image: "/images/mix-fruits.png",
-		title: "Cut Fruits 🥭",
-		description: "Freshly cut mangoes, avocados, and more. Perfect for snacking or adding to your meals."	
-	}
-]
-const FruitProducts = [
-	{
-		slug: "indian-plum",
-		image: "/images/plum-fruit.png",
-		title: "Plum (Indian)",
-		description: "Plum is a juicy fruit with a sweet and tart flavor, perfect for snacking or baking."
-	},	
-	{
-		slug: "pears",
-		image: "/images/pear.png",
-		title: "Green Pear",
-		description: "Crisp and sweet green pears — naturally grown and full of hydration. Excellent as a snack or dessert topper."
-	},
-	// {
-	// 	slug:"jamun",
-	// 	image: "/images/jamun.png",
-	// 	title: "Jamun",
-	// 	description: 'Jamun, also known as black plum, is a seasonal summer fruit known for its deep purple color and sweet-tart flavor. Rich in antioxidants and great for digestion and blood sugar control.'
-	// },
-	// {
-	// 	slug: "pears",
-	// 	image: "/images/pear-fruit-1.png",
-	// 	title: "Pear",
-	// 	description: "Freshness in every bite and The ultimate crisp and juicy experience."
-	// }
-];
+// const boxProducts = [
+// 	{
+// 		slug: "delight-box",
+// 		image: "/images/Delight-box.png",
+// 		title: "Delight Box 📦",
+// 		description: "A box full of 3 Pears, 6 Chickoo, and 3 Pomegranates."
+// 	},
+// ];
+// const cutProducts = [
+// 	{
+// 		slug: "cut-fruits",
+// 		image: "/images/mix-fruits.png",
+// 		title: "Cut Fruits 🥭",
+// 		description: "Freshly cut mangoes, avocados, and more. Perfect for snacking or adding to your meals."	
+// 	}
+// ]
+// const FruitProducts = [
+// 	{
+// 		slug: "indian-plum",
+// 		image: "/images/plum-fruit.png",
+// 		title: "Plum (Indian)",
+// 		description: "Plum is a juicy fruit with a sweet and tart flavor, perfect for snacking or baking."
+// 	},	
+// 	{
+// 		slug: "pears",
+// 		image: "/images/pear.png",
+// 		title: "Green Pear",
+// 		description: "Crisp and sweet green pears — naturally grown and full of hydration. Excellent as a snack or dessert topper."
+// 	},
+// 	// {
+// 	// 	slug:"jamun",
+// 	// 	image: "/images/jamun.png",
+// 	// 	title: "Jamun",
+// 	// 	description: 'Jamun, also known as black plum, is a seasonal summer fruit known for its deep purple color and sweet-tart flavor. Rich in antioxidants and great for digestion and blood sugar control.'
+// 	// },
+// 	// {
+// 	// 	slug: "pears",
+// 	// 	image: "/images/pear-fruit-1.png",
+// 	// 	title: "Pear",
+// 	// 	description: "Freshness in every bite and The ultimate crisp and juicy experience."
+// 	// }
+// ];
 // const products1 = [
 // 	{
 // 		image: "/images/fruit-1.jpg",
@@ -64,16 +66,16 @@ const FruitProducts = [
 // ];
 
 export default function ProductSection({ title }: ProductSectionProps) {
-	const products =
-    title == "Our Fruit Boxes 📦"
-      ? boxProducts
-      : title == "Fresh Cut Fruits 🥭"
-      ? cutProducts
-      : FruitProducts;
+	const products = (
+		title === "Our Fruit Boxes 📦" ? boxes :
+		title === "Fresh Cut Fruits 🥭" ? cutFruits :
+		fruits
+	).filter(product => product.isAvailable && product.tags.includes("trending"));
+	// products.forEach(item => item.isAvailable)
 	return (
-		<section className="py-16 px-4 bg-white">
-			<h2 className="text-3xl font-bold text-center mb-10">{title}</h2>
-			<div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
+		<section className="py-8 px-4 bg-white">
+			<h2 className="text-3xl font-bold text-center mb-6">{title}</h2>
+			<div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 				{products.map((product, index) => (
 					<ProductCard
 						key={index}
@@ -81,6 +83,8 @@ export default function ProductSection({ title }: ProductSectionProps) {
 						title={product.title}
 						description={product.description}
 						slug={product.slug}
+						isAvailable={product.isAvailable}
+						category=""
 					/>
 				))}
 			</div>

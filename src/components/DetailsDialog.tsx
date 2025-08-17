@@ -141,7 +141,7 @@ export const DetailsDialog: React.FC<DetailsDialogProps> = ({
         {hasError && <div className="text-red">Please fill in all fields.</div>}
         <DialogFooter>
           <DialogClose asChild>
-            <Button onClick={handleSubmit}>Save</Button>
+            <Button onClick={handleSubmit}>Order Now</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

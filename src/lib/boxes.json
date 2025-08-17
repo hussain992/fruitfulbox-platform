@@ -1,0 +1,33 @@
+[
+	{
+		"title": "Delight Box",
+		"slug": "delight-box",
+		"image": "/images/Delight-box.png",
+		"description": "A box full of 3 Mangoes, 6 Chickoo, and 3 Pomegranates.",
+		"benefits": [],
+		"isAvailable": true,
+		"price": {
+			"original": "₹349",
+			"discounted": "₹299/box"
+		},
+		"tags": ["trending"],
+		"stock": 12,
+		"reviews": [
+			{
+				"rating": 4.5,
+				"comment": "Great quality fruits, loved the mangoes!",
+				"user": "Anjali"
+			},
+			{
+				"rating": 4.0,
+				"comment": "Good box, but wish it had more variety.",
+				"user": "Rahul"
+			},
+			{
+				"rating": 5.0,
+				"comment": "Perfect for summer, mangoes were delicious!",
+				"user": "Priya"	
+			}
+		]
+	}
+]

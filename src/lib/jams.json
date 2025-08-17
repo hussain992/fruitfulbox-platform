@@ -1,0 +1,46 @@
+[
+  {
+    "id": "plum-jam",
+    "title": "Plum Jam",
+    "slug": "plum-jam",
+    "discountPrice": 199,
+    "isAvailable": true,
+    "stock": 10,
+    "price": {
+      "original": "₹250/500g",
+      "discounted": "₹199/500g"
+    },
+    "tags": ["jam", "plum", "homemade", "trending"],
+    "image": "/images/jams/plum-jam.png",
+    "category": "jam",
+    "description": "Fresh homemade plum jam made with natural ingredients.",
+    "reviews": [
+      {
+        "user": "Ayesha",
+        "rating": 5,
+        "comment": "Loved the taste! Very fresh and tangy."
+      },
+      {
+        "user": "Rahul",
+        "rating": 4,
+        "comment": "Good flavor, but could be a little less sweet."
+      },
+      {
+        "user": "Meera",
+        "rating": 5,
+        "comment": "Perfect for breakfast with bread, highly recommend!"
+      }
+    ],
+    "nutrition": {
+      "calories": 150,
+      "protein": 1,
+      "fat": 0.5,
+      "carbohydrates": 35,
+      "fiber": 1,
+      "sugar": 30
+    },
+    "ingredients": ["Plums", "Sugar", "Lemon Juice", "Pectin"],
+    "packaging": "Glass Jar",
+    "storageInstructions": "Store in a cool, dry place. Refrigerate after opening."
+  }
+]

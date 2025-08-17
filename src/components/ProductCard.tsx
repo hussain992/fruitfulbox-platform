@@ -9,6 +9,7 @@ interface ProductCardProps {
   slug?: string; // Optional prop for slug
   price?: string; // Optional prop for type
   isAvailable?: boolean; // Optional prop for availability
+  category: string;
   // price: {
   //   original: string;
   //   discounted?: string;
@@ -21,12 +22,15 @@ export default function ProductCard({
   description,
   slug,
   isAvailable,
+  category
 }: ProductCardProps) {
+  const href = `/${category}/${slug}`;
+
   // const imgWidth = type === 'full'? 300: 200; // Set a fixed width for the image
   // const imgHeight = type === 'full'? 300: 200;; // Set a fixed height for the image
   // console.log('isAvailable === false',isAvailable === false, isAvailable)
   return (
-    <Link rel="canonical" href={`/products/${slug}`}>
+    <Link rel="canonical" href={href}>
       <div className="bg-lime-100 p-3 mx-0 md:p-6 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:bg-amber-100">
         {/* <Image src={image} alt={title} 
       fill
