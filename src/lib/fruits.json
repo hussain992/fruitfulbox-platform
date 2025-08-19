@@ -118,8 +118,8 @@
     "title": "Peach",
     "description": "Juicy and semi-ripe peaches perfect for snacking or desserts. Rich in vitamins A and C, and known for their sweet, refreshing taste.",
     "price": {
-      "original": "₹249/1kg",
-      "discounted": "₹199/1kg"
+      "original": "₹299/1kg",
+      "discounted": "₹249/1kg"
     },
     "unit": "500g (Approx. 3-4 pcs)",
     "image": "/images/peaches.png",
@@ -156,7 +156,7 @@
     "image": "/images/apple.png",
     "price": {
       "original": "₹299/kg",
-      "discounted": "₹279/kg"
+      "discounted": "₹249/kg"
     },
     "discountPrice": 100,
     "unit": "1kg",
@@ -375,8 +375,8 @@
     "description": "Sweet and tangy Indian Plums, also known as Ber, are packed with flavor and nutrients. A perfect traditional snack enjoyed across India.",
     "benefits": ["Boosts immunity", "Rich in Vitamin C", "Aids digestion"],
     "price": {
-      "original": "₹299/kg",
-      "discounted": "₹249/kg"
+      "original": "₹249/kg",
+      "discounted": "₹229/kg"
     },
     "tags": ["seasonal", "trending"],
     "stock": 15,

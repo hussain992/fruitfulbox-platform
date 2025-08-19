@@ -6,9 +6,9 @@
     "description": "A ready-to-eat mix of seasonal fruits. Freshly cut and packed on order.",
     "price": {
       "original": "₹199",
-      "discounted": "₹149/400g"
+      "discounted": "₹149/350g"
     },
-    "unit": "400g box",
+    "unit": "350g box",
     "image": "/images/mix-fruits.png",
     "tags": ["cut-fruit", "new-arrival","trending"],
     "isAvailable": true,
