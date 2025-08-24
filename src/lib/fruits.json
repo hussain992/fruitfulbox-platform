@@ -403,5 +403,41 @@
         "Traditional Indian Fruits"
       ]
     }
-  }
+  },
+  {
+  "id": "guava",
+  "title": "Guava (organic)",
+  "slug": "guava",
+  "category": "fruits",
+  "image": "/images/guava.png", 
+  "stock": 20,
+  "price": {
+      "original": "₹129/kg",
+      "discounted": "₹99/kg"
+    },
+  "unit": "1kg (approx. 5–6 pcs)",
+  "isAvailable": true,
+  "tags": ["year-round", "fiber-rich"],
+  "description":
+    "Fresh, crunchy green guavas with a mildly sweet aroma. Great for snacking, salads, and juices. Sourced locally and delivered farm-fresh.",
+  "benefits": [
+    "Rich in Vitamin C & antioxidants",
+    "High in dietary fiber for digestion",
+    "Low calorie, diabetic-friendly option"
+  ],
+  "reviews": [
+    { "user": "Sneha", "comment": "Crisp and super fresh. Perfect for chutney!" },
+    { "user": "Arjun", "comment": "Good quality and nicely packed." }
+  ],
+  "faq": [
+    {
+      "question": "How should I store guavas?",
+      "answer": "Keep at room temperature to ripen. Refrigerate once ripe and consume within 2–3 days."
+    },
+    {
+      "question": "Are these naturally ripened?",
+      "answer": "Yes, ripened without chemicals for natural taste and texture."
+    }
+  ]
+}
 ]
