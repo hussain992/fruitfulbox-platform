@@ -6,9 +6,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Head from "next/head";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Clarity from '@microsoft/clarity';
 
 const inter = Inter({ subsets: ["latin"] });
-
+const projectId = "t0yu3rrbf1"
 export const metadata: Metadata = {
   title: "Fruitful Box – Premium Seasonal Fruits Delivered",
   description: "Delivering Fresh Fruits to Your Doorstep. Taste the freshest seasonal fruits – plum, peach, cut fruits and more. Order online and get them delivered at your doorstep!",
@@ -26,6 +27,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  Clarity.init(projectId);
   return (
     <html lang="en">
       <Head>
@@ -69,6 +71,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
+          
       <GoogleAnalytics gaId="G-M9YCH04SDJ" />
     </html>
   );
