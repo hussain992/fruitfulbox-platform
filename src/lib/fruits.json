@@ -89,8 +89,8 @@
     "title": "Sweet Lime (Mosambi)",
     "description": "Sweet Lime (Mosambi) is known for its refreshing and mild citrus flavor. Packed with Vitamin C and hydration, it is perfect for juicing and snacking.",
     "price": {
-      "original": "₹279/2kg",
-      "discounted": "₹229/2kg"
+      "original": "₹99/kg",
+      "discounted": "₹79/kg"
     },
     "image": "/images/sweet-lime-fruit.png",
     "tags": ["new-arrival"],
@@ -155,8 +155,8 @@
     ],
     "image": "/images/apple.png",
     "price": {
-      "original": "₹299/kg",
-      "discounted": "₹249/kg"
+      "original": "₹179/kg",
+      "discounted": "₹149/kg"
     },
     "discountPrice": 100,
     "unit": "1kg",
