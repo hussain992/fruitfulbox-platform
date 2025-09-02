@@ -29,8 +29,8 @@
     "description": "Freshly peeled pomegranate served in a hygienic clear container, ready to eat and perfect for a quick, healthy snack.",
     "image": "/images/peeled-pomegranate.png",
     "price": {
-      "original": "₹149/250g",
-      "discounted": "₹129/250g"
+      "original": "₹129/250g",
+      "discounted": "₹99/250g"
     },
     "weight": "200g",
     "stock": 15,
