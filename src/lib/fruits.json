@@ -439,5 +439,39 @@
       "answer": "Yes, ripened without chemicals for natural taste and texture."
     }
   ]
+},
+{
+  "id": "pineapple",
+  "name": "Pineapple",
+  "slug": "pineapple",
+  "description": "Juicy, tangy, and naturally sweet, our fresh pineapples are handpicked to ensure maximum flavor and nutrition. Perfect for juices, smoothies, salads, or enjoying as-is!",
+  "price": {
+    "original": "₹99/piece",
+    "discounted": "₹79/piece"
+  },
+  "unit": "per pc",
+  "image": "/images/pineapple.png",
+  "category": "Fruits",
+  "availability": true,
+  "benefits": [
+    "Rich in vitamin C to boost immunity",
+    "Contains bromelain, which aids digestion",
+    "Promotes healthy skin and hair",
+    "Helps reduce inflammation and supports healing"
+  ],
+  "reviews": [
+    {
+      "user": "Aarav Shah",
+      "comment": "Super fresh and sweet! The pineapple quality was amazing. Perfect for my smoothies."
+    },
+    {
+      "user": "Priya Kapoor",
+      "comment": "Really good taste and packaging. Would love if slightly more ripe next time."
+    },
+    {
+      "user": "Rohan Mehta",
+      "comment": "Excellent quality! Juicy and naturally sweet. Will definitely order again."
+    }
+  ]
 }
 ]
