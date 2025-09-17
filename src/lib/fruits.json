@@ -473,5 +473,45 @@
       "comment": "Excellent quality! Juicy and naturally sweet. Will definitely order again."
     }
   ]
+},
+{
+  "id": "custard-apple",
+  "slug": "custard-apple",
+  "title": "Custard Apple",
+  "category": "fruits",
+  "image": "/images/custard-apple.png",
+  "price": {
+    "original": "₹129/kg",
+    "discounted": "₹99/kg"
+  },
+  "stock":12,
+  "availability": true,
+  "description": "Fresh and creamy custard apples with a naturally sweet flavor, perfect for a healthy treat.",
+  "benefits": [
+    "Rich in Vitamin C for immunity boost",
+    "High in dietary fiber for digestion",
+    "Contains antioxidants for overall health",
+    "Provides natural energy with healthy sugars"
+  ],
+  "isAvailable": true,
+  "tags": ["fresh fruit", "custard apple", "seasonal fruit", "healthy"],
+  "reviews": [
+    {
+      "user": "Priya S.",
+      "rating": 5,
+      "comment": "The custard apples were so fresh and sweet, tasted just like homemade dessert!"
+    },
+    {
+      "user": "Amit K.",
+      "rating": 4,
+      "comment": "Great quality, nicely packed and delivered on time. Will order again."
+    },
+    {
+      "user": "Neha P.",
+      "rating": 5,
+      "comment": "Loved it! Creamy, tasty, and super healthy. Kids enjoyed it a lot."
+    }
+  ]
 }
+
 ]
