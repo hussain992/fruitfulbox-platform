@@ -481,8 +481,8 @@
   "category": "fruits",
   "image": "/images/custard-apple.png",
   "price": {
-    "original": "₹129/kg",
-    "discounted": "₹99/kg"
+    "original": "₹149/kg",
+    "discounted": "₹119/kg"
   },
   "stock":12,
   "availability": true,
