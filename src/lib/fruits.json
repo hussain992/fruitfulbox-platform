@@ -40,7 +40,7 @@
       "original": "₹199/kg",
       "discounted": "₹179/kg"
     },
-    "tags": ["new-arrival", "trending"],
+    "tags": ["new-arrival"],
     "isAvailable": true,
     "stock": 20,
     "reviews": [
@@ -93,7 +93,7 @@
       "discounted": "₹99/kg"
     },
     "image": "/images/sweet-lime-fruit.png",
-    "tags": ["new-arrival"],
+    "tags": ["new-arrival", "trending"],
     "isAvailable": true,
     "benefits": [
       "Rich in Vitamin C, boosts immunity",
@@ -124,7 +124,7 @@
     "unit": "500g (Approx. 3-4 pcs)",
     "image": "/images/peaches.png",
     "tags": ["new-arrival"],
-    "isAvailable": true,
+    "isAvailable": false,
     "benefits": [
       "Rich in vitamins A and C",
       "Good source of dietary fiber",
@@ -330,8 +330,8 @@
     "benefits": ["High in fiber", "Heart-healthy fats", "Rich in potassium"],
     "tags": ["new-arrival"],
     "price": {
-      "original": "",
-      "discounted": "₹349/3 pcs"
+      "original": "₹129/piece",
+      "discounted": "₹99/piece"
     },
     "stock": 8,
     "isAvailable": true,
@@ -378,7 +378,7 @@
       "original": "₹249/kg",
       "discounted": "₹229/kg"
     },
-    "tags": ["seasonal", "trending"],
+    "tags": ["seasonal"],
     "stock": 15,
     "deliveryDates": ["Wednesday", "Saturday", "Sunday"],
     "reviews": [
@@ -444,6 +444,7 @@
   "id": "pineapple",
   "title": "Pineapple",
   "slug": "pineapple",
+  "tags":["trending"],
   "description": "Juicy, tangy, and naturally sweet, our fresh pineapples are handpicked to ensure maximum flavor and nutrition. Perfect for juices, smoothies, salads, or enjoying as-is!",
   "price": {
     "original": "₹99/piece",
@@ -452,7 +453,7 @@
   "unit": "per pc",
   "image": "/images/pineapple.png",
   "category": "Fruits",
-  "availability": true,
+  "isAvailable": true,
   "benefits": [
     "Rich in vitamin C to boost immunity",
     "Contains bromelain, which aids digestion",
@@ -479,13 +480,13 @@
   "slug": "custard-apple",
   "title": "Custard Apple",
   "category": "fruits",
+  "tags": ["trending"],
   "image": "/images/custard-apple.png",
   "price": {
     "original": "₹149/kg",
     "discounted": "₹119/kg"
   },
   "stock":12,
-  "availability": true,
   "description": "Fresh and creamy custard apples with a naturally sweet flavor, perfect for a healthy treat.",
   "benefits": [
     "Rich in Vitamin C for immunity boost",
@@ -494,7 +495,6 @@
     "Provides natural energy with healthy sugars"
   ],
   "isAvailable": true,
-  "tags": ["fresh fruit", "custard apple", "seasonal fruit", "healthy"],
   "reviews": [
     {
       "user": "Priya S.",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "./ui/button";
 // import { ProductTag } from "./ProductTag";
 
 interface ProductCardProps {
@@ -7,13 +8,15 @@ interface ProductCardProps {
   title: string;
   description?: string;
   slug?: string; // Optional prop for slug
-  price?: string; // Optional prop for type
+  // price?: string; // Optional prop for type
   isAvailable?: boolean; // Optional prop for availability
   category: string;
-  // price: {
-  //   original: string;
-  //   discounted?: string;
-  // };
+  price: {
+    original: string;
+    discounted?: string;
+  };
+  buttonText?: string;
+
 }
 
 export default function ProductCard({
@@ -22,26 +25,18 @@ export default function ProductCard({
   description,
   slug,
   isAvailable,
-  category
+  category,
+  price,
+  buttonText
 }: ProductCardProps) {
   const href = `/${category}/${slug}`;
 
-  // const imgWidth = type === 'full'? 300: 200; // Set a fixed width for the image
-  // const imgHeight = type === 'full'? 300: 200;; // Set a fixed height for the image
-  // console.log('isAvailable === false',isAvailable === false, isAvailable)
   return (
     <Link rel="canonical" href={href}>
-      <div className="bg-lime-100 p-3 mx-0 md:p-6 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:bg-amber-100">
-        {/* <Image src={image} alt={title} 
-      fill
-      className="object-cover rounded-xl"
-      sizes="(max-width: 768px) 100vw, 33vw"
-      priority/> */}
-
-        {/* // className=" sm:h-45 lg:h-50 mx-auto mb-4" width={imgWidth} height={imgHeight} /> */}
+      <div className="bg-lime-100 p-1 md:p-3 mx-0 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:bg-amber-100">
+      
         <div className="relative w-full aspect-1/1 overflow-hidden rounded-xl mb-2 sm:mb-4">
           {/* <ProductTag label="Best Seller" color="green" /> */}
-
           {isAvailable === false && <span className="absolute top-0 right-0 left-0 bg-red-600 text-white text-xs px-2 py-1 rounded shadow-md z-10">
             Out of Stock
           </span>}
@@ -53,12 +48,29 @@ export default function ProductCard({
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
-        <h3 className=" text-md md:text-lg font-bold line-clamp-2 h-12 sm:h-13">
+        <h3 className=" text-md md:text-lg font-bold line-clamp-1">
           {title}
         </h3>
         {description && (
           <p className="text-md text-gray-700 line-clamp-2">{description}</p>
         )}
+        {price && (
+          <p className="text-md font-semibold mt-1 pl-3">
+            {price.discounted ? (
+              <>
+                <span>{price.discounted}</span>
+                <span className="line-through text-gray-500 mr-2 text-xs pl-2">
+                  {price.original}
+                </span>
+              </>
+            ) : (
+              <>₹{price.original}</>
+            )}
+          </p>
+        )}
+        <Button disabled={isAvailable === false} className="mt-2 text-lime-700 ml-3" variant={"outline"}>
+          {isAvailable === false ? "Unavailable" : buttonText || "Buy Now"}  
+        </Button>
       </div>
     </Link>
   );

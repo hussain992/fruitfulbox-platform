@@ -12,7 +12,7 @@ const categories = [
 ];
 
 export default function CategoriesSection() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(5);
 
   return (
     <section className="w-full px-4 py-6">
