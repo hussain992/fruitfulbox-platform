@@ -92,6 +92,7 @@ export default function ProductSection({ title }: ProductSectionProps) {
 						slug={product.slug}
 						isAvailable={product.isAvailable}
 						category={category}
+						price={product.price}
 					/>
 				))}
 			</div>
