@@ -11,7 +11,11 @@ import Clarity from '@microsoft/clarity';
 const inter = Inter({ subsets: ["latin"] });
 const projectId = "t0yu3rrbf1"
 export const metadata: Metadata = {
-  title: "Fruitful Box – Premium Seasonal Fruits Delivered",
+  // title: "Fruitful Box – Premium Seasonal Fruits Delivered",
+  title: {
+    template: '%s | Fruitful Box',
+    default: 'Fruitful Box',
+  },
   description: "Delivering Fresh Fruits to Your Doorstep. Taste the freshest seasonal fruits – plum, peach, cut fruits and more. Order online and get them delivered at your doorstep!",
   icons: {
     icon: "/favicon.png",
@@ -31,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <title>Fruitful Box – Premium Seasonal Fruits Delivered</title>
+        {/* <title>Fruitful Box – Premium Seasonal Fruits Delivered</title> */}
         <meta
           name="description"
           content="Taste the freshest seasonal fruits – mangoes, avocados, and more. Order online and get them delivered at your doorstep!"
@@ -57,7 +61,7 @@ export default function RootLayout({
         />
         <meta property="og:url" content="https://fruitfulbox.vercel.app" />
         <meta property="og:type" content="website" />
-
+{/* fruit delivery in Pune, fresh fruits Pune, cut fruit box Pune, ready-to-eat fruit delivery, seasonal fruits Pune, premium fruit box Pune, healthy fruit packs, fruit subscription Pune, Fruitful Box */}
         {/* Twitter Preview */}
         {/* <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Fruitful Box – Premium Seasonal Fruits Delivered" />

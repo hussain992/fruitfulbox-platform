@@ -1,8 +1,31 @@
-// import jamsData from '@/lib/jams.json';
 import ProductDetails from '@/components/ProductDetails';
 import { getProductsByCategory } from '@/lib/utils';
 import { use } from 'react';
 
+import type { Metadata } from 'next'
+ 
+type Props = {
+  params: Promise<{ category: string, slug: string }>,
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+ 
+export async function generateMetadata(
+  { params }: Props
+): Promise<Metadata> {
+  const resolvedParams = await params;
+  const { category, slug } = resolvedParams;
+  const products = await getProductsByCategory(category);
+
+  const product = products.find((p: {slug: string}) => p.slug === slug);
+  // console.log('product in metadata ', product);
+  return {
+    title: product.title,
+    // openGraph: {
+    //   images: ['/some-specific-page-image.jpg', ...previousImages],
+    // },
+  }
+}
+ 
 const ProductDetailPage: React.FC<{ params: Promise<{ category: string, slug: string }> }> = ({
   params
 }) => {
