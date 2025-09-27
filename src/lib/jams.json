@@ -3,12 +3,11 @@
     "id": "plum-jam",
     "title": "Plum Jam",
     "slug": "plum-jam",
-    "discountPrice": 199,
     "isAvailable": true,
     "stock": 10,
     "price": {
-      "original": "₹250/500g",
-      "discounted": "₹199/500g"
+      "original": "₹299/500g",
+      "discounted": "₹249/500g"
     },
     "tags": ["jam", "plum", "homemade", "trending"],
     "image": "/images/jams/plum-jam.png",
