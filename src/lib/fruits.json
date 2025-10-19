@@ -33,6 +33,7 @@
     "id": "pears",
     "slug": "pears",
     "title": "Green Pears",
+    "category":"fruits",
     "image": "/images/pear.png",
     "description": "Crisp and sweet green pears — naturally grown and full of hydration. Excellent as a snack or dessert topper.",
     "benefits": ["Low calorie", "High in antioxidants", "Promotes gut health"],
@@ -62,6 +63,7 @@
     "id": "pomegranate",
     "slug": "pomegranate",
     "title": "Fresh Pomegranates",
+    "category":"fruit",
     "image": "/images/Vibrant Pomegranate.png",
     "description": "Juicy, ruby-red pomegranates bursting with antioxidants. Handpicked for freshness and flavor.",
     "benefits": [
@@ -87,6 +89,7 @@
     "id": "sweet-lime",
     "slug": "sweet-lime",
     "title": "Sweet Lime (Mosambi)",
+    "category": "fruit",
     "description": "Sweet Lime (Mosambi) is known for its refreshing and mild citrus flavor. Packed with Vitamin C and hydration, it is perfect for juicing and snacking.",
     "price": {
       "original": "₹129/kg",
@@ -551,5 +554,85 @@
       "comment": "Perfectly ripe kiwis, will definitely reorder."
     }
   ]
+}, {
+  "id": "ber-001",
+  "title": "Ber (Indian Jujube)",
+  "slug": "ber-indian-jujube",
+  "shortDescription": "Fresh, crisp ber — sweet-tart Indian jujube. Perfect for snacking or salads.",
+  "description": "Locally sourced ber (Indian jujube), hand-picked for freshness. Firm texture with a pleasant sweet-tart flavor. Use for snacking, fruit salads, or pickling. Store in a cool place and consume within 3–5 days for best taste.",
+  "category": "fruits",
+  "tags": ["seasonal", "fresh", "snack", "native"],
+  "price": {
+    "original": "₹99/kg",
+    "discounted": "₹79/kg"
+  },
+  "image": "/images/ber.jpeg",
+  "currency": "INR",
+  "unit": "kg",
+  "minOrderQty": 0.5,
+  "priceUnitLabel": "per kg",
+  "stock": 120,
+  "isAvailable": true,
+  "images": [
+    {
+      "url": "/images/products/ber-white-bg.png",
+      "alt": "Fresh ber on white background"
+    },
+    {
+      "url": "/images/products/ber-wooden-bowl.png",
+      "alt": "Ber in wooden bowl"
+    }
+  ],
+  "variants": [
+    {
+      "id": "ber-kg",
+      "label": "By weight",
+      "options": [
+        { "value": "0.5", "label": "500 g", "price": 70.00 },
+        { "value": "1", "label": "1 kg", "price": 140.00 },
+        { "value": "2", "label": "2 kg", "price": 268.00 }
+      ]
+    }
+  ],
+  "attributes": {
+    "origin": "Local farms",
+    "ripeness": "Firm - Ready to eat",
+    "shelfLife": "3-5 days at room temperature; 7-10 days refrigerated",
+    "storage": "Keep in a cool, dry place or refrigerate to extend freshness",
+    "packaging": "Paper-lined box / eco-friendly bag"
+  },
+  "nutritionPer100g": {
+    "energy": "79 kcal",
+    "carbohydrates": "20 g",
+    "protein": "1 g",
+    "fat": "0.2 g",
+    "fiber": "3.6 g",
+    "vitaminC": "69 mg"
+  },
+  "shipping": {
+    "weightKg": 1,
+    "packageDimensionsCm": { "l": 20, "w": 14, "h": 8 },
+    "shipsFrom": "Pune, Maharashtra",
+    "deliveryEstimateDays": [1, 3]
+  },
+  "seo": {
+    "title": "Buy Fresh Ber (Indian Jujube) Online | Fruitful Box",
+    "metaDescription": "Order fresh ber (Indian jujube) — crisp, seasonal fruit delivered fresh. Available by 500g, 1kg packs. Shop now!",
+    "ogImage": "/images/products/ber-og.png"
+  },
+  "reviews": [
+    {
+      "user": "Sonal T.",
+      "rating": 5,
+      "comment": "Crisp and delicious ber! Perfect for snacking."
+    },
+    {
+      "user": "Vikram S.",
+      "rating": 4,
+      "comment": "Good quality fruit, nicely packed."
+    }
+  ],
+  "createdAt": "2025-10-19T00:00:00+05:30",
+  "isActive": true
 }
 ]

@@ -54,12 +54,13 @@ interface Product {
   stock: number;
   benefits?: string[];
   reviews?: { user: string; comment: string }[];
+  category: string;
 }
 
 const ProductDetails: React.FC<{ product: Product }> = ({
   product
 }) => {
-    console.log('product details ', product);
+    console.log('product details ', product.category);
 //   const resolvedParams = use(params);
 //   const product =
 //     resolvedParams.slug == "delight-box"
@@ -134,8 +135,8 @@ const ProductDetails: React.FC<{ product: Product }> = ({
         )}
 
         <div className="mt-12 text-center">
-          <Link href="/products" className="text-blue-600 hover:underline">
-            ← Back to Products
+          <Link href={`/${product.category}`} className="text-blue-600 hover:underline">
+            ← Back to {product.category || 'products'}
           </Link>
         </div>
       </main>
