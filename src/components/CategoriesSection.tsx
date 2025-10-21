@@ -35,7 +35,7 @@ export default function CategoriesSection() {
               sm:rounded-2xl sm:w-32 sm:h-28
             `}
           >
-            <span className="text-3xl sm:text-4xl">{cat.icon}</span>
+            <span className="text-5xl sm:text-7xl">{cat.icon}</span>
           </Link>
             <div className="text-sm sm:text-base mt-2 text-center">{cat.name}</div>
 </div>

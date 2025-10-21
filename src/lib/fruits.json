@@ -13,6 +13,17 @@
     "tags": ["seasonal"],
     "stock": 12,
     "isAvailable": false,
+    "seo":{
+      "title": "Buy Pairi Mangoes Online - Fresh & Juicy | Fruitful Box",
+      "description": "Order fresh Pairi Mangoes (Payari) online at Fruitful Box. Enjoy the tangy-sweet flavor of these early-season mangoes. Perfect for juicing and snacking. Limited stock available!",
+      "keywords": [
+        "Pairi Mangoes",
+        "Payari Mangoes",
+        "Buy Pairi Mangoes Online",
+        "Fresh Mangoes",
+        "Seasonal Fruits"
+      ]
+    },
     "benefits": [
       "High in Vitamin C",
       "Excellent for juicing",
@@ -44,6 +55,16 @@
     "tags": ["new-arrival"],
     "isAvailable": true,
     "stock": 20,
+    "seo": {
+      "title": "Buy Fresh Green Pears Online - Crisp & Juicy | Fruitful Box",
+      "description": "Order fresh green pears online at Fruitful Box. Enjoy the crisp and sweet flavor of naturally grown pears. Perfect for snacking and desserts. Limited stock available!",
+      "keywords": [
+        "Green Pears",
+        "Buy Pears Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
     "reviews": [
       {
         "user": "Riya",
@@ -77,6 +98,16 @@
       "discounted": "₹149/kg"
     },
     "isAvailable": true,
+    "seo":{
+      "title": "Buy Fresh Pomegranates Online - Juicy & Antioxidant-Rich | Fruitful Box",
+      "description": "Order fresh pomegranates online at Fruitful Box. Enjoy the juicy, ruby-red seeds packed with antioxidants. Perfect for snacking and juicing. Limited stock available!",
+      "keywords": [
+        "Pomegranates",
+        "Buy Pomegranates Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
     "stock": 10,
     "reviews": [
       {
@@ -98,6 +129,17 @@
     "image": "/images/sweet-lime-fruit.png",
     "tags": ["new-arrival", "trending"],
     "isAvailable": true,
+    "seo":{
+      "title": "Buy Sweet Lime (Mosambi) Online - Fresh & Juicy | Fruitful Box",
+      "description": "Order fresh Sweet Lime (Mosambi) online at Fruitful Box. Enjoy the refreshing citrus flavor packed with Vitamin C. Perfect for juicing and snacking. Limited stock available!",
+      "keywords": [
+        "Sweet Lime",
+        "Mosambi",
+        "Buy Sweet Lime Online",
+        "Fresh Citrus Fruits",
+        "Healthy Drinks"
+      ]
+    },
     "benefits": [
       "Rich in Vitamin C, boosts immunity",
       "Excellent for hydration and detox",
@@ -128,6 +170,16 @@
     "image": "/images/peaches.png",
     "tags": ["new-arrival"],
     "isAvailable": false,
+    "seo":{
+      "title": "Buy Fresh Peaches Online - Juicy & Sweet | Fruitful Box",
+      "description": "Order fresh peaches online at Fruitful Box. Enjoy the juicy and sweet flavor of naturally grown peaches. Perfect for snacking and desserts. Limited stock available!",
+      "keywords": [
+        "Peaches",
+        "Buy Peaches Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
     "benefits": [
       "Rich in vitamins A and C",
       "Good source of dietary fiber",
@@ -165,6 +217,16 @@
     "unit": "1kg",
     "category": "fruit",
     "isAvailable": true,
+    "seo":{
+      "title": "Buy Fresh Apples Online - Crisp & Juicy | Fruitful Box",
+      "description": "Order fresh apples online at Fruitful Box. Enjoy the crisp and sweet flavor of naturally grown apples. Perfect for snacking and desserts. Limited stock available!",
+      "keywords": [
+        "Apples",
+        "Buy Apples Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
     "isCutFruit": false,
     "description": "Sweet, crisp, and juicy red apples – perfect for daily snacking and nutrition.",
     "nutrition": {
