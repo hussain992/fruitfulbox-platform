@@ -262,6 +262,17 @@
     "image": "/images/jamun.png",
     "tags": ["seasonal", "new-arrival"],
     "isAvailable": false,
+    "seo":{
+      "title": "Buy Fresh Jamun Online - Sweet & Tart | Fruitful Box",
+      "description": "Order fresh Jamun (black plum) online at Fruitful Box. Enjoy the sweet-tart flavor packed with antioxidants. Perfect for snacking and digestion. Limited stock available!",
+      "keywords": [
+        "Jamun",
+        "Black Plum",
+        "Buy Jamun Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
     "benefits": [
       "Helps manage blood sugar levels",
       "Rich in Vitamin C and antioxidants",
@@ -298,6 +309,16 @@
       "Boosts immunity",
       "Hydrates and cools the body"
     ],
+    "seo": {
+      "title": "Buy Fresh Litchis Online - Juicy & Sweet | Fruitful Box",
+      "description": "Order fresh litchis online at Fruitful Box. Enjoy the juicy and sweet flavor packed with Vitamin C. Perfect for snacking and desserts. Limited stock available!",
+      "keywords": [
+        "Litchis",
+        "Buy Litchis Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
     "tags": ["new-arrival"],
     "availability": ["wednesday", "saturday", "sunday"],
     "isAvailable": false,
@@ -330,6 +351,16 @@
       "Boosts immunity",
       "Great for desserts and juices"
     ],
+    "seo": {
+      "title": "Buy Kesar Mangoes Online - Fresh & Juicy | Fruitful Box",
+      "description": "Order fresh Kesar mangoes online at Fruitful Box. Enjoy the rich flavor and vibrant color of these aromatic mangoes. Perfect for summer indulgence. Limited stock available!",
+      "keywords": [
+        "Kesar Mangoes",
+        "Buy Kesar Mangoes Online",
+        "Fresh Mangoes",
+        "Seasonal Fruits"
+      ]
+    },
     "reviews": [
       {
         "user": "Raj",
@@ -355,6 +386,16 @@
     },
     "stock": 12,
     "tags": ["seasonal", "new-arrival"],
+    "seo": {
+      "title": "Buy Devgad Alphonso Mangoes Online - Fresh & Juicy | Fruitful Box",
+      "description": "Order fresh Devgad Alphonso mangoes online at Fruitful Box. Enjoy the sweet, aromatic, and juicy flavor of these premium mangoes. Perfect for summer indulgence. Limited stock available!",
+      "keywords": [
+        "Devgad Alphonso Mangoes",
+        "Buy Alphonso Mangoes Online",
+        "Fresh Mangoes",
+        "Seasonal Fruits"
+      ]
+    },
     "reviews": [
       {
         "user": "Anita",
@@ -379,6 +420,17 @@
     ],
     "isAvailable": false,
     "tags": ["seasonal", "new-arrival"],
+    "seo": {
+      "title": "Buy Alphonso Mangoes (Karnataka) Online - Fresh & Juicy | Fruitful Box",
+      "description": "Order fresh Alphonso mangoes from Karnataka online at Fruitful Box. Enjoy the naturally sweet and juicy flavor of these premium mangoes. Perfect for summer indulgence. Limited stock available!",
+      "keywords": [
+        "Alphonso Mangoes",
+        "Karnataka Mangoes",
+        "Buy Alphonso Mangoes Online",
+        "Fresh Mangoes",
+        "Seasonal Fruits"
+      ]
+    },
     "price": {
       "original": "₹449",
       "discounted": "₹399/dozen"
@@ -400,6 +452,17 @@
     },
     "stock": 8,
     "isAvailable": true,
+    "seo":{
+      "title": "Buy Fresh Avocados Online - Creamy & Nutritious | Fruitful Box",
+      "description": "Order fresh Hass avocados online at Fruitful Box. Enjoy the creamy texture and rich flavor packed with healthy fats and nutrients. Perfect for toast, guacamole, or smoothies. Limited stock available!",
+      "keywords": [
+        "Avocados",
+        "Hass Avocados",
+        "Buy Avocados Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
     "reviews": [
       {
         "user": "Sara",
@@ -425,6 +488,17 @@
       "discounted": "₹99/kg"
     },
     "stock": 10,
+    "seo": {
+      "title": "Buy Fresh Chikoo (Sapodilla) Online - Sweet & Nutritious | Fruitful Box",
+      "description": "Order fresh Chikoo (Sapodilla) online at Fruitful Box. Enjoy the sweet and grainy flavor packed with dietary fiber and antioxidants. Perfect for smoothies and snacks. Limited stock available!",
+      "keywords": [
+        "Chikoo",
+        "Sapodilla",
+        "Buy Chikoo Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
     "reviews": [
       {
         "user": "Nikhil",
@@ -490,6 +564,17 @@
     "High in dietary fiber for digestion",
     "Low calorie, diabetic-friendly option"
   ],
+  "seo": {
+    "title": "Buy Organic Guava Online - Fresh & Crunchy | Fruitful Box",
+    "description": "Order fresh organic guavas online at Fruitful Box. Enjoy the crunchy texture and mildly sweet aroma packed with Vitamin C and fiber. Perfect for snacking and juices. Limited stock available!",
+    "keywords": [
+      "Guava",
+      "Organic Guava",
+      "Buy Guava Online",
+      "Fresh Fruits",
+      "Healthy Snacks"
+    ]
+  },
   "reviews": [
     { "user": "Sneha", "comment": "Crisp and super fresh. Perfect for chutney!" },
     { "user": "Arjun", "comment": "Good quality and nicely packed." }
@@ -525,6 +610,16 @@
     "Promotes healthy skin and hair",
     "Helps reduce inflammation and supports healing"
   ],
+  "seo": {
+    "title": "Buy Fresh Pineapples Online - Juicy & Sweet | Fruitful Box",
+    "description": "Order fresh pineapples online at Fruitful Box. Enjoy the juicy, tangy, and naturally sweet flavor packed with Vitamin C and digestive enzymes. Perfect for juices, smoothies, and salads. Limited stock available!",
+    "keywords": [
+      "Pineapples",
+      "Buy Pineapples Online",
+      "Fresh Fruits",
+      "Healthy Snacks"
+    ]
+  },
   "reviews": [
     {
       "user": "Aarav Shah",
@@ -550,6 +645,16 @@
   "price": {
     "original": "₹149/kg",
     "discounted": "₹119/kg"
+  },
+  "seo":{
+    "title": "Buy Fresh Custard Apples Online - Sweet & Creamy | Fruitful Box",
+    "description": "Order fresh custard apples online at Fruitful Box. Enjoy the sweet and creamy flavor packed with vitamins and antioxidants. Perfect for a healthy treat. Limited stock available!",
+    "keywords": [
+      "Custard Apples",
+      "Buy Custard Apples Online",
+      "Fresh Fruits",
+      "Healthy Snacks"
+    ]
   },
   "stock":12,
   "description": "Fresh and creamy custard apples with a naturally sweet flavor, perfect for a healthy treat.",
@@ -599,6 +704,16 @@
     "Boosts immunity and heart health",
     "Improves skin texture and glow"
   ],
+  "seo":{
+    "title": "Buy Fresh Kiwis Online - Tangy & Vitamin-Rich | Fruitful Box",
+    "description": "Order fresh kiwis online at Fruitful Box. Enjoy the tangy flavor packed with Vitamin C, antioxidants, and dietary fiber. Perfect for a refreshing snack. Limited stock available!",
+    "keywords": [
+      "Kiwis",
+      "Buy Kiwis Online",
+      "Fresh Fruits",
+      "Healthy Snacks"
+    ]
+  },
   "reviews": [
     {
       "user": "Aarav S.",
@@ -627,6 +742,17 @@
   "price": {
     "original": "₹99/kg",
     "discounted": "₹79/kg"
+  },
+  "seo":{
+    "title": "Buy Fresh Ber (Indian Jujube) Online | Fruitful Box",
+    "description": "Order fresh ber (Indian jujube) — crisp, seasonal fruit delivered fresh. Available by 500g, 1kg packs. Shop now!",
+    "keywords": [
+      "Ber",
+      "Indian Jujube",
+      "Buy Ber Online",
+      "Fresh Fruits",
+      "Healthy Snacks"
+    ]
   },
   "image": "/images/ber.jpeg",
   "currency": "INR",
@@ -676,11 +802,6 @@
     "packageDimensionsCm": { "l": 20, "w": 14, "h": 8 },
     "shipsFrom": "Pune, Maharashtra",
     "deliveryEstimateDays": [1, 3]
-  },
-  "seo": {
-    "title": "Buy Fresh Ber (Indian Jujube) Online | Fruitful Box",
-    "metaDescription": "Order fresh ber (Indian jujube) — crisp, seasonal fruit delivered fresh. Available by 500g, 1kg packs. Shop now!",
-    "ogImage": "/images/products/ber-og.png"
   },
   "reviews": [
     {

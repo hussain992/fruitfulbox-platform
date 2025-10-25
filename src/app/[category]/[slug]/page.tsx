@@ -20,6 +20,10 @@ export async function generateMetadata(
   // console.log('product in metadata ', product);
   return {
     title: product.title,
+    alternates: {
+      canonical: `https://fruitfulbox.vercel.app/${category}/${slug}`,
+    },
+    description: product.seo?.description,
     // openGraph: {
     //   images: ['/some-specific-page-image.jpg', ...previousImages],
     // },
