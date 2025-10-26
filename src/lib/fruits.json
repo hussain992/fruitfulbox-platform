@@ -13,6 +13,7 @@
     "tags": ["seasonal"],
     "stock": 12,
     "isAvailable": false,
+    "category": "fruits",
     "seo":{
       "title": "Buy Pairi Mangoes Online - Fresh & Juicy | Fruitful Box",
       "description": "Order fresh Pairi Mangoes (Payari) online at Fruitful Box. Enjoy the tangy-sweet flavor of these early-season mangoes. Perfect for juicing and snacking. Limited stock available!",
@@ -84,7 +85,7 @@
     "id": "pomegranate",
     "slug": "pomegranate",
     "title": "Fresh Pomegranates",
-    "category":"fruit",
+    "category":"fruits",
     "image": "/images/Vibrant Pomegranate.png",
     "description": "Juicy, ruby-red pomegranates bursting with antioxidants. Handpicked for freshness and flavor.",
     "benefits": [
@@ -120,7 +121,7 @@
     "id": "sweet-lime",
     "slug": "sweet-lime",
     "title": "Sweet Lime (Mosambi)",
-    "category": "fruit",
+    "category": "fruits",
     "description": "Sweet Lime (Mosambi) is known for its refreshing and mild citrus flavor. Packed with Vitamin C and hydration, it is perfect for juicing and snacking.",
     "price": {
       "original": "₹129/kg",
@@ -169,6 +170,7 @@
     "unit": "500g (Approx. 3-4 pcs)",
     "image": "/images/peaches.png",
     "tags": ["new-arrival"],
+    "category": "fruits",
     "isAvailable": false,
     "seo":{
       "title": "Buy Fresh Peaches Online - Juicy & Sweet | Fruitful Box",
@@ -215,7 +217,7 @@
     },
     "discountPrice": 100,
     "unit": "1kg",
-    "category": "fruit",
+    "category": "fruits",
     "isAvailable": true,
     "seo":{
       "title": "Buy Fresh Apples Online - Crisp & Juicy | Fruitful Box",
@@ -262,6 +264,7 @@
     "image": "/images/jamun.png",
     "tags": ["seasonal", "new-arrival"],
     "isAvailable": false,
+    "category": "fruits",
     "seo":{
       "title": "Buy Fresh Jamun Online - Sweet & Tart | Fruitful Box",
       "description": "Order fresh Jamun (black plum) online at Fruitful Box. Enjoy the sweet-tart flavor packed with antioxidants. Perfect for snacking and digestion. Limited stock available!",
@@ -297,6 +300,7 @@
     "slug": "litchi",
     "title": "Fresh Litchi",
     "image": "/images/litchi.png",
+    "category": "fruits",
     "price": {
       "original": "399/kg",
       "discounted": "349/kg"
@@ -346,6 +350,7 @@
     "isAvailable": false,
     "stock": 12,
     "tags": ["seasonal", "new-arrival"],
+    "category": "fruits",
     "benefits": [
       "Rich in Vitamin A and C",
       "Boosts immunity",
@@ -379,6 +384,7 @@
       "Boosts immunity",
       "Supports digestion"
     ],
+    "category": "fruits",
     "isAvailable": false,
     "price": {
       "original": "₹999",
@@ -419,6 +425,7 @@
       "Supports digestion"
     ],
     "isAvailable": false,
+    "category": "fruits",
     "tags": ["seasonal", "new-arrival"],
     "seo": {
       "title": "Buy Alphonso Mangoes (Karnataka) Online - Fresh & Juicy | Fruitful Box",
@@ -452,6 +459,7 @@
     },
     "stock": 8,
     "isAvailable": true,
+    "category": "fruits",
     "seo":{
       "title": "Buy Fresh Avocados Online - Creamy & Nutritious | Fruitful Box",
       "description": "Order fresh Hass avocados online at Fruitful Box. Enjoy the creamy texture and rich flavor packed with healthy fats and nutrients. Perfect for toast, guacamole, or smoothies. Limited stock available!",
@@ -488,6 +496,7 @@
       "discounted": "₹99/kg"
     },
     "stock": 10,
+    "category": "fruits",
     "seo": {
       "title": "Buy Fresh Chikoo (Sapodilla) Online - Sweet & Nutritious | Fruitful Box",
       "description": "Order fresh Chikoo (Sapodilla) online at Fruitful Box. Enjoy the sweet and grainy flavor packed with dietary fiber and antioxidants. Perfect for smoothies and snacks. Limited stock available!",
@@ -531,6 +540,7 @@
       }
     ],
     "isAvailable": true,
+    "category": "fruits",
     "seo": {
       "title": "Buy Indian Plum (Ber) Online - Fresh & Tangy",
       "description": "Shop fresh Indian Plums (Ber) online at Fruitful Box. Sweet, tangy, and rich in nutrients. Available for delivery on weekends. Order now! ",
