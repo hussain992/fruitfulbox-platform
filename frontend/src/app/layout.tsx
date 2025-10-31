@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: '%s | Fruitful Box',
     default: 'Fruitful Box',
   },
-  description: "Delivering Fresh Fruits to Your Doorstep. Taste the freshest seasonal fruits – plum, peach, cut fruits and more. Order online and get them delivered at your doorstep!",
+  description: "Fresh fruit delivery in Pune! Get handpicked whole fruits, ready-to-eat cut fruits, and curated fruit boxes. Delivering every Sunday & Wednesday. ",
   icons: {
     icon: "/favicon.png",
   },
@@ -34,16 +34,7 @@ export default function RootLayout({
   Clarity.init(projectId);
   return (
     <html lang="en">
-      <Head>
-        {/* <title>Fruitful Box – Premium Seasonal Fruits Delivered</title> */}
-        <meta
-          name="description"
-          content="Taste the freshest seasonal fruits – mangoes, avocados, and more. Order online and get them delivered at your doorstep!"
-        />
-        <meta
-          name="keywords"
-          content="fruit delivery, mangoes, avocados, Devgad mangoes, fresh fruits online, Fruitful Box"
-        />
+      <Head> 
         <meta name="author" content="Fruitful Box" />
         {/* <meta name="google-site-verification" content="Bzee-pKoCg_cOupVkgj87r5wuR_hpxS7NGKCE6UHvLo" /> */}
         {/* Open Graph / Social */}
