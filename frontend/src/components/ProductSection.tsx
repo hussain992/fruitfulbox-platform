@@ -4,8 +4,8 @@ import fruits from "@/lib/fruits.json";
 import jams from "@/lib/jams.json";
 import ProductCard from "./ProductCard";
 
-import { Button } from "./ui/button";
-import Link from "next/link";
+// import { Button } from "./ui/button";
+// import Link from "next/link";
 interface ProductSectionProps {
   title?: string;
 }
