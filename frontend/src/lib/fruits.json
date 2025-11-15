@@ -14,7 +14,7 @@
     "stock": 12,
     "isAvailable": false,
     "category": "fruits",
-    "seo":{
+    "seo": {
       "title": "Buy Pairi Mangoes Online - Fresh & Juicy | Fruitful Box",
       "description": "Order fresh Pairi Mangoes (Payari) online at Fruitful Box. Enjoy the tangy-sweet flavor of these early-season mangoes. Perfect for juicing and snacking. Limited stock available!",
       "keywords": [
@@ -45,7 +45,7 @@
     "id": "pears",
     "slug": "pears",
     "title": "Green Pears",
-    "category":"fruits",
+    "category": "fruits",
     "image": "/images/pear.png",
     "description": "Crisp and sweet green pears — naturally grown and full of hydration. Excellent as a snack or dessert topper.",
     "benefits": ["Low calorie", "High in antioxidants", "Promotes gut health"],
@@ -74,7 +74,7 @@
       {
         "user": "Rahul",
         "comment": "Great quality, will order again."
-      }, 
+      },
       {
         "user": "Anita",
         "comment": "Best pears I've had in a while!"
@@ -85,7 +85,7 @@
     "id": "pomegranate",
     "slug": "pomegranate",
     "title": "Fresh Pomegranates",
-    "category":"fruits",
+    "category": "fruits",
     "image": "/images/Vibrant Pomegranate.png",
     "description": "Juicy, ruby-red pomegranates bursting with antioxidants. Handpicked for freshness and flavor.",
     "benefits": [
@@ -99,7 +99,7 @@
       "discounted": "₹149/kg"
     },
     "isAvailable": true,
-    "seo":{
+    "seo": {
       "title": "Buy Fresh Pomegranates Online - Juicy & Antioxidant-Rich | Fruitful Box",
       "description": "Order fresh pomegranates online at Fruitful Box. Enjoy the juicy, ruby-red seeds packed with antioxidants. Perfect for snacking and juicing. Limited stock available!",
       "keywords": [
@@ -130,7 +130,7 @@
     "image": "/images/sweet-lime-fruit.png",
     "tags": ["new-arrival", "trending"],
     "isAvailable": true,
-    "seo":{
+    "seo": {
       "title": "Buy Sweet Lime (Mosambi) Online - Fresh & Juicy | Fruitful Box",
       "description": "Order fresh Sweet Lime (Mosambi) online at Fruitful Box. Enjoy the refreshing citrus flavor packed with Vitamin C. Perfect for juicing and snacking. Limited stock available!",
       "keywords": [
@@ -172,7 +172,7 @@
     "tags": ["new-arrival"],
     "category": "fruits",
     "isAvailable": false,
-    "seo":{
+    "seo": {
       "title": "Buy Fresh Peaches Online - Juicy & Sweet | Fruitful Box",
       "description": "Order fresh peaches online at Fruitful Box. Enjoy the juicy and sweet flavor of naturally grown peaches. Perfect for snacking and desserts. Limited stock available!",
       "keywords": [
@@ -219,7 +219,7 @@
     "unit": "1kg",
     "category": "fruits",
     "isAvailable": true,
-    "seo":{
+    "seo": {
       "title": "Buy Fresh Apples Online - Crisp & Juicy | Fruitful Box",
       "description": "Order fresh apples online at Fruitful Box. Enjoy the crisp and sweet flavor of naturally grown apples. Perfect for snacking and desserts. Limited stock available!",
       "keywords": [
@@ -265,7 +265,7 @@
     "tags": ["seasonal", "new-arrival"],
     "isAvailable": false,
     "category": "fruits",
-    "seo":{
+    "seo": {
       "title": "Buy Fresh Jamun Online - Sweet & Tart | Fruitful Box",
       "description": "Order fresh Jamun (black plum) online at Fruitful Box. Enjoy the sweet-tart flavor packed with antioxidants. Perfect for snacking and digestion. Limited stock available!",
       "keywords": [
@@ -460,7 +460,7 @@
     "stock": 8,
     "isAvailable": true,
     "category": "fruits",
-    "seo":{
+    "seo": {
       "title": "Buy Fresh Avocados Online - Creamy & Nutritious | Fruitful Box",
       "description": "Order fresh Hass avocados online at Fruitful Box. Enjoy the creamy texture and rich flavor packed with healthy fats and nutrients. Perfect for toast, guacamole, or smoothies. Limited stock available!",
       "keywords": [
@@ -478,7 +478,7 @@
       }
     ]
   },
- {
+  {
     "id": "chickoo",
     "slug": "chickoo",
     "title": "Fresh Chikoo (Sapodilla)",
@@ -554,278 +554,325 @@
     }
   },
   {
-  "id": "guava",
-  "title": "Guava (organic)",
-  "slug": "guava",
-  "category": "fruits",
-  "image": "/images/guava.png", 
-  "stock": 20,
-  "price": {
+    "id": "guava",
+    "title": "Guava (organic)",
+    "slug": "guava",
+    "category": "fruits",
+    "image": "/images/guava.png",
+    "stock": 20,
+    "price": {
       "original": "₹129/kg",
       "discounted": "₹99/kg"
     },
-  "unit": "1kg (approx. 5–6 pcs)",
-  "isAvailable": true,
-  "tags": ["year-round", "fiber-rich"],
-  "description":
-    "Fresh, crunchy green guavas with a mildly sweet aroma. Great for snacking, salads, and juices. Sourced locally and delivered farm-fresh.",
-  "benefits": [
-    "Rich in Vitamin C & antioxidants",
-    "High in dietary fiber for digestion",
-    "Low calorie, diabetic-friendly option"
-  ],
-  "seo": {
-    "title": "Buy Organic Guava Online - Fresh & Crunchy | Fruitful Box",
-    "description": "Order fresh organic guavas online at Fruitful Box. Enjoy the crunchy texture and mildly sweet aroma packed with Vitamin C and fiber. Perfect for snacking and juices. Limited stock available!",
-    "keywords": [
-      "Guava",
-      "Organic Guava",
-      "Buy Guava Online",
-      "Fresh Fruits",
-      "Healthy Snacks"
-    ]
-  },
-  "reviews": [
-    { "user": "Sneha", "comment": "Crisp and super fresh. Perfect for chutney!" },
-    { "user": "Arjun", "comment": "Good quality and nicely packed." }
-  ],
-  "faq": [
-    {
-      "question": "How should I store guavas?",
-      "answer": "Keep at room temperature to ripen. Refrigerate once ripe and consume within 2–3 days."
-    },
-    {
-      "question": "Are these naturally ripened?",
-      "answer": "Yes, ripened without chemicals for natural taste and texture."
-    }
-  ]
-},
-{
-  "id": "pineapple",
-  "title": "Pineapple",
-  "slug": "pineapple",
-  "tags":["trending"],
-  "description": "Juicy, tangy, and naturally sweet, our fresh pineapples are handpicked to ensure maximum flavor and nutrition. Perfect for juices, smoothies, salads, or enjoying as-is!",
-  "price": {
-    "original": "₹129/piece",
-    "discounted": "₹99/piece"
-  },
-  "unit": "per pc",
-  "image": "/images/pineapple.png",
-  "category": "Fruits",
-  "isAvailable": true,
-  "benefits": [
-    "Rich in vitamin C to boost immunity",
-    "Contains bromelain, which aids digestion",
-    "Promotes healthy skin and hair",
-    "Helps reduce inflammation and supports healing"
-  ],
-  "seo": {
-    "title": "Buy Fresh Pineapples Online - Juicy & Sweet | Fruitful Box",
-    "description": "Order fresh pineapples online at Fruitful Box. Enjoy the juicy, tangy, and naturally sweet flavor packed with Vitamin C and digestive enzymes. Perfect for juices, smoothies, and salads. Limited stock available!",
-    "keywords": [
-      "Pineapples",
-      "Buy Pineapples Online",
-      "Fresh Fruits",
-      "Healthy Snacks"
-    ]
-  },
-  "reviews": [
-    {
-      "user": "Aarav Shah",
-      "comment": "Super fresh and sweet! The pineapple quality was amazing. Perfect for my smoothies."
-    },
-    {
-      "user": "Priya Kapoor",
-      "comment": "Really good taste and packaging. Would love if slightly more ripe next time."
-    },
-    {
-      "user": "Rohan Mehta",
-      "comment": "Excellent quality! Juicy and naturally sweet. Will definitely order again."
-    }
-  ]
-},
-{
-  "id": "custard-apple",
-  "slug": "custard-apple",
-  "title": "Custard Apple",
-  "category": "fruits",
-  "tags": ["seasonal"],
-  "image": "/images/custard-apple.png",
-  "price": {
-    "original": "₹149/kg",
-    "discounted": "₹119/kg"
-  },
-  "seo":{
-    "title": "Buy Fresh Custard Apples Online - Sweet & Creamy | Fruitful Box",
-    "description": "Order fresh custard apples online at Fruitful Box. Enjoy the sweet and creamy flavor packed with vitamins and antioxidants. Perfect for a healthy treat. Limited stock available!",
-    "keywords": [
-      "Custard Apples",
-      "Buy Custard Apples Online",
-      "Fresh Fruits",
-      "Healthy Snacks"
-    ]
-  },
-  "stock":12,
-  "description": "Fresh and creamy custard apples with a naturally sweet flavor, perfect for a healthy treat.",
-  "benefits": [
-    "Rich in Vitamin C for immunity boost",
-    "High in dietary fiber for digestion",
-    "Contains antioxidants for overall health",
-    "Provides natural energy with healthy sugars"
-  ],
-  "isAvailable": true,
-  "reviews": [
-    {
-      "user": "Priya S.",
-      "rating": 5,
-      "comment": "The custard apples were so fresh and sweet, tasted just like homemade dessert!"
-    },
-    {
-      "user": "Amit K.",
-      "rating": 4,
-      "comment": "Great quality, nicely packed and delivered on time. Will order again."
-    },
-    {
-      "user": "Neha P.",
-      "rating": 5,
-      "comment": "Loved it! Creamy, tasty, and super healthy. Kids enjoyed it a lot."
-    }
-  ]
-}, 
-{
-  "id": "kiwi",
-  "slug": "kiwi",
-  "title": "Kiwi",
-  "tags": ["trending"],
-  "category": "fruits",
-  "description": "Fresh, tangy, and vitamin-rich kiwis packed with antioxidants and dietary fiber for a refreshing snack.",
-  "price": {
-    "original": "₹199/3 pcs",
-    "discounted": "₹129/3 pcs"
-  },
-  "stock": 15,
-  "isAvailable": true,
-  "unit": "kg",
-  "image": "/images/kiwi.png",
-  "benefits": [
-    "Rich source of Vitamin C and antioxidants",
-    "Supports digestion with high fiber",
-    "Boosts immunity and heart health",
-    "Improves skin texture and glow"
-  ],
-  "seo":{
-    "title": "Buy Fresh Kiwis Online - Tangy & Vitamin-Rich | Fruitful Box",
-    "description": "Order fresh kiwis online at Fruitful Box. Enjoy the tangy flavor packed with Vitamin C, antioxidants, and dietary fiber. Perfect for a refreshing snack. Limited stock available!",
-    "keywords": [
-      "Kiwis",
-      "Buy Kiwis Online",
-      "Fresh Fruits",
-      "Healthy Snacks"
-    ]
-  },
-  "reviews": [
-    {
-      "user": "Aarav S.",
-      "rating": 5,
-      "comment": "Kiwi was super fresh and juicy, loved the quality!"
-    },
-    {
-      "user": "Neha K.",
-      "rating": 4,
-      "comment": "Great taste, nicely packed and delivered on time."
-    },
-    {
-      "user": "Rohan P.",
-      "rating": 5,
-      "comment": "Perfectly ripe kiwis, will definitely reorder."
-    }
-  ]
-}, {
-  "id": "ber-001",
-  "title": "Ber (Indian Jujube)",
-  "slug": "ber-indian-jujube",
-  "shortDescription": "Fresh, crisp ber — sweet-tart Indian jujube. Perfect for snacking or salads.",
-  "description": "Locally sourced ber (Indian jujube), hand-picked for freshness. Firm texture with a pleasant sweet-tart flavor. Use for snacking, fruit salads, or pickling. Store in a cool place and consume within 3–5 days for best taste.",
-  "category": "fruits",
-  "tags": ["seasonal", "fresh", "snack", "native"],
-  "price": {
-    "original": "₹99/kg",
-    "discounted": "₹79/kg"
-  },
-  "seo":{
-    "title": "Buy Fresh Ber (Indian Jujube) Online | Fruitful Box",
-    "description": "Order fresh ber (Indian jujube) — crisp, seasonal fruit delivered fresh. Available by 500g, 1kg packs. Shop now!",
-    "keywords": [
-      "Ber",
-      "Indian Jujube",
-      "Buy Ber Online",
-      "Fresh Fruits",
-      "Healthy Snacks"
-    ]
-  },
-  "image": "/images/ber.jpeg",
-  "currency": "INR",
-  "unit": "kg",
-  "minOrderQty": 0.5,
-  "priceUnitLabel": "per kg",
-  "stock": 120,
-  "isAvailable": true,
-  "images": [
-    {
-      "url": "/images/products/ber-white-bg.png",
-      "alt": "Fresh ber on white background"
-    },
-    {
-      "url": "/images/products/ber-wooden-bowl.png",
-      "alt": "Ber in wooden bowl"
-    }
-  ],
-  "variants": [
-    {
-      "id": "ber-kg",
-      "label": "By weight",
-      "options": [
-        { "value": "0.5", "label": "500 g", "price": 70.00 },
-        { "value": "1", "label": "1 kg", "price": 140.00 },
-        { "value": "2", "label": "2 kg", "price": 268.00 }
+    "unit": "1kg (approx. 5–6 pcs)",
+    "isAvailable": true,
+    "tags": ["year-round", "fiber-rich"],
+    "description": "Fresh, crunchy green guavas with a mildly sweet aroma. Great for snacking, salads, and juices. Sourced locally and delivered farm-fresh.",
+    "benefits": [
+      "Rich in Vitamin C & antioxidants",
+      "High in dietary fiber for digestion",
+      "Low calorie, diabetic-friendly option"
+    ],
+    "seo": {
+      "title": "Buy Organic Guava Online - Fresh & Crunchy | Fruitful Box",
+      "description": "Order fresh organic guavas online at Fruitful Box. Enjoy the crunchy texture and mildly sweet aroma packed with Vitamin C and fiber. Perfect for snacking and juices. Limited stock available!",
+      "keywords": [
+        "Guava",
+        "Organic Guava",
+        "Buy Guava Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
       ]
-    }
-  ],
-  "attributes": {
-    "origin": "Local farms",
-    "ripeness": "Firm - Ready to eat",
-    "shelfLife": "3-5 days at room temperature; 7-10 days refrigerated",
-    "storage": "Keep in a cool, dry place or refrigerate to extend freshness",
-    "packaging": "Paper-lined box / eco-friendly bag"
-  },
-  "nutritionPer100g": {
-    "energy": "79 kcal",
-    "carbohydrates": "20 g",
-    "protein": "1 g",
-    "fat": "0.2 g",
-    "fiber": "3.6 g",
-    "vitaminC": "69 mg"
-  },
-  "shipping": {
-    "weightKg": 1,
-    "packageDimensionsCm": { "l": 20, "w": 14, "h": 8 },
-    "shipsFrom": "Pune, Maharashtra",
-    "deliveryEstimateDays": [1, 3]
-  },
-  "reviews": [
-    {
-      "user": "Sonal T.",
-      "rating": 5,
-      "comment": "Crisp and delicious ber! Perfect for snacking."
     },
-    {
-      "user": "Vikram S.",
-      "rating": 4,
-      "comment": "Good quality fruit, nicely packed."
+    "reviews": [
+      {
+        "user": "Sneha",
+        "comment": "Crisp and super fresh. Perfect for chutney!"
+      },
+      { "user": "Arjun", "comment": "Good quality and nicely packed." }
+    ],
+    "faq": [
+      {
+        "question": "How should I store guavas?",
+        "answer": "Keep at room temperature to ripen. Refrigerate once ripe and consume within 2–3 days."
+      },
+      {
+        "question": "Are these naturally ripened?",
+        "answer": "Yes, ripened without chemicals for natural taste and texture."
+      }
+    ]
+  },
+  {
+    "id": "pineapple",
+    "title": "Pineapple",
+    "slug": "pineapple",
+    "tags": ["trending"],
+    "description": "Juicy, tangy, and naturally sweet, our fresh pineapples are handpicked to ensure maximum flavor and nutrition. Perfect for juices, smoothies, salads, or enjoying as-is!",
+    "price": {
+      "original": "₹129/piece",
+      "discounted": "₹99/piece"
+    },
+    "unit": "per pc",
+    "image": "/images/pineapple.png",
+    "category": "Fruits",
+    "isAvailable": true,
+    "benefits": [
+      "Rich in vitamin C to boost immunity",
+      "Contains bromelain, which aids digestion",
+      "Promotes healthy skin and hair",
+      "Helps reduce inflammation and supports healing"
+    ],
+    "seo": {
+      "title": "Buy Fresh Pineapples Online - Juicy & Sweet | Fruitful Box",
+      "description": "Order fresh pineapples online at Fruitful Box. Enjoy the juicy, tangy, and naturally sweet flavor packed with Vitamin C and digestive enzymes. Perfect for juices, smoothies, and salads. Limited stock available!",
+      "keywords": [
+        "Pineapples",
+        "Buy Pineapples Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
+    "reviews": [
+      {
+        "user": "Aarav Shah",
+        "comment": "Super fresh and sweet! The pineapple quality was amazing. Perfect for my smoothies."
+      },
+      {
+        "user": "Priya Kapoor",
+        "comment": "Really good taste and packaging. Would love if slightly more ripe next time."
+      },
+      {
+        "user": "Rohan Mehta",
+        "comment": "Excellent quality! Juicy and naturally sweet. Will definitely order again."
+      }
+    ]
+  },
+  {
+    "id": "custard-apple",
+    "slug": "custard-apple",
+    "title": "Custard Apple",
+    "category": "fruits",
+    "tags": ["seasonal"],
+    "image": "/images/custard-apple.png",
+    "price": {
+      "original": "₹149/kg",
+      "discounted": "₹119/kg"
+    },
+    "seo": {
+      "title": "Buy Fresh Custard Apples Online - Sweet & Creamy | Fruitful Box",
+      "description": "Order fresh custard apples online at Fruitful Box. Enjoy the sweet and creamy flavor packed with vitamins and antioxidants. Perfect for a healthy treat. Limited stock available!",
+      "keywords": [
+        "Custard Apples",
+        "Buy Custard Apples Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
+    "stock": 12,
+    "description": "Fresh and creamy custard apples with a naturally sweet flavor, perfect for a healthy treat.",
+    "benefits": [
+      "Rich in Vitamin C for immunity boost",
+      "High in dietary fiber for digestion",
+      "Contains antioxidants for overall health",
+      "Provides natural energy with healthy sugars"
+    ],
+    "isAvailable": true,
+    "reviews": [
+      {
+        "user": "Priya S.",
+        "rating": 5,
+        "comment": "The custard apples were so fresh and sweet, tasted just like homemade dessert!"
+      },
+      {
+        "user": "Amit K.",
+        "rating": 4,
+        "comment": "Great quality, nicely packed and delivered on time. Will order again."
+      },
+      {
+        "user": "Neha P.",
+        "rating": 5,
+        "comment": "Loved it! Creamy, tasty, and super healthy. Kids enjoyed it a lot."
+      }
+    ]
+  },
+  {
+    "id": "kiwi",
+    "slug": "kiwi",
+    "title": "Kiwi",
+    "tags": ["trending"],
+    "category": "fruits",
+    "description": "Fresh, tangy, and vitamin-rich kiwis packed with antioxidants and dietary fiber for a refreshing snack.",
+    "price": {
+      "original": "₹199/3 pcs",
+      "discounted": "₹129/3 pcs"
+    },
+    "stock": 15,
+    "isAvailable": true,
+    "unit": "kg",
+    "image": "/images/kiwi.png",
+    "benefits": [
+      "Rich source of Vitamin C and antioxidants",
+      "Supports digestion with high fiber",
+      "Boosts immunity and heart health",
+      "Improves skin texture and glow"
+    ],
+    "seo": {
+      "title": "Buy Fresh Kiwis Online - Tangy & Vitamin-Rich | Fruitful Box",
+      "description": "Order fresh kiwis online at Fruitful Box. Enjoy the tangy flavor packed with Vitamin C, antioxidants, and dietary fiber. Perfect for a refreshing snack. Limited stock available!",
+      "keywords": [
+        "Kiwis",
+        "Buy Kiwis Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
+    "reviews": [
+      {
+        "user": "Aarav S.",
+        "rating": 5,
+        "comment": "Kiwi was super fresh and juicy, loved the quality!"
+      },
+      {
+        "user": "Neha K.",
+        "rating": 4,
+        "comment": "Great taste, nicely packed and delivered on time."
+      },
+      {
+        "user": "Rohan P.",
+        "rating": 5,
+        "comment": "Perfectly ripe kiwis, will definitely reorder."
+      }
+    ]
+  },
+  {
+    "id": "ber-001",
+    "title": "Ber (Indian Jujube)",
+    "slug": "ber-indian-jujube",
+    "shortDescription": "Fresh, crisp ber — sweet-tart Indian jujube. Perfect for snacking or salads.",
+    "description": "Locally sourced ber (Indian jujube), hand-picked for freshness. Firm texture with a pleasant sweet-tart flavor. Use for snacking, fruit salads, or pickling. Store in a cool place and consume within 3–5 days for best taste.",
+    "category": "fruits",
+    "tags": ["seasonal", "fresh", "snack", "native"],
+    "price": {
+      "original": "₹99/kg",
+      "discounted": "₹79/kg"
+    },
+    "seo": {
+      "title": "Buy Fresh Ber (Indian Jujube) Online | Fruitful Box",
+      "description": "Order fresh ber (Indian jujube) — crisp, seasonal fruit delivered fresh. Available by 500g, 1kg packs. Shop now!",
+      "keywords": [
+        "Ber",
+        "Indian Jujube",
+        "Buy Ber Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
+    "image": "/images/ber.jpeg",
+    "currency": "INR",
+    "unit": "kg",
+    "minOrderQty": 0.5,
+    "priceUnitLabel": "per kg",
+    "stock": 120,
+    "isAvailable": true,
+    "images": [
+      {
+        "url": "/images/products/ber-white-bg.png",
+        "alt": "Fresh ber on white background"
+      },
+      {
+        "url": "/images/products/ber-wooden-bowl.png",
+        "alt": "Ber in wooden bowl"
+      }
+    ],
+    "variants": [
+      {
+        "id": "ber-kg",
+        "label": "By weight",
+        "options": [
+          { "value": "0.5", "label": "500 g", "price": 70.0 },
+          { "value": "1", "label": "1 kg", "price": 140.0 },
+          { "value": "2", "label": "2 kg", "price": 268.0 }
+        ]
+      }
+    ],
+    "attributes": {
+      "origin": "Local farms",
+      "ripeness": "Firm - Ready to eat",
+      "shelfLife": "3-5 days at room temperature; 7-10 days refrigerated",
+      "storage": "Keep in a cool, dry place or refrigerate to extend freshness",
+      "packaging": "Paper-lined box / eco-friendly bag"
+    },
+    "nutritionPer100g": {
+      "energy": "79 kcal",
+      "carbohydrates": "20 g",
+      "protein": "1 g",
+      "fat": "0.2 g",
+      "fiber": "3.6 g",
+      "vitaminC": "69 mg"
+    },
+    "shipping": {
+      "weightKg": 1,
+      "packageDimensionsCm": { "l": 20, "w": 14, "h": 8 },
+      "shipsFrom": "Pune, Maharashtra",
+      "deliveryEstimateDays": [1, 3]
+    },
+    "reviews": [
+      {
+        "user": "Sonal T.",
+        "rating": 5,
+        "comment": "Crisp and delicious ber! Perfect for snacking."
+      },
+      {
+        "user": "Vikram S.",
+        "rating": 4,
+        "comment": "Good quality fruit, nicely packed."
+      }
+    ],
+    "createdAt": "2025-10-19T00:00:00+05:30",
+    "isActive": true
+  },
+  {
+    "id": "imported-orange",
+    "title": "Imported Premium Oranges",
+    "slug": "imported-orange",
+    "subtitle": "Fresh, seedless, naturally sweet oranges sourced from premium international farms.",
+    "image": "/images/imported-orange.png",
+    "category": "fruits",
+    "tags": ["imported", "premium", "fresh", "juicy", "vitamin-c-rich"],
+    "stock": 50,
+    "isAvailable": true,
+    "reviews": [
+      {
+        "user": "Lakshmi  N.",
+        "rating": 5,
+        "comment": "These imported oranges are incredibly sweet and juicy! Perfect for fresh juice."
+      },
+      {
+        "user": "Vikram  S.",
+        "rating": 4,
+        "comment": "Great quality oranges, nicely packed and delivered on time."
+      }
+    ],
+    "shortDescription": "Bright, juicy, and bursting with natural sweetness — our Imported Premium Oranges are handpicked for freshness and perfect for eating, juicing, salads, and gifting.",
+    "fullDescription": "Our Imported Premium Oranges are known for their rich aroma, thin peel, and exceptionally sweet taste. Sourced directly from the finest farms, these oranges offer consistent quality, high juice content, and a refreshing citrus flavor. Ideal for daily snacking, fresh juice, smoothies, or lunch boxes. Every piece is carefully selected and delivered fresh to your doorstep.",
+    "features": [
+      "Naturally sweet & seedless",
+      "Sourced from top international farms",
+      "100% premium quality guarantee",
+      "High juice content",
+      "Rich in Vitamin C & antioxidants",
+      "Delivered fresh & hygienically packed"
+    ],
+    "benefits": [
+      "Boosts immunity",
+      "Improves skin health",
+      "Supports digestion",
+      "Keeps you hydrated",
+      "Loaded with antioxidants"
+    ],
+    "price": {
+      "original": "₹199/kg",
+      "discounted": "₹99/kg"
     }
-  ],
-  "createdAt": "2025-10-19T00:00:00+05:30",
-  "isActive": true
-}
+  }
 ]
