@@ -96,7 +96,7 @@
     "tags": ["seasonal", "new-arrival", "trending"],
     "price": {
       "original": "₹199/kg",
-      "discounted": "₹149/kg"
+      "discounted": "₹179/kg"
     },
     "isAvailable": true,
     "seo": {
@@ -872,7 +872,7 @@
     ],
     "price": {
       "original": "₹199/kg",
-      "discounted": "₹99/kg"
+      "discounted": "₹129/kg"
     }
   }
 ]
