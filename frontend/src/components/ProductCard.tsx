@@ -1,5 +1,7 @@
+'use client';
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { Button } from "./ui/button";
 // import { ProductTag } from "./ProductTag";
 
@@ -31,8 +33,30 @@ export default function ProductCard({
 }: ProductCardProps) {
   const href = `/${category}/${slug}`;
 
+  // href={{
+  //         // The destination page, e.g., /product/details/[id] or just /product-details
+  //         // In the App Router, you can use a simple string for the pathname
+  //         pathname: `/product/${productId}`, 
+  //         // The 'query' object holds your extra parameters
+  //         query: { 
+  //           action: buyNowAction,
+  //           source: 'homepage_sale'
+  //         },
+  //       }}
+  const router = useRouter();
+  const handleNavigation = (e: React.MouseEvent, isBuyNow: boolean) => {
+  // If buyNow is true, append the query param
+  const finalHref = isBuyNow 
+    ? `${href}?action=buy-now` 
+    : href;
+
+  router.push(finalHref);
+};
   return (
-    <Link rel="canonical" href={href}>
+    // <Link rel="canonical" href={href}>
+    <div 
+    onClick={(e) => handleNavigation(e, false)} // Default card click
+    className="cursor-pointer">
       <div className="bg-lime-100 p-1 md:p-3 mx-0 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:bg-amber-100">
       
         <div className="relative w-full aspect-1/1 overflow-hidden rounded-xl mb-2 sm:mb-4">
@@ -68,10 +92,17 @@ export default function ProductCard({
             )}
           </p>
         )}
-        <Button disabled={isAvailable === false} className="mt-2 text-lime-700 ml-3" variant={"outline"}>
+        <Button disabled={isAvailable === false} className="mt-2 text-lime-700 ml-3" 
+          variant={"outline"}
+          onClick={(e) => {
+        e.stopPropagation(); // Prevents the card's onClick from firing twice
+        handleNavigation(e, true); // Specific "Buy Now" click
+      }}
+          >
           {isAvailable === false ? "Unavailable" : buttonText || "Buy Now"}  
         </Button>
       </div>
-    </Link>
+      </div>
+    // {/* </Link> */}
   );
 }

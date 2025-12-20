@@ -874,5 +874,76 @@
       "original": "₹199/kg",
       "discounted": "₹129/kg"
     }
+  },
+  {
+    "id": "kinnow-orange",
+    "slug": "kinnow-orange",
+    "title": "Kinnow Orange",
+    "category": "fruits",
+    "variant": "Fresh",
+    "description": "Freshly sourced Kinnow Oranges known for their bright color, juicy pulp, and naturally sweet-tangy taste. Rich in Vitamin C and antioxidants, perfect for daily consumption and fresh juices.",
+    "benefits": [
+      "Rich in Vitamin C",
+      "Boosts immunity",
+      "High in antioxidants",
+      "Supports healthy digestion",
+      "Naturally refreshing"
+    ],
+    "usage": ["Eat fresh", "Fresh juice", "Fruit salads", "Detox drinks"],
+    "origin": "India",
+    "season": "Winter",
+    "quality": "Premium Grade",
+    "storage": "Store in a cool, dry place or refrigerate for longer freshness",
+    "packaging": "Hygienically packed in eco-friendly packaging",
+    "weightOptions": [
+      {
+        "label": "1 kg",
+        "price": 120
+      },
+      {
+        "label": "2 kg",
+        "price": 230
+      }
+    ],
+    "availability": "In Stock",
+    "rating": 4.6,
+    "reviewsCount": 128,
+    "image": "/images/kinnow-oranges.png",
+    "tags": [
+      "kinnow",
+      "orange",
+      "vitamin c",
+      "immunity booster",
+      "fresh fruits",
+      "fruitful box"
+    ],
+    "price": {
+      "original": "₹149/kg",
+      "discounted": "₹129/kg"
+    },
+    "isAvailable": true,
+    "stock": 30,
+    "seo": {
+      "title": "Buy Fresh Kinnow Oranges Online - Juicy & Vitamin C Rich | Fruitful Box",
+      "description": "Order fresh Kinnow oranges online at Fruitful Box. Enjoy the juicy, sweet-tangy flavor packed with Vitamin C and antioxidants. Perfect for daily consumption and fresh juices. Limited stock available!",
+      "keywords": [
+        "Kinnow Oranges",
+        "Buy Kinnow Oranges Online",
+        "Fresh Fruits",
+        "Healthy Snacks"
+      ]
+    },
+    "reviews": [
+      {
+        "user": "Anjali P.",
+        "rating": 5,
+        "comment": "The Kinnow oranges were incredibly juicy and sweet! Perfect for my morning juice."
+      },
+      {
+        "user": "Rohit S.",
+        "rating": 4,
+        "comment": "Great quality oranges, nicely packed and delivered on time."
+      }
+    ]
   }
 ]
