@@ -1,6 +1,6 @@
 "use client";
-
-import React from "react";
+import { useSearchParams } from "next/navigation";
+import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { DetailsDialog } from "./DetailsDialog";
 import { useCaptureUTM } from "@/hooks/useCaptureUTM";
@@ -19,7 +19,13 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
     society: "",
   });
   const [open, setOpen] = React.useState(false); // State to control the dialog open/close
-  
+  const searchParams = useSearchParams();
+  const isBuyNow = searchParams.get("action") === "buy-now";
+  useEffect(() => {
+    if (isBuyNow) {
+      setOpen(true);
+    }
+  }, [isBuyNow]);
   // This hook captures UTM parameters and stores them in localStorage
   useCaptureUTM();
 
@@ -44,7 +50,7 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
     const encodedMessage = encodeURIComponent(message);
     const phoneNumber = "917558535953";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
+
     window.open(whatsappUrl, "_blank");
   };
   const buttonTitle = isAvailable
