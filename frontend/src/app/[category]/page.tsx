@@ -1,15 +1,25 @@
+'use client';
 import ServiceNotice from "@/components/ServiceNotice";
 import ProductCard from "@/components/ProductCard";
-import { use } from "react";
-import { getProductsByCategory } from "@/lib/utils";
+import { use, useEffect, useState } from "react";
+// import { getProductsByCategory } from "@/lib/utils";
 
 const ProductListPage: React.FC<{
   params: Promise<{ category: string; slug: string }>;
 }> = ({ params }) => {
   const resolvedParams = use(params);
   const { category } = resolvedParams;
-  const products = use(getProductsByCategory(category));
-
+  // const products = use(getProductsByCategory(category));
+  const [products, setProducts] = useState<Product[]>();
+   useEffect(() => {
+    if (category) {
+      console.log('going if');
+      fetch(`http://localhost:5000/api/${category}`)
+        .then((res) => res.json())
+        .then((data) => setProducts(data))
+        .catch((error) => console.error("Error fetching fruits:", error));
+    }
+  }, []);
   // const product = products.find((p: { slug: string }) => p.slug === slug);
   // if (!product) return <div>Product not found.</div>;
   // console.log("this.page called", resolvedParams);
@@ -34,7 +44,7 @@ const ProductListPage: React.FC<{
   //   slug: string;
   // }
 
-  const availableProducts: Product[] = (products as Product[]).filter(
+  const availableProducts: Product[] = (products as Product[])?.filter(
     (item: Product) => item.isAvailable
   );
   return (
@@ -45,7 +55,7 @@ const ProductListPage: React.FC<{
           {category.toUpperCase().replace("_", " ")}
         </h1>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {availableProducts.map((product: Product) => (
+          {availableProducts?.map((product: Product) => (
             <ProductCard
               key={product.slug}
               slug={product.slug}
