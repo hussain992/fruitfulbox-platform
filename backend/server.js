@@ -34,8 +34,16 @@ async function startServer() {
 
 app.get("/api/fruits", async (req, res) => {
   const db = req.app.locals.db;
-  const fruits = await db.collection("fruits").find({}).toArray();
-  res.json(fruits);
+  try {
+    const fruits = await db.collection("fruits").find({}).toArray();
+    console.log("Fetched fruits:", fruits);
+    res.json(fruits);
+  } catch (err) {
+    console.error("Error fetching fruits:", err);
+    res.status(500).json({ error: "Internal Server Error" });
+    return;
+  } 
+  
 });
 
 app.get("/api/jams", async (req, res) => {
