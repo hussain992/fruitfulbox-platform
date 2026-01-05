@@ -32,7 +32,7 @@ async function startServer() {
   }
 }
 
-app.get("/api/fruits", async (req, res) => {
+app.get("/fruits", async (req, res) => {
   const db = req.app.locals.db;
   try {
     const fruits = await db.collection("fruits").find({}).toArray();
@@ -46,19 +46,19 @@ app.get("/api/fruits", async (req, res) => {
   
 });
 
-app.get("/api/jams", async (req, res) => {
+app.get("/jams", async (req, res) => {
   const db = req.app.locals.db;
   const jams = await db.collection("jams").find({}).toArray();
   res.json(jams);
 });
 
-app.get("/api/boxes", async (req, res) => {
+app.get("/boxes", async (req, res) => {
   const db = req.app.locals.db;
   const boxes = await db.collection("boxes").find({}).toArray();
   res.json(boxes);
 });
 
-app.get("/api/cut_fruits", async (req, res) => {
+app.get("/cut_fruits", async (req, res) => {
   const db = req.app.locals.db;
   const cutFruits = await db.collection("cut_fruits").find({}).toArray();
   res.json(cutFruits);

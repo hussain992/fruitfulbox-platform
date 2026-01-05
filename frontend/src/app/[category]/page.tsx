@@ -14,7 +14,7 @@ const ProductListPage: React.FC<{
    useEffect(() => {
     if (category) {
       console.log('going if');
-      fetch(`http://136.116.75.160:5000/api/${category}`)
+      fetch(`/api/${category}`)
         .then((res) => res.json())
         .then((data) => setProducts(data))
         .catch((error) => console.error("Error fetching fruits:", error));
