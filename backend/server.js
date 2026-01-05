@@ -23,7 +23,7 @@ async function startServer() {
     console.log("Connected to MongoDB");
     app.locals.db = client.db("fruitfulbox");
 
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0',() => {
       console.log(`Server is running on port ${PORT}`);
     });
     } catch (err) { 
