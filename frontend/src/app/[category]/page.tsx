@@ -14,12 +14,13 @@ const ProductListPage: React.FC<{
    useEffect(() => {
     if (category) {
       console.log('going if');
-      fetch(`api/api/${category}`)
+      const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+      fetch(`${apiBaseUrl}/${category}`)
         .then((res) => res.json())
         .then((data) => setProducts(data))
         .catch((error) => console.error("Error fetching fruits:", error));
     }
-  }, []);
+  }, [category]);
   // const product = products.find((p: { slug: string }) => p.slug === slug);
   // if (!product) return <div>Product not found.</div>;
   // console.log("this.page called", resolvedParams);
