@@ -4,6 +4,8 @@ import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { DetailsDialog } from "./DetailsDialog";
 import { useCaptureUTM } from "@/hooks/useCaptureUTM";
+import { useDeviceType } from "@/hooks/useDeviceType";
+import FallbackOrderOptions from "./FallbackOrderOptions";
 
 interface Props {
   title: string;
@@ -20,6 +22,9 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
   });
   const [open, setOpen] = React.useState(false); // State to control the dialog open/close
   const [isRedirecting, setIsRedirecting] = React.useState(false); // State to show redirect message
+  const [showFallback, setShowFallback] = React.useState(false); // State to show fallback options
+  const [messageText, setMessageText] = React.useState(""); // Store the message for fallback
+  const { isMobile } = useDeviceType(); // Detect if device is mobile or desktop
   const searchParams = useSearchParams();
   const isBuyNow = searchParams.get("action") === "buy-now";
   useEffect(() => {
@@ -41,7 +46,6 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
   };
 
   const performWhatsAppRedirect = () => {
-    setIsRedirecting(true);
     const addr = `\n🏠 Address: Flat no ${userDetails.flatNo}, ${
       userDetails.wing
     } ${userDetails.wing && "wing,"} ${
@@ -53,13 +57,29 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
         userDetails.selectedDate &&
         `\n📅 Preferred Delivery: ${userDetails.selectedDate}`
       } ${addr && addr} ${source}`;
+    
+    setMessageText(message);
+    setIsRedirecting(true);
+    
     const encodedMessage = encodeURIComponent(message);
     const phoneNumber = "917558535953";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-    window.open(whatsappUrl, "_blank");
-    // Reset redirect state after a delay
-    setTimeout(() => setIsRedirecting(false), 2000);
+      console.log("WhatsApp URL: ", whatsappUrl);
+    // Open WhatsApp (works on mobile for app, desktop for web)
+    // window.open(whatsappUrl, "_blank");
+    
+    // Show fallback options only on desktop, after a delay
+    if (!isMobile) {
+      setTimeout(() => {
+        setIsRedirecting(false);
+        setShowFallback(true);
+      }, 3000);
+    } else {
+      // On mobile, just hide the redirecting modal
+      setTimeout(() => {
+        setIsRedirecting(false);
+      }, 1500);
+    }
   };
   const buttonTitle = isAvailable
     ? `Order on WhatsApp for ${price}`
@@ -91,8 +111,27 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
             <p className="text-sm text-gray-600 mt-2">
               Redirecting to WhatsApp to complete your order
             </p>
+            <button
+              onClick={() => {
+                setIsRedirecting(false);
+                setShowFallback(true);
+              }}
+              className="mt-4 text-sm text-blue-600 hover:text-blue-700 underline"
+            >
+              Didn't work? Try alternatives
+            </button>
           </div>
         </div>
+      )}
+
+      {/* Fallback Options Modal - Only show on desktop */}
+      {!isMobile && (
+        <FallbackOrderOptions
+          isOpen={showFallback}
+          messageText={messageText}
+          onClose={() => setShowFallback(false)}
+          phoneNumber="917558535953"
+        />
       )}
       {/* Order Button - Sticky on Mobile, Inline on Desktop */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:static bg-white px-4 py-3 md:p-0 border-t md:border-t-0 shadow-lg md:shadow-none">
