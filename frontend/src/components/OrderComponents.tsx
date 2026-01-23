@@ -37,8 +37,11 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
       setOpen(true);
       return;
     }
+    performWhatsAppRedirect();
+  };
+
+  const performWhatsAppRedirect = () => {
     setIsRedirecting(true);
-    console.log('redirecting to whatsapp',isRedirecting);
     const addr = `\n🏠 Address: Flat no ${userDetails.flatNo}, ${
       userDetails.wing
     } ${userDetails.wing && "wing,"} ${
@@ -67,7 +70,11 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
       <div className="mb-4"></div>
       {isAvailable && (
         <DetailsDialog
-          getDetails={(details) => setUserDetails(details)}
+          getDetails={(details) => {
+            setUserDetails(details);
+            // Trigger WhatsApp redirect after details are set
+            setTimeout(() => performWhatsAppRedirect(), 100);
+          }}
           defaultOpen={open}
         />
       )}
