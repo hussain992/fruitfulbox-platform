@@ -3,6 +3,7 @@ import ServiceNotice from "@/components/ServiceNotice";
 import ProductCard from "@/components/ProductCard";
 import { ProductGridSkeleton } from "@/components/ProductCardSkeleton";
 import { use, useEffect, useState } from "react";
+import { notFound } from "next/navigation";
 // import { getProductsByCategory } from "@/lib/utils";
 
 const ProductListPage: React.FC<{
@@ -13,23 +14,41 @@ const ProductListPage: React.FC<{
   // const products = use(getProductsByCategory(category));
   const [products, setProducts] = useState<Product[]>();
   const [isLoading, setIsLoading] = useState(true);
+  const [isInvalidCategory, setIsInvalidCategory] = useState(false);
    useEffect(() => {
     if (category) {
       setIsLoading(true);
+      setIsInvalidCategory(false);
       console.log('going if');
       const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
       fetch(`${apiBaseUrl}/${category}`)
-        .then((res) => res.json())
+        .then((res) => {
+          if (!res.ok) {
+            setIsInvalidCategory(true);
+            setIsLoading(false);
+            return null;
+          }
+          return res.json();
+        })
         .then((data) => {
-          setProducts(data);
+          if (data && Array.isArray(data)) {
+            setProducts(data);
+          } else {
+            setIsInvalidCategory(true);
+          }
           setIsLoading(false);
         })
         .catch((error) => {
           console.error("Error fetching fruits:", error);
+          setIsInvalidCategory(true);
           setIsLoading(false);
         });
     }
   }, [category]);
+
+  if (isInvalidCategory) {
+    notFound();
+  }
   // const product = products.find((p: { slug: string }) => p.slug === slug);
   // if (!product) return <div>Product not found.</div>;
   // console.log("this.page called", resolvedParams);

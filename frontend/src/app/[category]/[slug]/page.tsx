@@ -1,6 +1,7 @@
 import ProductDetails from '@/components/ProductDetails';
 import { getProductsByCategory } from '@/lib/utils';
 import { use } from 'react';
+import { notFound } from 'next/navigation';
 
 import type { Metadata } from 'next'
  
@@ -38,7 +39,10 @@ const ProductDetailPage: React.FC<{ params: Promise<{ category: string, slug: st
   const products = use(getProductsByCategory(category));
 
   const product = products.find((p: {slug: string}) => p.slug === slug);
-  // if (!product) return <div>Product not found.</div>;
+  
+  if (!product) {
+    notFound();
+  }
 
   return (
     <div>
