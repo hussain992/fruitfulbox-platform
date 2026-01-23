@@ -3,9 +3,9 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import OrderDetails from "@/components/OrderComponents";
-// import fruits from "@/lib/fruits.json";
 import ServiceNotice from "@/components/ServiceNotice";
-// import type { Metadata } from "next";
+import CustomerReviewsSection from "@/components/CustomerReviewsSection";
+// import fruits from "@/lib/fruits.json";
 
 // type ProductSlug = keyof typeof productData;
 
@@ -121,17 +121,7 @@ const ProductDetails: React.FC<{ product: Product }> = ({
         </div>
 
         {product?.reviews && product.reviews?.length > 0 && (
-          <div className="mt-12 border-t pt-8">
-            <h3 className="font-bold mb-4">Customer Reviews</h3>
-            <div className="space-y-4">
-              {product.reviews.map((review, i) => (
-                <div key={i} className="bg-gray-100 p-4 rounded-md shadow-sm">
-                  <p className="font-semibold">{review.user}</p>
-                  <p className="text-sm text-gray-700">{review.comment}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <CustomerReviewsSection reviews={product.reviews} />
         )}
 
         <div className="mt-12 text-center">
