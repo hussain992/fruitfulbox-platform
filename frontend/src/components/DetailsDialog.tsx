@@ -75,7 +75,7 @@ export const DetailsDialog: React.FC<DetailsDialogProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-md fixed">
+      <DialogContent className="sm:max-w-md fixed" aria-describedby="dialog-description">
         <DialogHeader>
           <DialogTitle>Enter Your Delivery Details</DialogTitle>
         </DialogHeader>

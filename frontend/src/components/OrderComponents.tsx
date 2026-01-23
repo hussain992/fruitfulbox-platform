@@ -19,6 +19,7 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
     society: "",
   });
   const [open, setOpen] = React.useState(false); // State to control the dialog open/close
+  const [isRedirecting, setIsRedirecting] = React.useState(false); // State to show redirect message
   const searchParams = useSearchParams();
   const isBuyNow = searchParams.get("action") === "buy-now";
   useEffect(() => {
@@ -36,6 +37,8 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
       setOpen(true);
       return;
     }
+    setIsRedirecting(true);
+    console.log('redirecting to whatsapp',isRedirecting);
     const addr = `\n🏠 Address: Flat no ${userDetails.flatNo}, ${
       userDetails.wing
     } ${userDetails.wing && "wing,"} ${
@@ -52,6 +55,8 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
     window.open(whatsappUrl, "_blank");
+    // Reset redirect state after a delay
+    setTimeout(() => setIsRedirecting(false), 2000);
   };
   const buttonTitle = isAvailable
     ? `Order on WhatsApp for ${price}`
@@ -66,14 +71,30 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
           defaultOpen={open}
         />
       )}
+      {/* Redirect Message */}
+      {isRedirecting && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+            <div className="animate-spin mb-4 inline-block">
+              <div className="h-8 w-8 border-4 border-green-500 border-t-transparent rounded-full"></div>
+            </div>
+            <p className="text-lg font-semibold text-gray-800">
+              Opening WhatsApp...
+            </p>
+            <p className="text-sm text-gray-600 mt-2">
+              Redirecting to WhatsApp to complete your order
+            </p>
+          </div>
+        </div>
+      )}
       {/* Order Button - Sticky on Mobile, Inline on Desktop */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:static bg-white px-4 py-3 md:p-0 border-t md:border-t-0 shadow-lg md:shadow-none">
         <Button
           onClick={handleWhatsAppOrder}
-          disabled={disableOrderButton}
+          disabled={disableOrderButton || isRedirecting}
           className="w-full md:w-auto md:ml-4 bg-green-500 hover:bg-green-600 text-white px-6 py-3 md:py-2 rounded-md shadow"
         >
-          {buttonTitle}
+          {isRedirecting ? "Redirecting..." : buttonTitle}
         </Button>
       </div>
     </>
