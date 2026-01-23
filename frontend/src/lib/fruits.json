@@ -945,5 +945,75 @@
         "comment": "Great quality oranges, nicely packed and delivered on time."
       }
     ]
+  },
+  {
+    "id": "strawberry",
+    "slug": "strawberry",
+    "title": "Fresh Strawberries",
+    "price": {
+      "original": "₹170/350g",
+      "discounted": "₹149/350g"
+    },
+    "category": "fruits",
+    "variant": "Premium",
+    "description": "Fresh, juicy strawberries with a naturally sweet taste and vibrant red color. Rich in antioxidants and Vitamin C, perfect for healthy snacking, desserts, and smoothies.",
+    "benefits": [
+      "High in Vitamin C",
+      "Rich in antioxidants",
+      "Supports heart health",
+      "Good for skin health",
+      "Low-calorie fruit"
+    ],
+    "usage": ["Eat fresh", "Smoothies", "Desserts", "Fruit bowls", "Salads"],
+    "origin": "India",
+    "season": "Winter",
+    "quality": "Premium Grade",
+    "storage": "Refrigerate and consume within 2–3 days for best freshness",
+    "packaging": "Carefully packed in breathable, eco-friendly packaging",
+    "isAvailable": true,
+    "stock": 25,
+    "reviews": [
+      {
+        "id": "rev-001",
+        "user": "Ayesha M.",
+        "rating": 5,
+        "comment": "Very fresh and sweet strawberries. Perfect for my morning smoothies!",
+        "date": "2025-01-12"
+      },
+      {
+        "id": "rev-002",
+        "user": "Rohan P.",
+        "rating": 4,
+        "comment": "Good quality and well packed. Slightly small in size but taste was great.",
+        "date": "2025-01-15"
+      },
+      {
+        "id": "rev-003",
+        "user": "Neha K.",
+        "rating": 5,
+        "comment": "Loved the freshness! Arrived in perfect condition and lasted well in the fridge.",
+        "date": "2025-01-18"
+      },
+      {
+        "id": "rev-004",
+        "user": "Sameer S.",
+        "rating": 4,
+        "comment": "Juicy and fresh. Would definitely order again from Fruitful Box.",
+        "date": "2025-01-20"
+      }
+    ],
+    "image": "/images/strawberry.jpeg",
+    "tags": [
+      "strawberry",
+      "berries",
+      "fresh fruits",
+      "vitamin c",
+      "healthy snacks",
+      "fruitful box"
+    ],
+    "seo": {
+      "metaTitle": "Fresh Strawberries Online | Fruitful Box",
+      "metaDescription": "Buy fresh strawberries online from Fruitful Box. Premium quality, rich in antioxidants and Vitamin C. Fresh fruit delivered to your doorstep."
+    }
   }
 ]
