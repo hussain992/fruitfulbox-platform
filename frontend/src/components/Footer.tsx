@@ -1,145 +1,157 @@
-
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-yellow-100 border-t mt-10">
-      <div className="max-w-6xl mx-auto px-4 py-8 text-sm text-gray-800 space-y-4">
-        <div className="text-center text-[13px] leading-relaxed">
-          <p>
-            🚚 Delivering every <strong>Sunday & Wednesday</strong> between{" "}
-            <strong>10 AM – 12 PM</strong>. <br />
-            📍 <strong>Pune only</strong>.
-            {/* <Link href="/delivery" className="underline ml-1 hover:text-red-600">See details</Link> */}
-          </p>
-        </div>
-        <div className="flex justify-center space-x-4">
-          <a
-            href="https://www.instagram.com/fruitful.box"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="32"
-              height="32"
-              viewBox="0 0 48 48"
-            >
-              <radialGradient
-                id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1"
-                cx="19.38"
-                cy="42.035"
-                r="44.899"
-                gradientUnits="userSpaceOnUse"
+    <footer className="bg-gray-900 text-gray-300">
+      {/* Main Footer Content */}
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          {/* Company Info */}
+          <div>
+            <h3 className="text-white font-bold text-lg mb-4">Fruitful Box</h3>
+            <p className="text-sm text-gray-400 mb-4">
+              Fresh, handpicked seasonal fruits delivered to your door in Pune.
+            </p>
+            <div className="flex space-x-4">
+              <a
+                href="https://www.instagram.com/fruitful.box"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-pink-500 transition"
+                aria-label="Instagram"
               >
-                <stop offset="0" stopColor="#fd5"></stop>
-                <stop offset=".328" stopColor="#ff543f"></stop>
-                <stop offset=".348" stopColor="#fc5245"></stop>
-                <stop offset=".504" stopColor="#e64771"></stop>
-                <stop offset=".643" stopColor="#d53e91"></stop>
-                <stop offset=".761" stopColor="#cc39a4"></stop>
-                <stop offset=".841" stopColor="#c837ab"></stop>
-              </radialGradient>
-              <path
-                fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)"
-                d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"
-              ></path>
-              <radialGradient
-                id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2"
-                cx="11.786"
-                cy="5.54"
-                r="29.813"
-                gradientTransform="matrix(1 0 0 .6663 0 1.849)"
-                gradientUnits="userSpaceOnUse"
+                <svg
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.07 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61569871812547"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-500 transition"
+                aria-label="Facebook"
               >
-                <stop offset="0" stopColor="#4168c9"></stop>
-                <stop
-                  offset=".999"
-                  stopColor="#4168c9"
-                  stopOpacity="0"
-                ></stop>
-              </radialGradient>
-              <path
-                fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)"
-                d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"
-              ></path>
-              <path
-                fill="#fff"
-                d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"
-              ></path>
-              <circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle>
-              <path
-                fill="#fff"
-                d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"
-              ></path>
-            </svg>
-          </a>
-          <a
-            href="https://www.facebook.com/profile.php?id=61569871812547"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            width="32"
-            height="32"
-            viewBox="0 0 48 48"
-          >
-            <path
-              fill="#3F51B5"
-              d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
-            ></path>
-            <path
-              fill="#FFF"
-              d="M34.368,25H31v13h-5V25h-3v-4h3v-2.41c0.002-3.508,1.459-5.59,5.592-5.59H35v4h-2.287C31.104,17,31,17.6,31,18.723V21h4L34.368,25z"
-            ></path>
-          </svg></a>
-          <a
-            href="https://wa.me/7558535953"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Whatsapp"
-          >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            width="32"
-            height="32"
-            viewBox="0 0 48 48"
-          >
-            <path
-              fill="#fff"
-              d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"
-            ></path>
-            <path
-              fill="#fff"
-              d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"
-            ></path>
-            <path
-              fill="#cfd8dc"
-              d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"
-            ></path>
-            <path
-              fill="#40c351"
-              d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"
-            ></path>
-            <path
-              fill="#fff"
-              fillRule="evenodd"
-              d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
-              clipRule="evenodd"
-            ></path>
-          </svg></a>
-          {/* Add more social icons here if needed */}
+                <svg
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/7558535953"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-500 transition"
+                aria-label="WhatsApp"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.429.742 4.768 2.148 6.746L2.929 22.29l7.261-1.906a9.865 9.865 0 004.991 1.271h.004c5.444 0 9.867-4.414 9.967-9.852.099-5.438-4.314-9.888-9.679-9.888zM19.19 18.196c-5.582 5.592-14.556 5.592-20.139 0-5.582-5.591-5.582-14.655 0-20.247 5.582-5.592 14.556-5.592 20.139 0 5.582 5.592 5.582 14.655 0 20.247z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Shop</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/fruits" className="hover:text-white transition">
+                  Fresh Fruits
+                </Link>
+              </li>
+              <li>
+                <Link href="/cut_fruits" className="hover:text-white transition">
+                  Cut Fruits
+                </Link>
+              </li>
+              <li>
+                <Link href="/boxes" className="hover:text-white transition">
+                  Fruit Boxes
+                </Link>
+              </li>
+              <li>
+                <Link href="/jams" className="hover:text-white transition">
+                  Jams
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Information */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Information</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/about" className="hover:text-white transition">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <a href="mailto:contact@fruitfulbox.com" className="hover:text-white transition">
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/7558535953" className="hover:text-white transition">
+                  WhatsApp Support
+                </a>
+              </li>
+              <li>
+                <Link href="/about#faq" className="hover:text-white transition">
+                  FAQs
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Delivery Info */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Delivery</h4>
+            <div className="space-y-3 text-sm">
+              <div>
+                <p className="text-gray-400">📍 Service Area</p>
+                <p className="text-white">Pune, Maharashtra</p>
+              </div>
+              <div>
+                <p className="text-gray-400">📅 Delivery Days</p>
+                <p className="text-white">Sunday & Wednesday</p>
+              </div>
+              <div>
+                <p className="text-gray-400">⏰ Time Slot</p>
+                <p className="text-white">10 AM – 12 PM</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="text-center pt-4 border-t text-xs text-gray-600">
-          <p>© {new Date().getFullYear()} Fruitful Box. All rights reserved.</p>
+
+          {/* Divider */}
+        <div className="border-t border-gray-700 pt-8">
+          {/* Bottom Footer */}
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>© {new Date().getFullYear()} Fruitful Box. All rights reserved.</p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <Link href="/privacy-policy" className="hover:text-white transition">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-conditions" className="hover:text-white transition">
+                Terms & Conditions
+              </Link>
+              <a href="mailto:contact@fruitfulbox.com" className="hover:text-white transition">
+                Contact
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

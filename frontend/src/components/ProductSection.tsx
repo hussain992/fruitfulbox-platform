@@ -8,6 +8,7 @@ import ProductCard from "./ProductCard";
 // import Link from "next/link";
 interface ProductSectionProps {
   title?: string;
+  description?: string;
 }
 // const boxProducts = [
 // 	{
@@ -69,7 +70,7 @@ interface ProductSectionProps {
 // 	}
 // ];
 
-export default function ProductSection({ title }: ProductSectionProps) {
+export default function ProductSection({ title, description }: ProductSectionProps) {
   const category = title?.includes("Fruit Boxes")
     ? "boxes"
     : title?.includes("Cut Fruits")
@@ -90,30 +91,28 @@ export default function ProductSection({ title }: ProductSectionProps) {
     (product) => product.isAvailable && product.tags.includes("trending")
   );
   return (
-    <section className="py-8 px-4 bg-white">
-      <h2 className="text-3xl font-bold text-center mb-6">{title}</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product, index) => (
-          <ProductCard
-            key={index}
-            image={product.image}
-            title={product.title}
-            description={product.description}
-            slug={product.slug}
-            isAvailable={product.isAvailable}
-            category={category}
-            price={product.price}
-          />
-        ))}
-      </div>
-      {/* <Button>View More Fruits</Button> */}
-      <div className="mt-12 text-center">
-        {/* <Link
-          href={`/${product.category}`}
-          className="text-blue-600 hover:underline"
-        >
-          ← Back to {product.category || "products"}
-        </Link> */}
+    <section className="py-12 md:py-16 px-4 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{title}</h2>
+          {description && (
+            <p className="text-lg text-gray-600">{description}</p>
+          )}
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {products.map((product, index) => (
+            <ProductCard
+              key={index}
+              image={product.image}
+              title={product.title}
+              description={product.description}
+              slug={product.slug}
+              isAvailable={product.isAvailable}
+              category={category}
+              price={product.price}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
