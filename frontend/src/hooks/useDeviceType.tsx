@@ -8,8 +8,8 @@ export const useDeviceType = () => {
     const checkMobile = () => {
       const isTouchDevice =
         window.matchMedia("(pointer:coarse)").matches ||
-        navigator.maxTouchPoints > 0 ||
-        navigator.msMaxTouchPoints > 0;
+        navigator.maxTouchPoints > 0;
+        // navigator.msMaxTouchPoints > 0;
 
       const isSmallViewport = window.innerWidth < 768; // md breakpoint in Tailwind
       
