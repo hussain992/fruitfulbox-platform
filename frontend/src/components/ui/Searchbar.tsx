@@ -1,28 +1,90 @@
 // components/SearchBar.js
 "use client";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { Search, X } from 'lucide-react';
 
-// interface SearchBarProps {
-//   onSearch: (query: string) => void;
-// }
-
-export default function SearchBar() {
-  const [query, setQuery] = useState('');
-
-
-function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
-    const value = e.target.value;
-    setQuery(value);
-    // onSearch(value);
+interface SearchBarProps {
+  isMobile?: boolean;
 }
 
+export default function SearchBar({ isMobile = false }: SearchBarProps) {
+  const [query, setQuery] = useState('');
+  const router = useRouter();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (query.trim()) {
+      router.push(`/search?q=${encodeURIComponent(query)}`);
+      setQuery('');
+    }
+  };
+
+  const clearSearch = () => {
+    setQuery('');
+  };
+
+  if (isMobile) {
+    return (
+      <form onSubmit={handleSearch} className="w-full">
+        <div className="relative flex items-center">
+          <input
+            type="text"
+            value={query}
+            onChange={handleChange}
+            placeholder="Search fruits..."
+            className="w-full px-4 py-2 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={clearSearch}
+              className="absolute right-12 text-gray-400 hover:text-gray-600"
+            >
+              <X size={18} />
+            </button>
+          )}
+          <button
+            type="submit"
+            className="absolute right-3 text-green-600 hover:text-green-700"
+          >
+            <Search size={18} />
+          </button>
+        </div>
+      </form>
+    );
+  }
+
   return (
-    <input
-      type="text"
-      value={query}
-      onChange={handleChange}
-      placeholder="Search for fruits..."
-      className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-    />
+    <form onSubmit={handleSearch} className="hidden md:block">
+      <div className="relative">
+        <input
+          type="text"
+          value={query}
+          onChange={handleChange}
+          placeholder="Search fruits..."
+          className="px-4 py-2 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 w-full"
+        />
+        {query && (
+          <button
+            type="button"
+            onClick={clearSearch}
+            className="absolute right-12 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+          >
+            <X size={18} />
+          </button>
+        )}
+        <button
+          type="submit"
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-green-600 hover:text-green-700"
+        >
+          <Search size={18} />
+        </button>
+      </div>
+    </form>
   );
 }

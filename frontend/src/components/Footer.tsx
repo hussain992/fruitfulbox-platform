@@ -147,7 +147,7 @@ export default function Footer() {
               <Link href="/terms-conditions" className="hover:text-white transition">
                 Terms & Conditions
               </Link>
-              <a href="mailto:contact@fruitfulbox.com" className="hover:text-white transition">
+              <a href="mailto:fruitfulbox992@gmail.com" className="hover:text-white transition">
                 Contact
               </a>
             </div>
