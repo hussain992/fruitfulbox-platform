@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import { ProductGridSkeleton } from "@/components/ProductCardSkeleton";
 import { use, useEffect, useState } from "react";
 import { notFound } from "next/navigation";
+import { Product } from "@/types";
 // import { getProductsByCategory } from "@/lib/utils";
 
 const ProductListPage: React.FC<{
@@ -56,18 +57,6 @@ const ProductListPage: React.FC<{
 
   // const sortedProducts = products.sort((a: { isAvailable: boolean; }, b: { isAvailable: boolean; }) =>
   //   Number(b.isAvailable) - Number(a.isAvailable))
-  interface Product {
-    slug: string;
-    title: string;
-    image: string;
-    isAvailable?: boolean;
-    price: {
-      original: string;
-      discounted?: string;
-    };
-    buttonText?: string;
-  }
-
   // interface Params {
   //   category: string;
   //   slug: string;

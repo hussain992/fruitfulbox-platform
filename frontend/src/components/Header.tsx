@@ -68,7 +68,7 @@ export default function Header() {
           {/* Center: Search */}
           <div className="flex justify-center">
             <div className="w-full max-w-xs">
-              {/* <SearchBar /> */}
+              <SearchBar />
             </div>
           </div>
 

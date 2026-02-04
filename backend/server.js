@@ -32,6 +32,30 @@ async function startServer() {
   }
 }
 
+app.get("/search", async (req, res) => {
+  console.log('Received search query:fha', req.query.q);
+  const db = req.app.locals.db;
+  
+  const searchQuery = req.query.q; // Get the search query from the request parameters
+  try {
+    const collections = await Promise.all([
+      db.collection("fruits").find({}).toArray(),
+      db.collection("jams").find({}).toArray(),
+      db.collection("boxes").find({}).toArray(),
+      db.collection("cut_fruits").find({}).toArray(),
+      // Add more collections as needed
+    ]);
+
+    const results = [].concat(...collections); // Merge the results from all collections
+    console.log(`Search results:`, results);
+    res.json(results);
+  } catch (err) {
+    console.error(`Error searching:`, err);
+    res.status(500).json({ error: "Internal Server Error" });
+    return;
+  } 
+});
+
 app.get("/fruits", async (req, res) => {
   const db = req.app.locals.db;
   try {
