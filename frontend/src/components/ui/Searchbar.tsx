@@ -1,11 +1,11 @@
 // components/SearchBar.js
 "use client";
-import { useState } from 'react';
+import { useState } from "react";
 // import { useRouter } from 'next/navigation';
-import { Search, X } from 'lucide-react';
+import { Search, X } from "lucide-react";
 // import { filter } from 'framer-motion/client';
-import ProductList from './ProductList';
-import { Product } from '@/types';
+import ProductList from "./ProductList";
+import { Product } from "@/types";
 // import { Product } from '@/types';
 
 interface SearchBarProps {
@@ -13,7 +13,7 @@ interface SearchBarProps {
 }
 
 export default function SearchBar({ isMobile = false }: SearchBarProps) {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   // const router = useRouter();
   // const [products, setProducts] = useState<Product[]>([]);
@@ -39,7 +39,9 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
           console.log(data);
           if (data && Array.isArray(data)) {
             // setProducts(data);
-            const result = data.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()));
+            const result = data.filter((item) =>
+              item.title.toLowerCase().includes(query.toLowerCase()),
+            );
             console.log("Filtered data:", result);
             setFilteredProducts(result);
             // router.push(`/search?q=${encodeURIComponent(query)}`);
@@ -47,14 +49,14 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
             // setIsInvalidCategory(true);
           }
           // setIsLoading(false);
-        })
+        });
       // router.push(`/search?q=${encodeURIComponent(query)}`);
       // setQuery('');
     }
   };
 
   const clearSearch = () => {
-    setQuery('');
+    setQuery("");
   };
 
   if (isMobile) {
@@ -83,6 +85,11 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
           >
             <Search size={18} />
           </button>
+          {filteredProducts.length > 0 && (
+            <div className="absolute left-0 bg-white right-0 top-5 mt-5 z-10 w-full">
+              <ProductList products={filteredProducts} />
+            </div>
+          )}
         </div>
       </form>
     );
@@ -113,7 +120,11 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
         >
           <Search size={18} />
         </button>
-        {filteredProducts.length > 0 && (<ProductList products={filteredProducts} />)}
+        {filteredProducts.length > 0 && (
+          <div className="absolute bg-white rounded-lg shadow-lg z-10 w-full">
+            <ProductList products={filteredProducts} />
+          </div>
+        )}
       </div>
     </form>
   );
