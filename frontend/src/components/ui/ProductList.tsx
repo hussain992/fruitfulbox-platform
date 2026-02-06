@@ -1,4 +1,5 @@
 import { Product } from "@/types";
+import Link from "next/dist/client/link";
 // import React, { useState } from 'react';
 
 const ProductList = ({ products }: { products: Product[] }) => {
@@ -17,9 +18,13 @@ const ProductList = ({ products }: { products: Product[] }) => {
       <ul className="list-none p-0 m-0">
         {products.map((product) => (
           <li key={product.slug} className="flex items-center mb-2">
-            <span className="text-gray-900 font-bold mr-2">
-              {product.title}
-            </span>
+            <Link href={`/${product.category}/${product.slug}`}>
+              {/* <a> */}
+                <span className="text-gray-900 font-bold mr-2">
+                  {product.title}
+                </span>
+              {/* </a> */}
+            </Link>
             {/* Add more product details as needed */}
           </li>
         ))}

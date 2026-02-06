@@ -39,9 +39,15 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
           console.log(data);
           if (data && Array.isArray(data)) {
             // setProducts(data);
-            const result = data.filter((item) =>
-              item.title.toLowerCase().includes(query.toLowerCase()),
-            );
+            const result = data
+              .filter((item) =>
+                item.title.toLowerCase().includes(query.toLowerCase()),
+              )
+              .sort((a, b) => {
+                if (a.title.toLowerCase() === query.toLowerCase()) return -1; // Move 'a' to a lower index
+                if (b.title.toLowerCase() === query.toLowerCase()) return 1; // Move 'b' to a lower index
+                return 0; // Keep relative order for others
+              });
             console.log("Filtered data:", result);
             setFilteredProducts(result);
             // router.push(`/search?q=${encodeURIComponent(query)}`);
@@ -56,6 +62,7 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
   };
 
   const clearSearch = () => {
+    setFilteredProducts([]);
     setQuery("");
   };
 
@@ -120,7 +127,7 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
         >
           <Search size={18} />
         </button>
-        {filteredProducts.length > 0 && (
+        {query && filteredProducts.length > 0 && (
           <div className="absolute bg-white rounded-lg shadow-lg z-10 w-full">
             <ProductList products={filteredProducts} />
           </div>

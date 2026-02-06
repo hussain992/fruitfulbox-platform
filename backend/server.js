@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
 // const express = require("express");
@@ -18,43 +18,62 @@ app.get("/", (req, res) => {
 async function startServer() {
   console.log("MONGODB_URI:");
   const client = new MongoClient(process.env.MONGODB_URI);
-    try {
+  try {
     await client.connect();
     console.log("Connected to MongoDB");
     app.locals.db = client.db("fruitfulbox");
 
-    app.listen(PORT, '0.0.0.0',() => {
+    app.listen(PORT, "0.0.0.0", () => {
       console.log(`Server is running on port ${PORT}`);
     });
-    } catch (err) { 
+  } catch (err) {
     console.error("Failed to connect to MongoDB", err);
     process.exit(1);
   }
 }
 
 app.get("/search", async (req, res) => {
-  console.log('Received search query:fha', req.query.q);
+  console.log("Received search query:fha", req.query.q);
   const db = req.app.locals.db;
-  
+
   const searchQuery = req.query.q; // Get the search query from the request parameters
   try {
-    const collections = await Promise.all([
-      db.collection("fruits").find({}).toArray(),
-      db.collection("jams").find({}).toArray(),
-      db.collection("boxes").find({}).toArray(),
-      db.collection("cut_fruits").find({}).toArray(),
-      // Add more collections as needed
-    ]);
+    const collections = ["fruits", "jams", "boxes", "cut_fruits"];
 
-    const results = [].concat(...collections); // Merge the results from all collections
+    const results = await Promise.all(
+      collections.map((collection) =>
+        db
+          .collection(collection)
+          .find({ title: { $regex: searchQuery, $options: "i" } })
+          .toArray(),
+      ),
+    );
+
     console.log(`Search results:`, results);
     res.json(results);
   } catch (err) {
     console.error(`Error searching:`, err);
     res.status(500).json({ error: "Internal Server Error" });
     return;
-  } 
+  }
 });
+// const collections = await Promise.all([
+//   db.collection("fruits").find({}).toArray(),
+//   db.collection("jams").find({}).toArray(),
+//   db.collection("boxes").find({}).toArray(),
+//   db.collection("cut_fruits").find({}).toArray(),
+//   // Add more collections as needed
+// ]);
+
+// const results = [].concat(...collections); // Merge the results from all collections
+// console.log(`Search results:`, results);
+// res.json(results);
+// } catch (err) {
+//   console.error(`Error searching:`, err);
+//   res.status(500).json({ error: "Internal Server Error" });
+//   return;
+// }
+// });
 
 app.get("/fruits", async (req, res) => {
   const db = req.app.locals.db;
@@ -63,29 +82,38 @@ app.get("/fruits", async (req, res) => {
     console.log("Fetched fruits:", fruits);
     res.json(fruits);
   } catch (err) {
-    console.error("Error fetching fruits:", err);
-    res.status(500).json({ error: "Internal Server Error" });
-    return;
-  } 
-  
+    next(err);
+  }
 });
 
 app.get("/jams", async (req, res) => {
   const db = req.app.locals.db;
-  const jams = await db.collection("jams").find({}).toArray();
-  res.json(jams);
+  try {
+    const jams = await db.collection("jams").find({}).toArray();
+    res.json(jams);
+  } catch (err) {
+    next(err);
+  }
 });
 
 app.get("/boxes", async (req, res) => {
   const db = req.app.locals.db;
-  const boxes = await db.collection("boxes").find({}).toArray();
-  res.json(boxes);
+  try {
+    const boxes = await db.collection("boxes").find({}).toArray();
+    res.json(boxes);
+  } catch (err) {
+    next(err);
+  }
 });
 
 app.get("/cut_fruits", async (req, res) => {
   const db = req.app.locals.db;
-  const cutFruits = await db.collection("cut_fruits").find({}).toArray();
-  res.json(cutFruits);
+  try {
+    const cutFruits = await db.collection("cut_fruits").find({}).toArray();
+    res.json(cutFruits);
+  } catch (err) {
+    next(err);
+  }
 });
 
 startServer();
