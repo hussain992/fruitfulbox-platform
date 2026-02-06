@@ -113,8 +113,8 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
         >
           <Search size={18} />
         </button>
-      </div>
         {filteredProducts.length > 0 && (<ProductList products={filteredProducts} />)}
+      </div>
     </form>
   );
 }
