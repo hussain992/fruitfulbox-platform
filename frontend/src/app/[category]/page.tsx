@@ -5,6 +5,7 @@ import { ProductGridSkeleton } from "@/components/ProductCardSkeleton";
 import { use, useEffect, useState } from "react";
 import { notFound } from "next/navigation";
 import { Product } from "@/types";
+import { useCachedData } from "@/hooks/useCachedData";
 // import { getProductsByCategory } from "@/lib/utils";
 
 const ProductListPage: React.FC<{
@@ -13,43 +14,46 @@ const ProductListPage: React.FC<{
   const resolvedParams = use(params);
   const { category } = resolvedParams;
   // const products = use(getProductsByCategory(category));
-  const [products, setProducts] = useState<Product[]>();
-  const [isLoading, setIsLoading] = useState(true);
-  const [isInvalidCategory, setIsInvalidCategory] = useState(false);
-   useEffect(() => {
-    if (category) {
-      setIsLoading(true);
-      setIsInvalidCategory(false);
-      console.log('going if');
-      const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-      fetch(`${apiBaseUrl}/${category}`)
-        .then((res) => {
-          if (!res.ok) {
-            setIsInvalidCategory(true);
-            setIsLoading(false);
-            return null;
-          }
-          return res.json();
-        })
-        .then((data) => {
-          if (data && Array.isArray(data)) {
-            setProducts(data);
-          } else {
-            setIsInvalidCategory(true);
-          }
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          console.error("Error fetching fruits:", error);
-          setIsInvalidCategory(true);
-          setIsLoading(false);
-        });
-    }
-  }, [category]);
+  // const [products, setProducts] = useState<Product[]>();
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [isInvalidCategory, setIsInvalidCategory] = useState(false);
+  // const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const { data: products, isLoading: isProductsLoading } = useCachedData(`${category}`);
+  const safeProducts: Product[] = Array.isArray(products) ? products : []; 
 
-  if (isInvalidCategory) {
-    notFound();
-  }
+  //  useEffect(() => {
+  //   if (category) {
+  //     // setIsLoading(true);
+  //     setIsInvalidCategory(false);
+  //     console.log('going if');
+  //     // fetch(`${apiBaseUrl}/${category}`)
+  //       // .then((res) => {
+  //       //   if (!res.ok) {
+  //       //     setIsInvalidCategory(true);
+  //       //     setIsLoading(false);
+  //       //     return null;
+  //       //   }
+  //       //   return res.json();
+  //       // })
+  //       // .then((data) => {
+  //       //   if (data && Array.isArray(data)) {
+  //       //     setProducts(data);
+  //       //   } else {
+  //       //     setIsInvalidCategory(true);
+  //       //   }
+  //       //   setIsLoading(false);
+  //       // })
+  //       // .catch((error) => {
+  //       //   console.error("Error fetching fruits:", error);
+  //       //   setIsInvalidCategory(true);
+  //       //   setIsLoading(false);
+  //       // });
+  //   }
+  // }, [category]);
+
+  // if (isInvalidCategory) {
+  //   notFound();
+  // }
   // const product = products.find((p: { slug: string }) => p.slug === slug);
   // if (!product) return <div>Product not found.</div>;
   // console.log("this.page called", resolvedParams);
@@ -62,9 +66,7 @@ const ProductListPage: React.FC<{
   //   slug: string;
   // }
 
-  const availableProducts: Product[] = (products as Product[])?.filter(
-    (item: Product) => item.isAvailable
-  );
+  const availableProducts = safeProducts.length > 0 ? safeProducts.filter((item: Product) => item.isAvailable) : [];
   return (
     <>
       <ServiceNotice />
@@ -72,7 +74,7 @@ const ProductListPage: React.FC<{
         <h1 className="text-3xl font-bold mb-6">
           {category.toUpperCase().replace("_", " ")}
         </h1>
-        {isLoading ? (
+        {isProductsLoading ? (
           <ProductGridSkeleton />
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
