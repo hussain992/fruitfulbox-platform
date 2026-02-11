@@ -49,8 +49,16 @@ app.get("/search", async (req, res) => {
       ),
     );
 
-    console.log(`Search results:`, results);
-    res.json(results);
+    // remove empty results and flatten the array
+    const flattenedResults = results.reduce((acc, curr) => {
+      if (curr.length > 0) {
+        return acc.concat(curr);
+      }
+      return acc;
+    }, []);
+
+    console.log(`Search results:`, flattenedResults);
+    res.json(flattenedResults);
   } catch (err) {
     console.error(`Error searching:`, err);
     res.status(500).json({ error: "Internal Server Error" });

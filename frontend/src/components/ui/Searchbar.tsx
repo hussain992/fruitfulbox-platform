@@ -40,9 +40,6 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
           if (data && Array.isArray(data)) {
             // setProducts(data);
             const result = data
-              .filter((item) =>
-                item.title.toLowerCase().includes(query.toLowerCase()),
-              )
               .sort((a, b) => {
                 if (a.title.toLowerCase() === query.toLowerCase()) return -1; // Move 'a' to a lower index
                 if (b.title.toLowerCase() === query.toLowerCase()) return 1; // Move 'b' to a lower index
