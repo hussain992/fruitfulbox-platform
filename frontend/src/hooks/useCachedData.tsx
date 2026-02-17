@@ -15,6 +15,7 @@ export const useCachedData = <T,>(
 
   const executeFetch = useCallback(async () => {
     setIsLoading(true);
+    console.log('api called again');
     try {
       const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
       const newData = await fetch(`${apiBaseUrl}/${key}`).then((res) =>
@@ -55,6 +56,7 @@ export const useCachedData = <T,>(
         }
       } catch (e) {
         // If JSON parse fails, treat as empty cache
+        console.error(`Error parsing cached data for key "${key}":`, e);
         localStorage.removeItem(key);
       }
     }
