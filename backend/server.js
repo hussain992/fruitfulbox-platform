@@ -6,7 +6,7 @@ import cors from "cors";
 import { MongoClient } from "mongodb";
 
 const app = express();
-const PORT = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -23,8 +23,8 @@ async function startServer() {
     console.log("Connected to MongoDB");
     app.locals.db = client.db("fruitfulbox");
 
-    app.listen(PORT, "0.0.0.0", () => {
-      console.log(`Server is running on port ${PORT}`);
+    app.listen(port, "0.0.0.0", () => {
+      console.log(`Server is running on port ${port}`);
     });
   } catch (err) {
     console.error("Failed to connect to MongoDB", err);
