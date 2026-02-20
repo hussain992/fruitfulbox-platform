@@ -14,7 +14,7 @@ COPY package*.json ./
 # Only install production dependencies (no typescript, etc.)
 RUN npm install --only=production
 # Copy only the compiled code from the builder stage
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app .
 
 # Use the PORT variable provided by Cloud Run
 ENV PORT=8080
