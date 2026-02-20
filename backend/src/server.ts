@@ -1,5 +1,7 @@
 import "dotenv/config";
 import express from "express";
+import type { NextFunction } from 'express';
+
 import cors from "cors";
 // const express = require("express");
 // const cors = require("cors");
@@ -17,14 +19,19 @@ app.get("/", (req, res) => {
 
 async function startServer() {
   console.log("MONGODB_URI:");
-  const client = new MongoClient(process.env.MONGODB_URI);
+  const mongoUri = process.env.MONGODB_URI;
+  if (!mongoUri) {
+    console.error("MONGODB_URI environment variable is not defined");
+    process.exit(1);
+  }
+  const client = new MongoClient(mongoUri);
   try {
     await client.connect();
     console.log("Connected to MongoDB");
     app.locals.db = client.db("fruitfulbox");
 
-    app.listen(port, "0.0.0.0", () => {
-      console.log(`Server is running on port ${port}`);
+    app.listen(8080, "0.0.0.0", () => {
+      console.log(`Server is running on port 8080`);
     });
   } catch (err) {
     console.error("Failed to connect to MongoDB", err);
@@ -83,7 +90,7 @@ app.get("/search", async (req, res) => {
 // }
 // });
 
-app.get("/fruits", async (req, res) => {
+app.get("/fruits", async (req, res, next: NextFunction) => {
   const db = req.app.locals.db;
   try {
     const fruits = await db.collection("fruits").find({}).toArray();
@@ -94,7 +101,7 @@ app.get("/fruits", async (req, res) => {
   }
 });
 
-app.get("/jams", async (req, res) => {
+app.get("/jams", async (req, res, next: NextFunction) => {
   const db = req.app.locals.db;
   try {
     const jams = await db.collection("jams").find({}).toArray();
@@ -104,7 +111,7 @@ app.get("/jams", async (req, res) => {
   }
 });
 
-app.get("/boxes", async (req, res) => {
+app.get("/boxes", async (req, res, next: NextFunction) => {
   const db = req.app.locals.db;
   try {
     const boxes = await db.collection("boxes").find({}).toArray();
@@ -114,7 +121,7 @@ app.get("/boxes", async (req, res) => {
   }
 });
 
-app.get("/cut_fruits", async (req, res) => {
+app.get("/cut_fruits", async (req, res, next: NextFunction) => {
   const db = req.app.locals.db;
   try {
     const cutFruits = await db.collection("cut_fruits").find({}).toArray();
@@ -125,3 +132,9 @@ app.get("/cut_fruits", async (req, res) => {
 });
 
 startServer();
+
+app.use((err: unknown, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  console.error("Error:", err);
+  res.status(500).json({ error: "Internal Server Error" });
+});
+

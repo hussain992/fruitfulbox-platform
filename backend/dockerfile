@@ -8,16 +8,12 @@ COPY . .
 RUN npm run build 
 
 # Stage 2: Run the compiled JavaScript
+# Stage 2: Run
 FROM node:20-slim
 WORKDIR /app
 COPY package*.json ./
-# Only install production dependencies (no typescript, etc.)
 RUN npm install --only=production
-# Copy only the compiled code from the builder stage
-COPY --from=builder /app .
+COPY --from=builder /app/dist ./dist
 
-# Use the PORT variable provided by Cloud Run
-ENV PORT=8080
-EXPOSE 8080
-
-CMD ["node", "index.js"]
+# Point exactly to server.js
+CMD ["node", "dist/server.js"]
