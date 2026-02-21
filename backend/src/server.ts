@@ -39,7 +39,7 @@ async function startServer() {
   }
 }
 
-app.get("/search", async (req, res) => {
+app.get("/api/search", async (req, res) => {
   console.log("Received search query:fha", req.query.q);
   const db = req.app.locals.db;
 
@@ -90,7 +90,7 @@ app.get("/search", async (req, res) => {
 // }
 // });
 
-app.get("/fruits", async (req, res, next: NextFunction) => {
+app.get("/api/fruits", async (req, res, next: NextFunction) => {
   const db = req.app.locals.db;
   try {
     const fruits = await db.collection("fruits").find({}).toArray();
@@ -101,7 +101,7 @@ app.get("/fruits", async (req, res, next: NextFunction) => {
   }
 });
 
-app.get("/jams", async (req, res, next: NextFunction) => {
+app.get("/api/jams", async (req, res, next: NextFunction) => {
   const db = req.app.locals.db;
   try {
     const jams = await db.collection("jams").find({}).toArray();
@@ -111,7 +111,7 @@ app.get("/jams", async (req, res, next: NextFunction) => {
   }
 });
 
-app.get("/boxes", async (req, res, next: NextFunction) => {
+app.get("/api/boxes", async (req, res, next: NextFunction) => {
   const db = req.app.locals.db;
   try {
     const boxes = await db.collection("boxes").find({}).toArray();
@@ -121,7 +121,7 @@ app.get("/boxes", async (req, res, next: NextFunction) => {
   }
 });
 
-app.get("/cut_fruits", async (req, res, next: NextFunction) => {
+app.get("/api/cut_fruits", async (req, res, next: NextFunction) => {
   const db = req.app.locals.db;
   try {
     const cutFruits = await db.collection("cut_fruits").find({}).toArray();
