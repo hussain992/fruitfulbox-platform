@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "api/:path*",
-      "destination": "https://fruitfulbox-platform-548644839764.asia-south1.run.app/:path*"
+      "destination": "https://fruitfulbox-platform-548644839764.asia-south1.run.app/api/:path*"
     }
   ]
 }
