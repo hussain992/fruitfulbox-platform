@@ -22,3 +22,7 @@ steps:
 
 images:
   - 'gcr.io/$PROJECT_ID/fruitfulbox-platform'
+
+# --- THE FIX FOR YOUR ERROR ---
+options:
+  logging: CLOUD_LOGGING_ONLY
