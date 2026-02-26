@@ -8,6 +8,11 @@ export const Fruits: CollectionConfig = {
   },
   fields: [
     {
+      name: 'id',
+      type: 'text',
+      unique: true,
+    },
+    {
       name: 'title',
       type: 'text',
       required: true,

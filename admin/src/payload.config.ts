@@ -4,6 +4,7 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import { importExportPlugin } from '@payloadcms/plugin-import-export'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media';
@@ -29,5 +30,18 @@ export default buildConfig({
     url: process.env.DATABASE_URL || '',
   }),
   sharp,
-  plugins: [],
+  plugins: [
+    importExportPlugin({
+      collections: [{
+        slug:'fruits',
+        import: {
+            defaultVersionStatus: 'draft',
+            limit: 500, // Override global importLimit for this collection
+          },
+      }],
+      debug: true, // Optional: Enable debug mode for detailed logs
+      importLimit: 5000,
+      // see below for a list of available options
+    }),
+  ],
 })
