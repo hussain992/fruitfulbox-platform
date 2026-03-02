@@ -2,16 +2,19 @@ import type { CollectionConfig } from 'payload'
 
 export const Fruits: CollectionConfig = {
   slug: 'fruits',
+  access: {
+    read: () => true, // Allows anyone to view images
+  },
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'category', 'price', 'isAvailable'],
   },
   fields: [
-    {
-      name: 'id',
-      type: 'text',
-      unique: true,
-    },
+    // {
+    //   name: 'id',
+    //   type: 'text',
+    //   unique: true,
+    // },
     {
       name: 'title',
       type: 'text',

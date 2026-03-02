@@ -554,7 +554,6 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "fruits_select".
  */
 export interface FruitsSelect<T extends boolean = true> {
-  id?: T;
   title?: T;
   slug?: T;
   category?: T;

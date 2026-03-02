@@ -2,6 +2,7 @@
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import { Button } from "./ui/button";
+import useStore from '@/lib/store';
 
 interface ProductCardProps {
   image: string;
@@ -12,7 +13,7 @@ interface ProductCardProps {
   category: string;
   price: {
     original: string;
-    discounted?: string;
+    discounted: string;
   };
   buttonText?: string;
 }
@@ -29,11 +30,13 @@ export default function ProductCard({
 }: ProductCardProps) {
   const href = `/${category}/${slug}`;
   const router = useRouter();
+  const setProduct = useStore((state) => state.setProduct);
 
   const handleNavigation = (e: React.MouseEvent, isBuyNow: boolean) => {
     const finalHref = isBuyNow 
       ? `${href}?action=buy-now` 
       : href;
+      setProduct({ image, title, description, slug, category, price });
     router.push(finalHref);
   };
 

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 import ServiceNotice from "@/components/ServiceNotice";
 import ProductCard from "@/components/ProductCard";
 import { ProductGridSkeleton } from "@/components/ProductCardSkeleton";
-import { use, useEffect, useState } from "react";
-import { notFound } from "next/navigation";
+import { use } from "react";
+// import { notFound } from "next/navigation";
 import { Product } from "@/types";
 import { useCachedData } from "@/hooks/useCachedData";
 // import { getProductsByCategory } from "@/lib/utils";
@@ -18,8 +18,10 @@ const ProductListPage: React.FC<{
   // const [isLoading, setIsLoading] = useState(true);
   // const [isInvalidCategory, setIsInvalidCategory] = useState(false);
   // const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const { data: products, isLoading: isProductsLoading } = useCachedData(`${category}`);
-  const safeProducts: Product[] = Array.isArray(products) ? products : []; 
+  const { data: products, isLoading: isProductsLoading } = useCachedData(
+    `${category}`,
+  );
+  const safeProducts: Product[] = Array.isArray(products) ? products : [];
 
   //  useEffect(() => {
   //   if (category) {
@@ -66,7 +68,10 @@ const ProductListPage: React.FC<{
   //   slug: string;
   // }
 
-  const availableProducts = safeProducts.length > 0 ? safeProducts.filter((item: Product) => item.isAvailable) : [];
+  const availableProducts =
+    safeProducts.length > 0
+      ? safeProducts.filter((item: Product) => item.isAvailable)
+      : [];
   return (
     <>
       <ServiceNotice />
@@ -78,15 +83,17 @@ const ProductListPage: React.FC<{
           <ProductGridSkeleton />
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {availableProducts.length === 0 && <p>No products available.</p>}{" "}
             {availableProducts?.map((product: Product) => (
               <ProductCard
                 key={product.slug}
                 slug={product.slug}
-                title={product.title}
-                image={product.image}
+                title={product.title ?? "Untitled Product"}
+                image={product.image ?? "/placeholder.png"}
                 isAvailable={product.isAvailable}
                 category={category}
-                price={product.price}
+                price={product.price }
+                description={product.description}
               />
             ))}
           </div>

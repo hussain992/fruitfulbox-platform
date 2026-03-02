@@ -8,7 +8,7 @@ import { useDeviceType } from "@/hooks/useDeviceType";
 import FallbackOrderOptions from "./FallbackOrderOptions";
 
 interface Props {
-  title: string;
+  title?: string;
   price: string;
   isAvailable?: boolean; // Optional prop to indicate availability
 }

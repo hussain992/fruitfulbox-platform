@@ -8,12 +8,12 @@ import cors from "cors";
 import { MongoClient } from "mongodb";
 
 const app = express();
-const port = process.env.PORT || 8080;
+// const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send("Server is running");
 });
 
@@ -38,6 +38,37 @@ async function startServer() {
     process.exit(1);
   }
 }
+
+app.get("/api/products/:slug", async (req, res, next: NextFunction) => {
+  const db = req.app.locals.db;
+  const { slug } = req.params;
+console.log('SLUG', slug);
+  try {
+    const collections = ["fruits", "jams", "boxes", "cut_fruits"];
+    
+    // We look through each collection for a matching slug
+    const searchPromises = collections.map((col) =>
+      db.collection(col).findOne({ slug: slug })
+    );
+
+    const results = await Promise.all(searchPromises);
+    console.log(`Search results for slug "${slug}":`, results);
+    // Find the first result that isn't null/undefined
+    const product = results.find((item) => item != null);
+
+    // If no product found, return 404 instead of accessing properties on null
+    if (!product) {
+      console.log(`Product with slug "${slug}" not found in any collection`);
+      return res.status(404).json({ error: "Product not found" });
+    }
+
+    console.log(`Fetched single product: ${product?.title ?? product}`);
+    res.json(product);
+  } catch (err) {
+    console.error("Error fetching product by slug:", err);
+    next(err);
+  }
+});
 
 app.get("/api/search", async (req, res) => {
   console.log("Received search query:fha", req.query.q);
@@ -133,7 +164,7 @@ app.get("/api/cut_fruits", async (req, res, next: NextFunction) => {
 
 startServer();
 
-app.use((err: unknown, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error("Error:", err);
   res.status(500).json({ error: "Internal Server Error" });
 });
