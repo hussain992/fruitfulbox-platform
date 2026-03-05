@@ -36,7 +36,7 @@ export default function ProductCard({
     const finalHref = isBuyNow 
       ? `${href}?action=buy-now` 
       : href;
-      setProduct({ image, title, description, slug, category, price });
+      setProduct({ image, title, description, slug, category, price, isAvailable });
     router.push(finalHref);
   };
 
