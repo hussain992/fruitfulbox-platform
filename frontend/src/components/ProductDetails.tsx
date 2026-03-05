@@ -73,7 +73,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
       try {
         setIsLoading(true);
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "";
-        const apiUrl = `${apiBaseUrl}${apiBaseUrl.endsWith("/") ? "" : ""}/api/products/${slug}`;
+        const apiUrl = `${apiBaseUrl.endsWith("/") ? "" : ""}/api/products/${slug}`;
         console.log("Fetching product details from:", apiUrl);
 
         const res = await fetch(apiUrl);
