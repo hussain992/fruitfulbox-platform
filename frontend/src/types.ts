@@ -1,5 +1,5 @@
 export interface Product {
-  category: string;
+  category?: string;
   slug?: string;
   title: string;
   image: string;
@@ -11,10 +11,11 @@ export interface Product {
   buttonText?: string;
   description?: string;
   seo?: {
-    description: string;
+    description?: string;
   }; 
   stock?: number;
   benefits?: string[];
   reviews?: { user: string; comment: string }[];
   categorySlug?: string;
+  tags?: string[];
 }
