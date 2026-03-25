@@ -15,7 +15,7 @@ export const useCachedData = <T,>(
 
   const executeFetch = useCallback(async () => {
     setIsLoading(true);
-    console.log('api called again');
+    // console.log('api called again');
     try {
       const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
       const newData = await fetch(`${apiBaseUrl}/${key}`).then((res) =>
@@ -43,13 +43,11 @@ export const useCachedData = <T,>(
       try {
         const parsed = JSON.parse(cachedData) as CacheWrapper<T>;
         const isExpired = Date.now() > parsed.expiresAt;
-        console.log(isExpired, parsed);
         if (
           !isExpired &&
           parsed.data &&
           Object.keys(parsed.data).length > 0
         ) {
-          console.log(`Using cached data for key "${key}"`);
           setData(parsed.data);
           setIsLoading(false);
           return; // Exit early, no need to fetch

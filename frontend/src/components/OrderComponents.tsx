@@ -9,11 +9,11 @@ import FallbackOrderOptions from "./FallbackOrderOptions";
 
 interface Props {
   title?: string;
-  price: string;
+  totalPrice: string;
   isAvailable?: boolean; // Optional prop to indicate availability
 }
 
-const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
+const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
   const [userDetails, setUserDetails] = React.useState({
     selectedDate: "",
     flatNo: "",
@@ -38,7 +38,6 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
   // Function to handle WhatsApp order
   const handleWhatsAppOrder = () => {
     if (userDetails.flatNo == "") {
-      console.log("Please enter your userDetails.");
       setOpen(true);
       return;
     }
@@ -52,7 +51,7 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
       userDetails.society && userDetails.society
     }`;
     const source = localStorage.getItem("utm_source") || "direct";
-    const message = `Hi, I'm interested in buying:\n\n🥭 ${title}\n💰 Price: ${price} 
+    const message = `Hi, I'm interested in buying:\n\n🥭 ${title}\n💰 Total Price: ${totalPrice} 
       ${
         userDetails.selectedDate &&
         `\n📅 Preferred Delivery: ${userDetails.selectedDate}`
@@ -82,7 +81,7 @@ const OrderDetails: React.FC<Props> = ({ title, price, isAvailable }) => {
     }
   };
   const buttonTitle = isAvailable
-    ? `Order on WhatsApp for ${price}`
+    ? `Order on WhatsApp for ${totalPrice}`
     : "Out of Stock";
   const disableOrderButton = !isAvailable;
   return (

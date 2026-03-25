@@ -82,9 +82,9 @@ export default function ProductCard({
         </div>
 
         {/* Content Container */}
-        <div className="p-4 md:p-5 flex flex-col flex-grow">
+        <div className="p-3 md:p-4 flex flex-col flex-grow">
           {/* Title */}
-          <h3 className="text-base md:text-lg font-bold text-gray-900 line-clamp-2 mb-2 group-hover:text-green-600 transition-colors">
+          <h3 className="text-base md:text-lg font-bold text-gray-900 line-clamp-2 group-hover:text-green-600 transition-colors">
             {title}
           </h3>
 
@@ -98,13 +98,13 @@ export default function ProductCard({
           {/* Pricing */}
           {price && (
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-lg md:text-xl font-bold text-gray-900">
-                {price.discounted || price.original}
-              </span>
+              <div className="text-lg md:text-xl font-bold text-gray-900">
+                {price.discounted}
+              </div>
               {price.discounted && (
-                <span className="text-sm text-gray-500 line-through">
+                <div className="text-sm text-gray-500 line-through">
                   {price.original}
-                </span>
+                </div>
               )}
             </div>
           )}

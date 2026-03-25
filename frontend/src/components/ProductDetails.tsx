@@ -67,14 +67,43 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
   const setProduct = useStore((state) => state.setProduct);
 
   const [isLoading, setIsLoading] = useState(false);
+  const [quantity, setQuantity] = useState<string>('1');
+
+  // parse price like "₹129/kg" (or "129") then calculate total
+  const unitPriceLabel = product?.price?.discounted ?? product?.price?.original ?? "₹0/kg"
+  const unitPrice = Number((unitPriceLabel.match(/[0-9]+(?:\.[0-9]+)?/) || ["0"])[0])
+
+  const quantityNumber = Number(quantity)
+  const totalPrice = Number.isFinite(quantityNumber) ? unitPrice * quantityNumber : 0
+
+  const formattedTotal = totalPrice.toLocaleString('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
+
+  const handleQuantityChange = (value: string) => {
+    if (value === '') {
+      setQuantity('')
+      return
+    }
+
+    const next = Number(value)
+    if (Number.isNaN(next) || next < 0) return
+
+    setQuantity(next.toFixed(2).replace(/\.00$/, ''))
+  }
+
   // const [isInvalidCategory, setIsInvalidCategory] = useState(false);
   useEffect(() => {
     const getData = async () => {
       try {
         setIsLoading(true);
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "";
-        const apiUrl = `${apiBaseUrl.endsWith("/") ? "" : ""}/api/products/${slug}`;
-        console.log("Fetching product details from:", apiUrl);
+
+        const apiUrl = `${apiBaseUrl}/products/${slug}`;
+        // console.log("Fetching product details from:", apiUrl);
 
         const res = await fetch(apiUrl);
         if (!res.ok) {
@@ -83,7 +112,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
         }
 
         const data = await res.json();
-        console.log("api reply details page", data);
+        // console.log("api reply details page", data);
 
         if (!data) {
           setIsLoading(false);
@@ -111,7 +140,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
     // getData();
   }, [slug, setProduct, product]);
 
-  console.log("product details ", product);
+  // console.log("product details ", product);
   // const resolvedParams = use(params);
   //   const product =
   //     resolvedParams.slug == "delight-box"
@@ -151,6 +180,38 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
                       {product.price.discounted}
                     </span>
                   </div>
+
+                  <div className="mb-4 flex items-center gap-2">
+                    <span className="font-medium">Quantity</span>
+                    <button
+                      onClick={() => handleQuantityChange((Number(quantity) - 1).toString())}
+                      className="px-2 py-1 border rounded"
+                      type="button"
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      min={0}
+                      step={0.1}
+                      value={quantity}
+                      onChange={(e) => handleQuantityChange(e.target.value)}
+                      className="w-20 p-1 border rounded"
+                    />
+                    <button
+                      onClick={() => handleQuantityChange((Number(quantity || '0') + 1).toString())}
+                      className="px-2 py-1 border rounded"
+                      type="button"
+                    >
+                      +
+                    </button>
+                    <span className="text-sm text-gray-600">kg</span>
+                  </div>
+
+                  <p className="text-sm mb-4 text-green-700">
+                    Total: <strong>{formattedTotal}</strong>
+                  </p>
+
                   <p
                     className={`text-sm mb-4 ${
                       product.stock && product.stock > 0
@@ -158,7 +219,6 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
                         : "text-red-500"
                     }`}
                   >
-                    {/* {product.stock > 0 ? `${product.stock} in stock` : "Out of stock"} */}
                     {"In stock"}
                   </p>
                 </>
@@ -170,11 +230,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
               </ul>
               <OrderDetails
                 title={product.title}
-                price={
-                  product.price.discounted
-                    ? product.price.discounted
-                    : product.price.original
-                }
+                totalPrice={formattedTotal}
                 isAvailable={product.isAvailable}
               />
             </div>

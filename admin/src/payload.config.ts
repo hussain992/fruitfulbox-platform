@@ -19,6 +19,14 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    autoLogin: process.env.NODE_ENV === 'development' 
+      ? {
+          email: 'admin@fruitfulbox.com',
+          password: 'adminfruits123',
+          prefillOnly: true, // Only fills the fields without auto-submitting
+        } 
+      : false,
+  
   },
   collections: [Users, Media, Fruits],
   editor: lexicalEditor(),

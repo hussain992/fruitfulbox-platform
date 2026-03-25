@@ -59,7 +59,6 @@ const ProductListPage: React.FC<{
   // const product = products.find((p: { slug: string }) => p.slug === slug);
   // if (!product) return <div>Product not found.</div>;
   // console.log("this.page called", resolvedParams);
-  console.log("products", products);
 
   // const sortedProducts = products.sort((a: { isAvailable: boolean; }, b: { isAvailable: boolean; }) =>
   //   Number(b.isAvailable) - Number(a.isAvailable))

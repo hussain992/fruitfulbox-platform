@@ -36,25 +36,15 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
           return res.json();
         })
         .then((data) => {
-          console.log(data);
           if (data && Array.isArray(data)) {
-            // setProducts(data);
-            const result = data
-              .sort((a, b) => {
-                if (a.title.toLowerCase() === query.toLowerCase()) return -1; // Move 'a' to a lower index
-                if (b.title.toLowerCase() === query.toLowerCase()) return 1; // Move 'b' to a lower index
-                return 0; // Keep relative order for others
-              });
-            console.log("Filtered data:", result);
+            const result = data.sort((a, b) => {
+              if (a.title.toLowerCase() === query.toLowerCase()) return -1; // Move 'a' to a lower index
+              if (b.title.toLowerCase() === query.toLowerCase()) return 1; // Move 'b' to a lower index
+              return 0; // Keep relative order for others
+            });
             setFilteredProducts(result);
-            // router.push(`/search?q=${encodeURIComponent(query)}`);
-          } else {
-            // setIsInvalidCategory(true);
           }
-          // setIsLoading(false);
         });
-      // router.push(`/search?q=${encodeURIComponent(query)}`);
-      // setQuery('');
     }
   };
 

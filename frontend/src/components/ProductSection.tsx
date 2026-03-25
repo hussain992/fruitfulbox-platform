@@ -27,7 +27,7 @@ export default function ProductSection({ title, description }: ProductSectionPro
   const { data: apiProducts, isLoading: isApiLoading } = useCachedData<Product[]>(
     category,
   );
-  console.log('apiProducts in ProductSection ', apiProducts);
+  // console.log('apiProducts in ProductSection ', apiProducts);
   const sourceProducts: Product[] =
     category === "fruits"
       ? Array.isArray(apiProducts)
