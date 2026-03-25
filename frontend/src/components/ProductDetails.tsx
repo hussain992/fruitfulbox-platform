@@ -153,9 +153,8 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
     <>
       <ServiceNotice />
       <main className="max-w-5xl mx-auto py-6 sm:py-16 px-4">
-        {isLoading ? (
-          <ProductGridSkeleton />
-        ) : product ? (
+        {isLoading && <ProductGridSkeleton />}
+        {!isLoading && product && (
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <Image
               src={product.image}
@@ -244,9 +243,8 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
               </Link>
             </div>
           </div>
-        ) : (
-          <p>Product not found.</p>
         )}
+        {!isLoading && !product && <p>Product not found.</p>}
       </main>
     </>
   );
