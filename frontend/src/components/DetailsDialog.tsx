@@ -25,11 +25,13 @@ interface UserDetails {
 interface DetailsDialogProps {
   getDetails: (address: UserDetails) => void;
   defaultOpen: boolean;
+  closeDialog: () => void; // Optional callback to close the dialog from parent
 }
 
 export const DetailsDialog: React.FC<DetailsDialogProps> = ({
   getDetails,
   defaultOpen,
+  closeDialog
 }) => {
   const [userDetails, setUserDetails] = useState<UserDetails>({
     selectedDate: "",
@@ -48,8 +50,13 @@ export const DetailsDialog: React.FC<DetailsDialogProps> = ({
 
   // IMPORTANT: This allows the X button and Overlay clicks to work
   const handleOpenChange = (newOpen: boolean) => {
+    console.log("handleOpenChange", newOpen);
     setOpen(newOpen);
-    if (!newOpen) setHasError(false); // Reset error when closing
+    if (!newOpen) {
+      setHasError(false); // Reset error when closing
+      //set parent open state to false as well
+      closeDialog();
+    }
   };
 
   const deliveryOptions = getNextDeliveryDates();
@@ -58,7 +65,6 @@ export const DetailsDialog: React.FC<DetailsDialogProps> = ({
     if (
       !userDetails.selectedDate ||
       !userDetails.flatNo ||
-      !userDetails.wing ||
       !userDetails.society
     ) {
       setHasError(true);
@@ -72,7 +78,7 @@ export const DetailsDialog: React.FC<DetailsDialogProps> = ({
   if (!deliveryOptions || deliveryOptions.length === 0) {
     return <div>No delivery dates available</div>;
   }
-
+// console.log('child render');
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-md fixed" aria-describedby="dialog-description">
@@ -82,7 +88,7 @@ export const DetailsDialog: React.FC<DetailsDialogProps> = ({
 
         {/* Delivery Date Select */}
         <div className="flex flex-col gap-2">
-          <Label htmlFor="deliveryDate">Select Delivery Date:</Label>
+          <Label htmlFor="deliveryDate">Select Delivery Date</Label>
           <select
             id="deliveryDate"
             value={userDetails.selectedDate}
@@ -101,9 +107,9 @@ export const DetailsDialog: React.FC<DetailsDialogProps> = ({
         {/* Input Fields */}
         <div className="grid grid-cols-2 gap-4 py-2">
           {[
-            { id: "flatNo", label: "Flat No." },
+            { id: "flatNo", label: "Flat No*" },
             { id: "wing", label: "Wing" },
-            { id: "society", label: "Society Name" },
+            { id: "society", label: "Society Name*" },
             { id: "area", label: "Area" },
           ].map((field) => (
             <div key={field.id} className="grid grid-cols-1 gap-2">

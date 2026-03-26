@@ -34,7 +34,7 @@ const FallbackOrderOptions: React.FC<FallbackOrderOptionsProps> = ({
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-md mx-4">
         <p className="text-lg font-semibold text-gray-800 mb-4">
-          Couldn't open WhatsApp?
+          Couldn&apos;t open WhatsApp?
         </p>
         <p className="text-sm text-gray-600 mb-6">
           Try one of these alternatives:

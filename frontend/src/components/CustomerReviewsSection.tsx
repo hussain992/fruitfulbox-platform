@@ -4,7 +4,7 @@ interface Review {
 }
 
 interface CustomerReviewsSectionProps {
-  reviews: Review[];
+  reviews?: Review[];
 }
 
 const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = ({

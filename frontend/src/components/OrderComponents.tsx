@@ -39,9 +39,9 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
   const handleWhatsAppOrder = () => {
     if (userDetails.flatNo == "") {
       setOpen(true);
-      return;
-    }
+    } else {
     performWhatsAppRedirect();
+    }
   };
 
   const performWhatsAppRedirect = () => {
@@ -56,17 +56,15 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
         userDetails.selectedDate &&
         `\n📅 Preferred Delivery: ${userDetails.selectedDate}`
       } ${addr && addr} ${source}`;
-    
+
     setMessageText(message);
     setIsRedirecting(true);
-    
+
     const encodedMessage = encodeURIComponent(message);
     const phoneNumber = "917558535953";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-      console.log("WhatsApp URL: ", whatsappUrl);
-    // Open WhatsApp (works on mobile for app, desktop for web)
-    // window.open(whatsappUrl, "_blank");
-    
+    console.log("WhatsApp URL: ", whatsappUrl);
+
     // Show fallback options only on desktop, after a delay
     if (!isMobile) {
       setTimeout(() => {
@@ -77,7 +75,9 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
       // On mobile, just hide the redirecting modal
       setTimeout(() => {
         setIsRedirecting(false);
-      }, 1500);
+        // Open WhatsApp (works on mobile for app, desktop for web)
+        window.open(whatsappUrl, "_blank");
+      }, 500);
     }
   };
   const buttonTitle = isAvailable
@@ -95,6 +95,7 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
             setTimeout(() => performWhatsAppRedirect(), 100);
           }}
           defaultOpen={open}
+          closeDialog={() => setOpen(false)}
         />
       )}
       {/* Redirect Message */}
@@ -117,7 +118,7 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
               }}
               className="mt-4 text-sm text-blue-600 hover:text-blue-700 underline"
             >
-              Didn't work? Try alternatives
+              Didn&apos;t work? Try alternatives
             </button>
           </div>
         </div>
@@ -130,6 +131,7 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
           messageText={messageText}
           onClose={() => setShowFallback(false)}
           phoneNumber="917558535953"
+          // whatsappweburl={}
         />
       )}
       {/* Order Button - Sticky on Mobile, Inline on Desktop */}
