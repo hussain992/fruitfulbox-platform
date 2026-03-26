@@ -44,7 +44,7 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
     }
   };
 
-  const performWhatsAppRedirect = () => {
+  const performWhatsAppRedirect = React.useCallback(() => {
     const addr = `\n🏠 Address: Flat no ${userDetails.flatNo}, ${
       userDetails.wing
     } ${userDetails.wing && "wing,"} ${
@@ -63,14 +63,14 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
     const encodedMessage = encodeURIComponent(message);
     const phoneNumber = "917558535953";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    console.log("WhatsApp URL: ", whatsappUrl);
+    // console.log("WhatsApp URL: ", whatsappUrl);
 
     // Show fallback options only on desktop, after a delay
     if (!isMobile) {
       setTimeout(() => {
         setIsRedirecting(false);
         setShowFallback(true);
-      }, 3000);
+      }, 500);
     } else {
       // On mobile, just hide the redirecting modal
       setTimeout(() => {
@@ -79,7 +79,14 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
         window.open(whatsappUrl, "_blank");
       }, 500);
     }
-  };
+  }, [userDetails, title, totalPrice, isMobile]);
+  
+  useEffect(() => {
+    if(userDetails.flatNo && userDetails.society) {
+      performWhatsAppRedirect();
+    }
+  }, [performWhatsAppRedirect, userDetails]);
+  
   const buttonTitle = isAvailable
     ? `Order on WhatsApp for ${totalPrice}`
     : "Out of Stock";
@@ -92,7 +99,7 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
           getDetails={(details) => {
             setUserDetails(details);
             // Trigger WhatsApp redirect after details are set
-            setTimeout(() => performWhatsAppRedirect(), 100);
+            // setTimeout(() => performWhatsAppRedirect(), 500);
           }}
           defaultOpen={open}
           closeDialog={() => setOpen(false)}
