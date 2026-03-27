@@ -6,66 +6,14 @@ import { use } from "react";
 // import { notFound } from "next/navigation";
 import { Product } from "@/types";
 import { useCachedData } from "@/hooks/useCachedData";
-// import { getProductsByCategory } from "@/lib/utils";
 
 const ProductListPage: React.FC<{
   params: Promise<{ category: string; slug: string }>;
 }> = ({ params }) => {
   const resolvedParams = use(params);
   const { category } = resolvedParams;
-  // const products = use(getProductsByCategory(category));
-  // const [products, setProducts] = useState<Product[]>();
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [isInvalidCategory, setIsInvalidCategory] = useState(false);
-  // const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const { data: products, isLoading: isProductsLoading } = useCachedData(
-    `${category}`,
-  );
+  const { data: products, isLoading: isProductsLoading } = useCachedData(`${category}`);
   const safeProducts: Product[] = Array.isArray(products) ? products : [];
-
-  //  useEffect(() => {
-  //   if (category) {
-  //     // setIsLoading(true);
-  //     setIsInvalidCategory(false);
-  //     console.log('going if');
-  //     // fetch(`${apiBaseUrl}/${category}`)
-  //       // .then((res) => {
-  //       //   if (!res.ok) {
-  //       //     setIsInvalidCategory(true);
-  //       //     setIsLoading(false);
-  //       //     return null;
-  //       //   }
-  //       //   return res.json();
-  //       // })
-  //       // .then((data) => {
-  //       //   if (data && Array.isArray(data)) {
-  //       //     setProducts(data);
-  //       //   } else {
-  //       //     setIsInvalidCategory(true);
-  //       //   }
-  //       //   setIsLoading(false);
-  //       // })
-  //       // .catch((error) => {
-  //       //   console.error("Error fetching fruits:", error);
-  //       //   setIsInvalidCategory(true);
-  //       //   setIsLoading(false);
-  //       // });
-  //   }
-  // }, [category]);
-
-  // if (isInvalidCategory) {
-  //   notFound();
-  // }
-  // const product = products.find((p: { slug: string }) => p.slug === slug);
-  // if (!product) return <div>Product not found.</div>;
-  // console.log("this.page called", resolvedParams);
-
-  // const sortedProducts = products.sort((a: { isAvailable: boolean; }, b: { isAvailable: boolean; }) =>
-  //   Number(b.isAvailable) - Number(a.isAvailable))
-  // interface Params {
-  //   category: string;
-  //   slug: string;
-  // }
 
   const availableProducts =
     safeProducts.length > 0

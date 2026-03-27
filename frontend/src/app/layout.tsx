@@ -5,19 +5,23 @@ import { cn } from "@/lib/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Head from "next/head";
-import { GoogleAnalytics } from '@next/third-parties/google'
-import Clarity from '@microsoft/clarity';
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
-const projectId = "t0yu3rrbf1"
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap", // This prevents the render-blocking behavior
+  preload: true,
+});
 export const metadata: Metadata = {
   title: {
-    template: '%s | Fruitful Box',
-    default: 'Fruitful Box - Fresh Fruit Delivery in Pune',
+    template: "%s | Fruitful Box",
+    default: "Fruitful Box - Fresh Fruit Delivery in Pune",
   },
-  description: "Get premium fresh fruits, cut fruits, and curated fruit boxes delivered to your door in Pune. Handpicked seasonal fruits delivered every Sunday & Wednesday. Order online or via WhatsApp.",
-  keywords: "fresh fruits Pune, fruit delivery, seasonal fruits, cut fruits, fruit boxes, mango delivery, avocado, fresh produce, healthy food delivery",
+  description:
+    "Get premium fresh fruits, cut fruits, and curated fruit boxes delivered to your door in Pune. Handpicked seasonal fruits delivered every Sunday & Wednesday. Order online or via WhatsApp.",
+  keywords:
+    "fresh fruits Pune, fruit delivery, seasonal fruits, cut fruits, fruit boxes, mango delivery, avocado, fresh produce, healthy food delivery",
   authors: [{ name: "Fruitful Box" }],
   icons: {
     icon: "/favicon.png",
@@ -31,7 +35,8 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://fruitfulbox.vercel.app",
     title: "Fruitful Box - Fresh Fruit Delivery in Pune",
-    description: "Premium seasonal fruits delivered fresh to your door. Same-week delivery available.",
+    description:
+      "Premium seasonal fruits delivered fresh to your door. Same-week delivery available.",
     images: [
       {
         url: "/images/bannernw.png",
@@ -41,11 +46,11 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Fruitful Box - Fresh Fruit Delivery in Pune",
-    description: "Premium seasonal fruits delivered to your door",
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "Fruitful Box - Fresh Fruit Delivery in Pune",
+  //   description: "Premium seasonal fruits delivered to your door",
+  // },
   robots: {
     index: true,
     follow: true,
@@ -60,8 +65,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  Clarity.init(projectId);
-  
   // Structured data for organization
   const structuredData = {
     "@context": "https://schema.org",
@@ -85,7 +88,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <Head> 
+      <Head>
         <meta name="author" content="Fruitful Box" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#16a34a" />
@@ -97,17 +100,14 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        
+
         {/* Structured Data */}
-        <Script
-          id="structured-data"
-          type="application/ld+json"
-        >
+        <Script id="structured-data" type="application/ld+json">
           {JSON.stringify(structuredData)}
         </Script>
       </body>
-          
-      <GoogleAnalytics gaId='G-7DK8KL5KTF' />
+
+      <GoogleAnalytics gaId="G-7DK8KL5KTF" />
     </html>
   );
 }

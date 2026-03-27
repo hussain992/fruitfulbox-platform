@@ -14,7 +14,8 @@ export default function Header() {
     { href: "/fruits", label: "Fruits" },
     { href: "/cut_fruits", label: "Cut Fruits" },
     { href: "/boxes", label: "Boxes" },
-    { href: "/jams", label: "Jams" }
+    // { href: "/jams", label: "Jams" },
+    { href: "/bulk-order", label: "Bulk Order" }
   ];
 
   return (
@@ -74,7 +75,7 @@ export default function Header() {
 
           {/* Right: Navigation + CTA */}
           <div className="flex items-center justify-end gap-6">
-            <nav className="hidden lg:flex gap-6">
+            <nav className="hidden lg:flex gap-4">
               {links.map((link) => (
                 <Link
                   key={link.href}
