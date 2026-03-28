@@ -10,10 +10,17 @@ export const useCachedData = <T,>(
   expirationTimeMs: number = 24 * 60 * 60 * 1000, // Defaults to 24h
 ) => {
   const [data, setData] = useState<T | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
 
   const executeFetch = useCallback(async () => {
+    if (key === "")
+      return {
+        data: null,
+        isLoading: false,
+        error: new Error("Key cannot be empty"),
+        refetch: () => {},
+      };
     setIsLoading(true);
     // console.log('api called again');
     try {
@@ -29,6 +36,7 @@ export const useCachedData = <T,>(
       setData(newData);
       setError(null);
     } catch (err) {
+      setIsLoading(false);
       setError(err as Error);
       console.error(`Error fetching data for key "${key}":`, err);
     } finally {
@@ -43,11 +51,7 @@ export const useCachedData = <T,>(
       try {
         const parsed = JSON.parse(cachedData) as CacheWrapper<T>;
         const isExpired = Date.now() > parsed.expiresAt;
-        if (
-          !isExpired &&
-          parsed.data &&
-          Object.keys(parsed.data).length > 0
-        ) {
+        if (!isExpired && parsed.data && Object.keys(parsed.data).length > 0) {
           setData(parsed.data);
           setIsLoading(false);
           return; // Exit early, no need to fetch

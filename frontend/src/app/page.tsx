@@ -97,7 +97,9 @@ export default function Home() {
 
       <CategoriesSection />
 
-      <ProductSection title="Trending Fruits" description="Our most popular fresh seasonal fruits" />
+      <ProductSection 
+        title="Trending Fruits" description="Our most popular fresh seasonal fruits" 
+      />
       <ProductSection
         title="Fresh Cut Fruits"
         description="Ready-to-eat cut fruits prepared fresh daily"

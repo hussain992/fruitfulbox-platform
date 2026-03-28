@@ -15,18 +15,21 @@ interface ProductSectionProps {
   description?: string;
 }
 
-export default function ProductSection({ title, description }: ProductSectionProps) {
+export default function ProductSection({
+  title,
+  description,
+}: ProductSectionProps) {
   const category = title?.includes("Fruit Boxes")
     ? "boxes"
     : title?.includes("Cut Fruits")
-    ? "cut_fruits"
-    : title?.includes("Jams")
-    ? "jams"
-    : "fruits";
+      ? "cut_fruits"
+      : title?.includes("Jams")
+        ? "jams"
+        : "fruits";
+  const { data: apiProducts, isLoading: isApiLoading } = useCachedData<
+    Product[]
+  >(category === "fruits" ? "fruits" : "");
 
-  const { data: apiProducts, isLoading: isApiLoading } = useCachedData<Product[]>(
-    category,
-  );
   // console.log('apiProducts in ProductSection ', apiProducts);
   const sourceProducts: Product[] =
     category === "fruits"
@@ -34,12 +37,12 @@ export default function ProductSection({ title, description }: ProductSectionPro
         ? apiProducts
         : []
       : category === "boxes"
-      ? boxes
-      : category === "cut_fruits"
-      ? cut_fruits
-      : category === "jams"
-      ? jams
-      : fruits;
+        ? boxes
+        : category === "cut_fruits"
+          ? cut_fruits
+          : category === "jams"
+            ? jams
+            : fruits;
 
   const products = sourceProducts
     .filter((product) => product.isAvailable)
@@ -48,7 +51,9 @@ export default function ProductSection({ title, description }: ProductSectionPro
     <section className="py-12 md:py-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{title}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+            {title}
+          </h2>
           {description && (
             <p className="text-lg text-gray-600">{description}</p>
           )}
