@@ -1,7 +1,6 @@
 "use client";
 import boxes from "@/lib/boxes.json";
 import cut_fruits from "@/lib/cut_fruits.json";
-import fruits from "@/lib/fruits.json";
 import jams from "@/lib/jams.json";
 import ProductCard from "./ProductCard";
 import { Product } from "@/types";
@@ -19,30 +18,23 @@ export default function ProductSection({
   title,
   description,
 }: ProductSectionProps) {
-  const category = title?.includes("Fruit Boxes")
-    ? "boxes"
-    : title?.includes("Cut Fruits")
-      ? "cut_fruits"
-      : title?.includes("Jams")
-        ? "jams"
-        : "fruits";
+  const category = (title?.includes("Fruit Boxes") && "boxes")
+    || (title?.includes("Cut Fruits") && "cut_fruits")
+    || (title?.includes("Jams") && "jams")
+    || (title?.includes("fruits") && "fruits")
+    || "";
+
   const { data: apiProducts, isLoading: isApiLoading } = useCachedData<
     Product[]
   >(category === "fruits" ? "fruits" : "");
 
   // console.log('apiProducts in ProductSection ', apiProducts);
   const sourceProducts: Product[] =
-    category === "fruits"
-      ? Array.isArray(apiProducts)
-        ? apiProducts
-        : []
-      : category === "boxes"
-        ? boxes
-        : category === "cut_fruits"
-          ? cut_fruits
-          : category === "jams"
-            ? jams
-            : fruits;
+    (category === "fruits" && apiProducts && apiProducts?.length > 0) ? apiProducts
+      : (category === "boxes") ? boxes
+      : (category === "cut_fruits") ? cut_fruits
+      : (category === "jams") ? jams
+      : []
 
   const products = sourceProducts
     .filter((product) => product.isAvailable)

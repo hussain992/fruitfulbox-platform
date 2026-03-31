@@ -8,7 +8,7 @@ import CustomerReviewsSection from "@/components/CustomerReviewsSection";
 import useStore from "@/lib/store";
 import { useEffect, useState } from "react";
 import { ProductGridSkeleton } from "./ProductCardSkeleton";
-// import fruits from "@/lib/fruits.json";
+
 
 // type ProductSlug = keyof typeof productData;
 

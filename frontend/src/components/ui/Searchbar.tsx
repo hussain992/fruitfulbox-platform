@@ -1,9 +1,8 @@
 // components/SearchBar.js
 "use client";
 import { useState } from "react";
-// import { useRouter } from 'next/navigation';
+
 import { Search, X } from "lucide-react";
-// import { filter } from 'framer-motion/client';
 import ProductList from "./ProductList";
 import { Product } from "@/types";
 // import { Product } from '@/types';
@@ -15,8 +14,6 @@ interface SearchBarProps {
 export default function SearchBar({ isMobile = false }: SearchBarProps) {
   const [query, setQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  // const router = useRouter();
-  // const [products, setProducts] = useState<Product[]>([]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
