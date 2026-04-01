@@ -5,7 +5,6 @@ import { useState } from "react";
 import { Search, X } from "lucide-react";
 import ProductList from "./ProductList";
 import { Product } from "@/types";
-// import { Product } from '@/types';
 
 interface SearchBarProps {
   isMobile?: boolean;
