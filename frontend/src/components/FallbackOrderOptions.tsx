@@ -1,4 +1,3 @@
-import React from "react";
 
 interface FallbackOrderOptionsProps {
   isOpen: boolean;
@@ -17,7 +16,9 @@ const FallbackOrderOptions: React.FC<FallbackOrderOptionsProps> = ({
 
   const handleCopyMessage = () => {
     navigator.clipboard.writeText(messageText);
-    alert("Message copied to clipboard! Visit wa.me or WhatsApp Web and paste it.");
+    alert(
+      "Message copied to clipboard! Visit wa.me or WhatsApp Web and paste it.",
+    );
   };
 
   const handleWhatsAppWeb = () => {

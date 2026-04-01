@@ -1,5 +1,5 @@
-'use client'
-import Image from 'next/image'
+"use client";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -14,5 +14,5 @@ export default function Hero() {
         />
       </div>
     </section>
-  )
+  );
 }

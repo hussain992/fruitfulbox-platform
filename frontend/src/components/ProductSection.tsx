@@ -7,8 +7,6 @@ import { Product } from "@/types";
 import { useCachedData } from "@/hooks/useCachedData";
 import { ProductGridSkeleton } from "./ProductCardSkeleton";
 
-// import { Button } from "./ui/button";
-// import Link from "next/link";
 interface ProductSectionProps {
   title?: string;
   description?: string;
@@ -18,11 +16,12 @@ export default function ProductSection({
   title,
   description,
 }: ProductSectionProps) {
-  const category = (title?.includes("Fruit Boxes") && "boxes")
-    || (title?.includes("Cut Fruits") && "cut_fruits")
-    || (title?.includes("Jams") && "jams")
-    || (title?.includes("fruits") && "fruits")
-    || "";
+  const category =
+    (title?.includes("Fruit Boxes") && "boxes") ||
+    (title?.includes("Cut Fruits") && "cut_fruits") ||
+    (title?.includes("Jams") && "jams") ||
+    (title?.includes("fruits") && "fruits") ||
+    "";
 
   const { data: apiProducts, isLoading: isApiLoading } = useCachedData<
     Product[]
@@ -30,11 +29,15 @@ export default function ProductSection({
 
   // console.log('apiProducts in ProductSection ', apiProducts);
   const sourceProducts: Product[] =
-    (category === "fruits" && apiProducts && apiProducts?.length > 0) ? apiProducts
-      : (category === "boxes") ? boxes
-      : (category === "cut_fruits") ? cut_fruits
-      : (category === "jams") ? jams
-      : []
+    category === "fruits" && apiProducts && apiProducts?.length > 0
+      ? apiProducts
+      : category === "boxes"
+        ? boxes
+        : category === "cut_fruits"
+          ? cut_fruits
+          : category === "jams"
+            ? jams
+            : [];
 
   const products = sourceProducts
     .filter((product) => product.isAvailable)

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import Image from "next/image";
 import logo from "../../public/images/logo.png";
 import SearchBar from "./ui/Searchbar";
@@ -15,7 +15,7 @@ export default function Header() {
     { href: "/cut_fruits", label: "Cut Fruits" },
     { href: "/boxes", label: "Boxes" },
     // { href: "/jams", label: "Jams" },
-    { href: "/bulk-order", label: "Bulk Order" }
+    { href: "/bulk-order", label: "Bulk Order" },
   ];
 
   return (
@@ -104,7 +104,7 @@ export default function Header() {
       {/* Mobile/Tablet menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -135,7 +135,7 @@ export default function Header() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </header>

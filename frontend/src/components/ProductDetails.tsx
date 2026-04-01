@@ -9,7 +9,6 @@ import useStore from "@/lib/store";
 import { useEffect, useState } from "react";
 import { ProductGridSkeleton } from "./ProductCardSkeleton";
 
-
 // type ProductSlug = keyof typeof productData;
 
 // 2️⃣ Metadata function

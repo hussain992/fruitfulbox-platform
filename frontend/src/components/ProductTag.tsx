@@ -1,14 +1,14 @@
 // components/ui/ProductTag.tsx
 interface ProductTagProps {
   label: string;
-  color?: 'green' | 'blue' | 'red';
+  color?: "green" | "blue" | "red";
 }
 
-export const ProductTag = ({ label, color = 'green' }: ProductTagProps) => {
+export const ProductTag = ({ label, color = "green" }: ProductTagProps) => {
   const colorMap = {
-    green: 'bg-green-500',
-    blue: 'bg-blue-500',
-    red: 'bg-red-500',
+    green: "bg-green-500",
+    blue: "bg-blue-500",
+    red: "bg-red-500",
   };
 
   return (

@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Dialog,
   DialogContent,
@@ -11,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState, useEffect } from "react";
-import React from "react";
 import { getNextDeliveryDates } from "@/lib/utils";
 
 interface UserDetails {
@@ -31,7 +29,7 @@ interface DetailsDialogProps {
 export const DetailsDialog: React.FC<DetailsDialogProps> = ({
   getDetails,
   defaultOpen,
-  closeDialog
+  closeDialog,
 }) => {
   const [userDetails, setUserDetails] = useState<UserDetails>({
     selectedDate: "",
@@ -78,10 +76,13 @@ export const DetailsDialog: React.FC<DetailsDialogProps> = ({
   if (!deliveryOptions || deliveryOptions.length === 0) {
     return <div>No delivery dates available</div>;
   }
-// console.log('child render');
+  // console.log('child render');
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-md fixed" aria-describedby="dialog-description">
+      <DialogContent
+        className="sm:max-w-md fixed"
+        aria-describedby="dialog-description"
+      >
         <DialogHeader>
           <DialogTitle>Enter Your Delivery Details</DialogTitle>
         </DialogHeader>
@@ -93,13 +94,18 @@ export const DetailsDialog: React.FC<DetailsDialogProps> = ({
             id="deliveryDate"
             value={userDetails.selectedDate}
             onChange={(e) =>
-              setUserDetails((prev) => ({ ...prev, selectedDate: e.target.value }))
+              setUserDetails((prev) => ({
+                ...prev,
+                selectedDate: e.target.value,
+              }))
             }
             className="border border-gray-300 rounded-md px-3 py-2 w-full text-sm"
           >
             <option value="">Choose a date</option>
             {deliveryOptions.map((date, index) => (
-              <option key={index} value={date}>{date}</option>
+              <option key={index} value={date}>
+                {date}
+              </option>
             ))}
           </select>
         </div>
@@ -118,7 +124,10 @@ export const DetailsDialog: React.FC<DetailsDialogProps> = ({
                 id={field.id}
                 value={userDetails[field.id as keyof UserDetails]}
                 onChange={(e) =>
-                  setUserDetails((prev) => ({ ...prev, [field.id]: e.target.value }))
+                  setUserDetails((prev) => ({
+                    ...prev,
+                    [field.id]: e.target.value,
+                  }))
                 }
                 placeholder={`e.g. ${field.label}`}
               />

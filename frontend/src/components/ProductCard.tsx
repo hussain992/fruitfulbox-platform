@@ -1,8 +1,8 @@
-'use client';
-import { useRouter } from 'next/navigation';
+"use client";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import useStore from '@/lib/store';
+import useStore from "@/lib/store";
 
 interface ProductCardProps {
   image: string;
@@ -26,31 +26,41 @@ export default function ProductCard({
   isAvailable,
   category,
   price,
-  buttonText
+  buttonText,
 }: ProductCardProps) {
   const href = `/${category}/${slug}`;
   const router = useRouter();
   const setProduct = useStore((state) => state.setProduct);
 
   const handleNavigation = (e: React.MouseEvent, isBuyNow: boolean) => {
-    const finalHref = isBuyNow 
-      ? `${href}?action=buy-now` 
-      : href;
-      setProduct({ image, title, description, slug, category, price, isAvailable });
+    const finalHref = isBuyNow ? `${href}?action=buy-now` : href;
+    setProduct({
+      image,
+      title,
+      description,
+      slug,
+      category,
+      price,
+      isAvailable,
+    });
     router.push(finalHref);
   };
 
-  const discountPercentage = price.discounted 
-    ? Math.round(((parseFloat(price.original.replace('₹', '').replace(/,/g, '')) - parseFloat(price.discounted.replace('₹', '').replace(/,/g, ''))) / parseFloat(price.original.replace('₹', '').replace(/,/g, ''))) * 100)
+  const discountPercentage = price.discounted
+    ? Math.round(
+        ((parseFloat(price.original.replace("₹", "").replace(/,/g, "")) -
+          parseFloat(price.discounted.replace("₹", "").replace(/,/g, ""))) /
+          parseFloat(price.original.replace("₹", "").replace(/,/g, ""))) *
+          100,
+      )
     : null;
 
   return (
-    <div 
+    <div
       onClick={(e) => handleNavigation(e, false)}
       className="cursor-pointer h-full group"
     >
       <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
-        
         {/* Image Container */}
         <div className="relative w-full aspect-square overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
           {/* Discount Badge */}
@@ -78,7 +88,6 @@ export default function ProductCard({
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             priority
           />
-
         </div>
 
         {/* Content Container */}
@@ -118,7 +127,7 @@ export default function ProductCard({
               handleNavigation(e, true);
             }}
           >
-            {isAvailable === false ? "Unavailable" : (buttonText || "Buy Now")}
+            {isAvailable === false ? "Unavailable" : buttonText || "Buy Now"}
           </Button>
         </div>
       </div>

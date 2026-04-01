@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DetailsDialog } from "./DetailsDialog";
 import { useCaptureUTM } from "@/hooks/useCaptureUTM";
@@ -14,16 +14,16 @@ interface Props {
 }
 
 const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
-  const [userDetails, setUserDetails] = React.useState({
+  const [userDetails, setUserDetails] = useState({
     selectedDate: "",
     flatNo: "",
     wing: "",
     society: "",
   });
-  const [open, setOpen] = React.useState(false); // State to control the dialog open/close
-  const [isRedirecting, setIsRedirecting] = React.useState(false); // State to show redirect message
-  const [showFallback, setShowFallback] = React.useState(false); // State to show fallback options
-  const [messageText, setMessageText] = React.useState(""); // Store the message for fallback
+  const [open, setOpen] = useState(false); // State to control the dialog open/close
+  const [isRedirecting, setIsRedirecting] = useState(false); // State to show redirect message
+  const [showFallback, setShowFallback] = useState(false); // State to show fallback options
+  const [messageText, setMessageText] = useState(""); // Store the message for fallback
   const { isMobile } = useDeviceType(); // Detect if device is mobile or desktop
   const searchParams = useSearchParams();
   const isBuyNow = searchParams.get("action") === "buy-now";
@@ -40,7 +40,7 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
     if (userDetails.flatNo == "") {
       setOpen(true);
     } else {
-    performWhatsAppRedirect();
+      performWhatsAppRedirect();
     }
   };
 
@@ -80,13 +80,13 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
       }, 500);
     }
   }, [userDetails, title, totalPrice, isMobile]);
-  
+
   useEffect(() => {
-    if(userDetails.flatNo && userDetails.society) {
+    if (userDetails?.flatNo && userDetails?.society) {
       performWhatsAppRedirect();
     }
   }, [performWhatsAppRedirect, userDetails]);
-  
+
   const buttonTitle = isAvailable
     ? `Order on WhatsApp for ${totalPrice}`
     : "Out of Stock";

@@ -1,19 +1,8 @@
 import { Product } from "@/types";
 import Link from "next/dist/client/link";
 import Image from "next/image";
-// import React, { useState } from 'react';
 
 const ProductList = ({ products }: { products: Product[] }) => {
-  //   const [filter] = useState('');
-
-  //   const filteredProducts = products.filter(product =>
-  //     product.title.toLowerCase().includes(filter.toLowerCase())
-  //   );
-
-  //   const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setFilter(event.target.value);
-  //   };
-
   return (
     <div className="border border-gray-300 rounded-lg shadow-md relative min-h-30 max-h-50 overflow-y-auto p-2">
       <ul className="list-none p-0 m-0">
@@ -37,10 +26,14 @@ const ProductList = ({ products }: { products: Product[] }) => {
                   {product.title}
                 </div>
                 {/* // add category */}
-                <div className="text-green-900 text-xs">in {product.category}
-                {product.isAvailable === false && (
-                  <span className="text-red-500 text-xs ml-2"> out of stock</span>
-                )}
+                <div className="text-green-900 text-xs">
+                  in {product.category}
+                  {product.isAvailable === false && (
+                    <span className="text-red-500 text-xs ml-2">
+                      {" "}
+                      out of stock
+                    </span>
+                  )}
                 </div>
               </div>
               {/* // add availability status if needed */}

@@ -71,7 +71,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/cut_fruits" className="hover:text-white transition">
+                <Link
+                  href="/cut_fruits"
+                  className="hover:text-white transition"
+                >
                   Cut Fruits
                 </Link>
               </li>
@@ -98,12 +101,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="mailto:contact@fruitfulbox.com" className="hover:text-white transition">
+                <a
+                  href="mailto:contact@fruitfulbox.com"
+                  className="hover:text-white transition"
+                >
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/7558535953" className="hover:text-white transition">
+                <a
+                  href="https://wa.me/7558535953"
+                  className="hover:text-white transition"
+                >
                   WhatsApp Support
                 </a>
               </li>
@@ -135,19 +144,30 @@ export default function Footer() {
           </div>
         </div>
 
-          {/* Divider */}
+        {/* Divider */}
         <div className="border-t border-gray-700 pt-8">
           {/* Bottom Footer */}
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-            <p>© {new Date().getFullYear()} Fruitful Box. All rights reserved.</p>
+            <p>
+              © {new Date().getFullYear()} Fruitful Box. All rights reserved.
+            </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy-policy" className="hover:text-white transition">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-white transition"
+              >
                 Privacy Policy
               </Link>
-              <Link href="/terms-conditions" className="hover:text-white transition">
+              <Link
+                href="/terms-conditions"
+                className="hover:text-white transition"
+              >
                 Terms & Conditions
               </Link>
-              <a href="mailto:fruitfulbox992@gmail.com" className="hover:text-white transition">
+              <a
+                href="mailto:fruitfulbox992@gmail.com"
+                className="hover:text-white transition"
+              >
                 Contact
               </a>
             </div>

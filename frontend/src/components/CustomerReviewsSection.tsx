@@ -20,8 +20,8 @@ const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = ({
       <div className="space-y-4">
         {reviews.map((review, i) => (
           <div key={i} className="bg-gray-100 p-4 rounded-md shadow-sm hover:shadow-md transition-shadow">
-            <p className="font-semibold text-gray-800">{review.user}</p>
-            <p className="text-sm text-gray-700 mt-2">{review.comment}</p>
+            <p className="font-semibold text-gray-800">{review?.user}</p>
+            <p className="text-sm text-gray-700 mt-2">{review?.comment}</p>
           </div>
         ))}
       </div>
