@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DetailsDialog } from "./DetailsDialog";
 import { useCaptureUTM } from "@/hooks/useCaptureUTM";
@@ -44,7 +44,7 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
     }
   };
 
-  const performWhatsAppRedirect = React.useCallback(() => {
+  const performWhatsAppRedirect = useCallback(() => {
     const addr = `\n🏠 Address: Flat no ${userDetails.flatNo}, ${
       userDetails.wing
     } ${userDetails.wing && "wing,"} ${
