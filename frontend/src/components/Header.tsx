@@ -17,9 +17,49 @@ export default function Header() {
     // { href: "/jams", label: "Jams" },
     { href: "/bulk-order", label: "Bulk Order" },
   ];
-  console.log("open ", isOpen);
+  const mobileHeader = () => (
+    <LazyMotion features={domAnimation}>
+        <AnimatePresence>
+          {isOpen && (
+            <m.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="absolute left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 shadow-lg"
+            >
+              <div className="px-4 py-4 space-y-3">
+                {links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-gray-700 hover:text-green-600 transition-colors pb-2"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <div className="pt-1">
+                  <a
+                    href="https://wa.me/7558535953"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold transition-colors"
+                  >
+                    <MessageCircle size={16} />
+                    Order on WhatsApp
+                  </a>
+                </div>
+              </div>
+            </m.div>
+          )}
+        </AnimatePresence>
+      </LazyMotion>
+  );
+  
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white shadow-sm sticky top-[-36px] h-[110px] z-50">
       {/* Top info bar */}
       <div className="bg-green-50 border-b border-green-200 text-center text-xs md:text-sm text-gray-700 py-2">
         🚚 Delivery: Sunday & Wednesday | 10 AM - 12 PM
@@ -28,7 +68,7 @@ export default function Header() {
       {/* Main header */}
       <div className="max-w-7xl mx-auto px-4 py-4">
         {/* Mobile/Tablet layout - Logo and Menu button */}
-        <div className="flex items-center justify-between md:hidden mb-3">
+        <div className="flex items-center justify-between md:hidden">
           <Link href="/" className="flex items-center gap-2">
             <Image
               className="h-9 w-auto"
@@ -36,8 +76,11 @@ export default function Header() {
               alt="Fruitful Box"
               priority
             />
-            <span className="font-bold text-gray-900">Fruitful Box</span>
+            <span className="hidden md:visible font-bold text-gray-900">Fruitful Box</span>
           </Link>
+          <div className="md:hidden mx-2">
+          <SearchBar isMobile={true} />
+        </div>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-gray-700 hover:text-green-600"
@@ -47,9 +90,9 @@ export default function Header() {
         </div>
 
         {/* Mobile/Tablet - Search bar */}
-        <div className="md:hidden mb-3">
+        {/* <div className="md:hidden mb-3">
           <SearchBar isMobile={true} />
-        </div>
+        </div> */}
 
         {/* Desktop layout */}
         <div className="hidden md:grid md:grid-cols-3 items-center gap-4">
@@ -102,44 +145,7 @@ export default function Header() {
       </div>
 
       {/* Mobile/Tablet menu */}
-      <LazyMotion features={domAnimation}>
-        <AnimatePresence>
-          {isOpen && (
-            <m.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="absolute left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 shadow-lg"
-            >
-              <div className="px-4 py-4 space-y-3">
-                {links.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block text-gray-700 hover:text-green-600 transition-colors pb-2"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                <div className="pt-1">
-                  <a
-                    href="https://wa.me/7558535953"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold transition-colors"
-                  >
-                    <MessageCircle size={16} />
-                    Order on WhatsApp
-                  </a>
-                </div>
-              </div>
-            </m.div>
-          )}
-        </AnimatePresence>
-      </LazyMotion>
+      {mobileHeader()}
     </header>
   );
 }
