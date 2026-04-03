@@ -22,13 +22,13 @@ const ProductListPage: React.FC<{
   return (
     <>
       <ServiceNotice />
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-6xl mx-auto p-4">
         <h1 className="text-3xl font-bold mb-6">
           {category.toUpperCase().replace("_", " ")}
         </h1>
         {isProductsLoading && <ProductGridSkeleton />}
         {!isProductsLoading && (
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6">
             {availableProducts.length === 0 && <p>No products available.</p>}{" "}
             {availableProducts?.map((product: Product) => (
               <ProductCard

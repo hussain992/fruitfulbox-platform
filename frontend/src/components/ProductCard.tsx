@@ -65,7 +65,7 @@ export default function ProductCard({
         <div className="relative w-full aspect-square overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
           {/* Discount Badge */}
           {discountPercentage && (
-            <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">
+            <div className="absolute top-1 right-1 bg-red-500 text-white text-xs font-bold p-1 rounded-full z-10">
               -{discountPercentage}%
             </div>
           )}
@@ -91,7 +91,7 @@ export default function ProductCard({
         </div>
 
         {/* Content Container */}
-        <div className="p-3 md:p-4 flex flex-col flex-grow">
+        <div className="p-2 md:p-4 flex flex-col flex-grow">
           {/* Title */}
           <h3 className="text-base md:text-lg font-bold text-gray-900 line-clamp-2 group-hover:text-green-600 transition-colors">
             {title}

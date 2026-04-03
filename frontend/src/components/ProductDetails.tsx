@@ -7,7 +7,7 @@ import ServiceNotice from "@/components/ServiceNotice";
 import CustomerReviewsSection from "@/components/CustomerReviewsSection";
 import useStore from "@/lib/store";
 import { useEffect, useState } from "react";
-import { ProductGridSkeleton } from "./ProductCardSkeleton";
+import { ProductDetailsSkeleton } from "./ProductDetailsSkeleton";
 
 // type ProductSlug = keyof typeof productData;
 
@@ -50,7 +50,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
   const product = useStore((state) => state.product);
   const setProduct = useStore((state) => state.setProduct);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [quantity, setQuantity] = useState<string>("1");
 
   // parse price like "₹129/kg" (or "129") then calculate total
@@ -90,20 +90,16 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
         const res = await fetch(apiUrl);
         if (!res.ok) {
           setIsLoading(false);
-          return notFound();
         }
         const data = await res.json();
         if (!data) {
           setIsLoading(false);
-          return notFound();
         }
         // Backend returns a single product object; handle array or object safely
         const productData = Array.isArray(data) ? data[0] : data;
-        if (!productData) {
+        if (!productData)
           setIsLoading(false);
-          return notFound();
-        }
-
+        
         setProduct(productData);
         setIsLoading(false);
       } catch (err) {
@@ -121,10 +117,10 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
     <>
       <ServiceNotice />
       <main className="max-w-5xl mx-auto py-6 sm:py-16 px-4">
-        {isLoading && <ProductGridSkeleton />}
+        {isLoading && <ProductDetailsSkeleton />}
         {!isLoading && product && (
           <>
-            <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div className="grid md:grid-cols-2 gap-5 sm:gap-10 items-start">
               <Image
                 src={product.image}
                 alt={product.title ?? "Product Image"}
@@ -133,19 +129,18 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
                 className="rounded-xl shadow-lg"
               />
               <div>
-                <h1 className="text-4xl font-bold mb-4">{product?.title}</h1>
+                <h1 className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-4">{product?.title}</h1>
                 <p className="text-lg text-gray-700 mb-4">
                   {product?.description}
                 </p>
-                {/* <p className="text-xl font-semibold text-green-700 mb-2">{product.price}</p> */}
                 {product.isAvailable && (
                   <>
                     <div className="mb-2">
-                      <span className="text-lg text-gray-500 line-through mr-2">
-                        {product.price.original}
-                      </span>
                       <span className="text-xl font-bold text-green-700">
                         {product.price.discounted}
+                      </span>
+                      <span className="text-lg text-gray-500 line-through ml-2">
+                        {product.price.original}
                       </span>
                     </div>
 
@@ -189,12 +184,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
                     </p>
 
                     <p
-                      className={`text-sm mb-4 ${
-                        product.stock && product.stock > 0
-                          ? "text-green-600"
-                          : "text-red-500"
-                      }`}
-                    >
+                      className="text-sm mb-4 text-green-600">
                       {"In stock"}
                     </p>
                   </>
@@ -212,7 +202,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
               </div>
             </div>
             <CustomerReviewsSection reviews={product?.reviews} />
-            <div className="mt-12 text-center">
+            <div className="sm:mt-12 text-center">
               <Link
                 href={`/${product.category}`}
                 className="text-blue-600 hover:underline"
@@ -222,7 +212,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
             </div>
           </>
         )}
-        {!isLoading && !product && <p>Product not found.</p>}
+        {!isLoading && !product && notFound()}
       </main>
     </>
   );
