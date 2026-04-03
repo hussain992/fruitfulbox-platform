@@ -20,14 +20,14 @@ export default function ProductSection({
     (title?.includes("Fruit Boxes") && "boxes") ||
     (title?.includes("Cut Fruits") && "cut_fruits") ||
     (title?.includes("Jams") && "jams") ||
-    (title?.includes("fruits") && "fruits") ||
+    (title?.includes("Trending Fruits") && "fruits") ||
     "";
 
   const { data: apiProducts, isLoading: isApiLoading } = useCachedData<
     Product[]
   >(category === "fruits" ? "fruits" : "");
 
-  // console.log('apiProducts in ProductSection ', apiProducts);
+  // console.log('category in ProductSection ', category);
   const sourceProducts: Product[] =
     category === "fruits" && apiProducts && apiProducts?.length > 0
       ? apiProducts
@@ -42,6 +42,7 @@ export default function ProductSection({
   const products = sourceProducts
     .filter((product) => product.isAvailable)
     .filter((product) => (product.tags ?? []).includes("trending"));
+  // console.log("products in ProductSection ", products);
   return (
     <section className="py-12 md:py-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">

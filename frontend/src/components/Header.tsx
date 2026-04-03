@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
-import { AnimatePresence, m } from "framer-motion";
+import { AnimatePresence, m, LazyMotion, domAnimation } from "framer-motion";
 import Image from "next/image";
 import logo from "../../public/images/logo.png";
 import SearchBar from "./ui/Searchbar";
@@ -17,7 +17,7 @@ export default function Header() {
     // { href: "/jams", label: "Jams" },
     { href: "/bulk-order", label: "Bulk Order" },
   ];
-
+  console.log("open ", isOpen);
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top info bar */}
@@ -102,42 +102,44 @@ export default function Header() {
       </div>
 
       {/* Mobile/Tablet menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <m.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-t border-gray-200"
-          >
-            <div className="px-4 py-4 space-y-3">
-              {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-gray-700 hover:text-green-600 transition-colors py-2"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="pt-3 border-t border-gray-200">
-                <a
-                  href="https://wa.me/7558535953"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold transition-colors"
-                >
-                  <MessageCircle size={16} />
-                  Order on WhatsApp
-                </a>
+      <LazyMotion features={domAnimation}>
+        <AnimatePresence>
+          {isOpen && (
+            <m.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="absolute left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 shadow-lg"
+            >
+              <div className="px-4 py-4 space-y-3">
+                {links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-gray-700 hover:text-green-600 transition-colors pb-2"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <div className="pt-1">
+                  <a
+                    href="https://wa.me/7558535953"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold transition-colors"
+                  >
+                    <MessageCircle size={16} />
+                    Order on WhatsApp
+                  </a>
+                </div>
               </div>
-            </div>
-          </m.div>
-        )}
-      </AnimatePresence>
+            </m.div>
+          )}
+        </AnimatePresence>
+      </LazyMotion>
     </header>
   );
 }

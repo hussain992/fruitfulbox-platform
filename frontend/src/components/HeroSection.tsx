@@ -7,10 +7,11 @@ export default function Hero() {
       <div className="">
         <Image
           src="/images/bannernw.webp"
-          alt="Pearl Pattern"
+          alt="fruit box banner"
           fill
           className=""
           priority
+          loading="eager"
         />
       </div>
     </section>
