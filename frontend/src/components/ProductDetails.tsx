@@ -82,6 +82,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
   };
   useEffect(() => {
     const getData = async () => {
+      console.log('get data for slug', slug);
       try {
         setIsLoading(true);
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "";
@@ -99,7 +100,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
         const productData = Array.isArray(data) ? data[0] : data;
         if (!productData)
           setIsLoading(false);
-        
+
         setProduct(productData);
         setIsLoading(false);
       } catch (err) {
@@ -108,8 +109,11 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
         notFound();
       }
     };
+    console.log('current product in store', product);
     if (!product || product.slug !== slug) {
       getData();
+    } else if (product.slug === slug) {
+      setIsLoading(false);
     }
   }, [slug, setProduct, product]);
 
