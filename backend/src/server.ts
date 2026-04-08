@@ -6,13 +6,17 @@ import cors from "cors";
 // const express = require("express");
 // const cors = require("cors");
 import { MongoClient } from "mongodb";
+import broadcastRoutes from "./routes/broadcast.js";
+import { startBroadcastJob } from "./jobs/broadcast.job.js";
 
 const app = express();
 // const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(express.json());
+app.use("/api", broadcastRoutes);
 
+startBroadcastJob();
 app.get("/", (_req, res) => {
   res.send("Server is running");
 });
@@ -161,7 +165,6 @@ app.get("/api/cut_fruits", async (req, res, next: NextFunction) => {
     next(err);
   }
 });
-
 startServer();
 
 app.use((err: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
