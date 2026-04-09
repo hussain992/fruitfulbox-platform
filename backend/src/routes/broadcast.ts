@@ -1,5 +1,5 @@
 // broadcast.routes.ts
-import { broadcastMessage } from "@/controllers/broadcast.js";
+import { broadcastMessage } from "../controllers/broadcast.js";
 import express from "express";
 
 const router = express.Router();

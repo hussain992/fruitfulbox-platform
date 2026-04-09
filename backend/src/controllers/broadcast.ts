@@ -1,5 +1,5 @@
 // broadcast.controller.ts
-import { sendWhatsAppMessage } from "@/services/whatsapp.js";
+import { sendWhatsAppMessage } from "../services/whatsapp.js";
 import { Request, Response } from "express";
 
 // Example: fetch from DB instead
