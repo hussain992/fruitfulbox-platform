@@ -12,7 +12,8 @@ const whatsappMessage =
 
 const mangoProducts = fruits.filter((product) => {
   const haystack = `${product.id ?? ""} ${product.title ?? ""} ${product.description ?? ""}`.toLowerCase();
-  return haystack.includes("mango");
+  //  haystack.includes("mango");
+   return (haystack.includes("mango") && !haystack.includes("pairi"));
 });
 
 const spotlightPoints = [

@@ -340,11 +340,11 @@
   {
     "id": "kesar-mango",
     "slug": "kesar-mango",
-    "title": "Kesar Mango",
-    "description": "Juicy, aromatic Kesar mangoes known for their rich flavor and vibrant color. Perfect for summer indulgence.",
+    "title": "Badam Mango",
+    "description": "Juicy, aromatic Badam mangoes known for their rich flavor and vibrant color. Perfect for summer indulgence.",
     "price": {
       "original": "249/2kg",
-      "discounted": "229/2kg"
+      "discounted": "199/kg"
     },
     "image": "/images/Kesar-Mangoes.jpg",
     "isAvailable": false,
@@ -357,11 +357,11 @@
       "Great for desserts and juices"
     ],
     "seo": {
-      "title": "Buy Kesar Mangoes Online - Fresh & Juicy | Fruitful Box",
-      "description": "Order fresh Kesar mangoes online at Fruitful Box. Enjoy the rich flavor and vibrant color of these aromatic mangoes. Perfect for summer indulgence. Limited stock available!",
+      "title": "Buy Badam Mangoes Online - Fresh & Juicy | Fruitful Box",
+      "description": "Order fresh Badam mangoes online at Fruitful Box. Enjoy the rich flavor and vibrant color of these aromatic mangoes. Perfect for summer indulgence. Limited stock available!",
       "keywords": [
-        "Kesar Mangoes",
-        "Buy Kesar Mangoes Online",
+        "Badam Mangoes",
+        "Buy Badam Mangoes Online",
         "Fresh Mangoes",
         "Seasonal Fruits"
       ]
@@ -387,8 +387,8 @@
     "category": "fruits",
     "isAvailable": false,
     "price": {
-      "original": "₹999",
-      "discounted": "₹799/dozen"
+      "original": "₹1699",
+      "discounted": "₹1399/dozen"
     },
     "stock": 12,
     "tags": ["seasonal", "new-arrival"],
@@ -439,8 +439,8 @@
       ]
     },
     "price": {
-      "original": "₹449",
-      "discounted": "₹399/dozen"
+      "original": "₹799",
+      "discounted": "₹599/dozen"
     },
     "stock": 12,
     "reviews": []
