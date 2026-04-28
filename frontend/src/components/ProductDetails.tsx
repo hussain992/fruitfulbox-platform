@@ -180,7 +180,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
                       >
                         +
                       </button>
-                      <span className="text-sm text-gray-600">kg</span>
+                      <span className="text-sm text-gray-600">box</span>
                     </div>
 
                     <p className="text-sm mb-4 text-green-700">
