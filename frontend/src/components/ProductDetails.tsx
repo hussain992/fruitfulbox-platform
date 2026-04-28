@@ -9,41 +9,6 @@ import useStore from "@/lib/store";
 import { useEffect, useState } from "react";
 import { ProductDetailsSkeleton } from "./ProductDetailsSkeleton";
 
-// type ProductSlug = keyof typeof productData;
-
-// 2️⃣ Metadata function
-// export async function generateMetadata(product): Promise<Metadata> {
-//   const slug = (await params).slug;
-//   const product = productData[slug as keyof typeof productData];
-
-//   if (!product) {
-//     return {
-//       title: "Product not found | Fruitful Box",
-//       description: "This product does not exist on Fruitful Box.",
-//     };
-//   }
-
-//   return {
-//     title: `${product.title} – Buy Now | Fruitful Box`,
-//     description: `Buy fresh ${product.title} online in Pune. ${product.description}`,
-//     openGraph: {
-//       title: `${product.title} – Fruitful Box`,
-//       description: `Order premium ${product.title} now via WhatsApp in Pune. ${product.description}`,
-//       images: [
-//         {
-//           // image extension can be anything like jpg, png, webp, etc.
-//           url: `https://fruitfulbox.vercel.app${product.image}`,
-//           width: 1200,
-//           height: 630,
-//         },
-//       ],
-//       siteName: "Fruitful Box",
-//       url: `https://fruitfulbox.vercel.app/products/${slug}`,
-//       type: "website",
-//     },
-//   };
-// }
-
 const ProductDetails: React.FC<{ category: string; slug: string }> = ({
   slug,
 }) => {
@@ -82,7 +47,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
   };
   useEffect(() => {
     const getData = async () => {
-      console.log('get data for slug', slug);
+      // console.log('get data for slug', slug);
       try {
         setIsLoading(true);
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "";
@@ -109,7 +74,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
         notFound();
       }
     };
-    console.log('current product in store', product);
+    // console.log('current product in store', product);
     if (!product || product.slug !== slug) {
       getData();
     } else if (product.slug === slug) {

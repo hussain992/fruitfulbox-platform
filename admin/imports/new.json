@@ -1,0 +1,64 @@
+{
+  "id": "blueberry-premium-001",
+  "name": "Fresh Blueberries",
+  "slug": "fresh-blueberries",
+  "category": "Berries",
+  "brand": "Fruitful Box",
+  "sku": "FB-BLU-125",
+  "unit": "125g Pack",
+  "price": 299,
+  "originalPrice": 349,
+  "currency": "INR",
+  "stock": 25,
+  "availability": "In Stock",
+  "featured": true,
+  "popular": true,
+  "rating": 4.8,
+  "reviewsCount": 18,
+  "images": [
+    "/images/products/blueberry.png"
+  ],
+  "description": "Premium fresh blueberries carefully packed for freshness. Sweet, juicy and perfect for snacking, smoothies, breakfast bowls and desserts.",
+  "shortDescription": "Fresh premium blueberries packed with antioxidants and natural sweetness.",
+  "benefits": [
+    "Rich in antioxidants",
+    "Supports immunity",
+    "Great for smoothies",
+    "Perfect healthy snack",
+    "Naturally sweet and juicy"
+  ],
+  "storage": "Keep refrigerated and consume within 3-5 days for best freshness.",
+  "origin": "Imported / Premium Farms",
+  "delivery": {
+    "type": "Same Day / Next Day",
+    "areas": ["Kondhwa", "NIBM", "Undri", "Wanowrie", "Pune"]
+  },
+  "reviews": [
+    {
+      "name": "Ayesha K",
+      "rating": 5,
+      "comment": "Very fresh and sweet blueberries. Perfect quality."
+    },
+    {
+      "name": "Rahul S",
+      "rating": 5,
+      "comment": "Excellent packing and fresh berries."
+    },
+    {
+      "name": "Neha P",
+      "rating": 4,
+      "comment": "Good taste and fresh stock."
+    }
+  ],
+  "seo": {
+    "title": "Buy Fresh Blueberries Online in Pune | Fruitful Box",
+    "description": "Order premium fresh blueberries online in Pune. Same day delivery available in Kondhwa, NIBM, Undri and nearby areas.",
+    "keywords": [
+      "blueberry online Pune",
+      "fresh blueberries Pune",
+      "buy blueberries Kondhwa",
+      "berries delivery Pune",
+      "Fruitful Box blueberries"
+    ]
+  }
+}
