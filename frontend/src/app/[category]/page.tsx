@@ -3,7 +3,6 @@ import ServiceNotice from "@/components/ServiceNotice";
 import ProductCard from "@/components/ProductCard";
 import { ProductGridSkeleton } from "@/components/ProductCardSkeleton";
 import { use } from "react";
-// import { notFound } from "next/navigation";
 import { Product } from "@/types";
 import { useCachedData } from "@/hooks/useCachedData";
 
@@ -15,10 +14,15 @@ const ProductListPage: React.FC<{
   const { data: products, isLoading: isProductsLoading } = useCachedData(`${category}`);
   const safeProducts: Product[] = Array.isArray(products) ? products : [];
 
-  const availableProducts =
-    safeProducts.length > 0
-      ? safeProducts.filter((item: Product) => item.isAvailable)
-      : [];
+  // Filter available products and sort by updatedAt (newest first)
+  const availableProducts = safeProducts
+    .filter((item: Product) => item.isAvailable)
+    .sort((a, b) => {
+      const dateA = a.updatedAt ? new Date(a.updatedAt).getTime() : 0;
+      const dateB = b.updatedAt ? new Date(b.updatedAt).getTime() : 0;
+      return dateB - dateA; // Descending order (newest first)
+    });
+
   return (
     <>
       <ServiceNotice />

@@ -18,4 +18,5 @@ export interface Product {
   reviews?: { user: string; comment: string }[];
   categorySlug?: string;
   tags?: string[];
+  updatedAt?: string;
 }
