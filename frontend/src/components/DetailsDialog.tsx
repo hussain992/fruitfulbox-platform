@@ -99,7 +99,7 @@ export const DetailsDialog: React.FC<DetailsDialogProps> = ({
                 selectedDate: e.target.value,
               }))
             }
-            className="border border-gray-300 rounded-md px-3 py-2 w-full text-sm"
+            className="border border-[var(--color-border)] rounded-md px-3 py-2 w-full text-sm"
           >
             <option value="">Choose a date</option>
             {deliveryOptions.map((date, index) => (

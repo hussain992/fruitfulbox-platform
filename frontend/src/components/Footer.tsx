@@ -9,18 +9,18 @@ export default function Footer() {
       <div className="absolute -right-8 bottom-8 h-48 w-48 rounded-full bg-yellow-300/10 blur-3xl hidden md:block" />
 
       <div className="relative mx-auto max-w-6xl px-4 py-6 md:py-12">
-        <div className="mb-6 md:mb-10 rounded-xl md:rounded-[2rem] border border-amber-300/20 bg-white/5 p-3 md:p-6 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur">
+        <div className="mb-6 md:mb-10 rounded-xl md:rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-card)] p-3 md:p-6 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur">
           <div className="grid gap-3 md:gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="min-w-0">
-              <div className="inline-flex items-center gap-1.5 md:gap-2 rounded-full border border-amber-300/30 bg-amber-200/10 px-3 md:px-4 py-1 md:py-2 text-xs font-semibold uppercase tracking-[0.2em] text-amber-200">
+              <div className="inline-flex items-center gap-1.5 md:gap-2 rounded-full border border-[var(--color-border)] bg-brand-100/70 px-3 md:px-4 py-1 md:py-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
                 <Sparkles className="h-3 md:h-4 w-auto" />
                 <span className="hidden sm:inline">Mango season</span>
                 <span className="sm:hidden">Mangoes</span>
               </div>
-              <h2 className="mt-2 md:mt-4 text-xl sm:text-2xl md:text-3xl font-black text-white lg:text-4xl">
+              <h2 className="mt-2 md:mt-4 text-xl sm:text-2xl md:text-3xl font-black text-[var(--color-foreground)] lg:text-4xl">
                 Summer mango mode.
               </h2>
-              <p className="mt-2 md:mt-3 max-w-2xl text-xs sm:text-sm leading-5 md:leading-7 text-[#f4ddb0] md:text-sm lg:text-base">
+              <p className="mt-2 md:mt-3 max-w-2xl text-xs sm:text-sm leading-5 md:leading-7 text-[var(--color-muted-foreground)] md:text-sm lg:text-base">
                 Seasonal picks, WhatsApp ordering & Pune delivery.
               </p>
             </div>
@@ -50,7 +50,7 @@ export default function Footer() {
               href="https://wa.me/7558535953"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 md:mt-5 inline-flex items-center gap-2 rounded-full bg-amber-400 px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-semibold text-stone-950 transition hover:bg-amber-300"
+              className="mt-3 md:mt-5 inline-flex items-center gap-2 rounded-full bg-brand-500 px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-semibold text-[var(--color-foreground)] transition hover:bg-brand-600"
             >
               <MessageCircle className="h-3.5 md:h-4 w-auto" />
               <span className="hidden sm:inline">Order on WhatsApp</span>
@@ -61,7 +61,7 @@ export default function Footer() {
                 href="https://www.instagram.com/fruitful.box"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#f4ddb0] transition hover:text-pink-300"
+                className="text-[var(--color-muted-foreground)] transition hover:text-brand-300"
                 aria-label="Instagram"
               >
                 <svg className="h-5 md:h-6 w-5 md:w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@ export default function Footer() {
                 href="https://www.facebook.com/profile.php?id=61569871812547"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#f4ddb0] transition hover:text-blue-300"
+                className="text-[var(--color-muted-foreground)] transition hover:text-brand-300"
                 aria-label="Facebook"
               >
                 <svg className="h-5 md:h-6 w-5 md:w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@ export default function Footer() {
                 href="https://wa.me/7558535953"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#f4ddb0] transition hover:text-green-300"
+                className="text-[var(--color-muted-foreground)] transition hover:text-brand-300"
                 aria-label="WhatsApp"
               >
                 <svg className="h-5 md:h-6 w-5 md:w-6" fill="currentColor" viewBox="0 0 24 24">

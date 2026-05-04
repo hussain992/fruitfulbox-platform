@@ -108,14 +108,14 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
       {/* Redirect Message */}
       {isRedirecting && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-[var(--color-card)] rounded-lg shadow-lg p-6 text-center">
             <div className="animate-spin mb-4 inline-block">
-              <div className="h-8 w-8 border-4 border-green-500 border-t-transparent rounded-full"></div>
+              <div className="h-8 w-8 border-4 border-brand-500 border-t-transparent rounded-full"></div>
             </div>
-            <p className="text-lg font-semibold text-gray-800">
+            <p className="text-lg font-semibold text-[var(--color-foreground)]">
               Opening WhatsApp...
             </p>
-            <p className="text-sm text-gray-600 mt-2">
+            <p className="text-sm text-[var(--color-muted-foreground)] mt-2">
               Redirecting to WhatsApp to complete your order
             </p>
             <button
@@ -123,7 +123,7 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
                 setIsRedirecting(false);
                 setShowFallback(true);
               }}
-              className="mt-4 text-sm text-blue-600 hover:text-blue-700 underline"
+              className="mt-4 text-sm text-brand-700 hover:text-brand-800 underline"
             >
               Didn&apos;t work? Try alternatives
             </button>
@@ -142,11 +142,11 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
         />
       )}
       {/* Order Button - Sticky on Mobile, Inline on Desktop */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:static bg-white px-4 py-3 md:p-0 border-t md:border-t-0 shadow-lg md:shadow-none">
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:static bg-[var(--color-card)] px-4 py-3 md:p-0 border-t border-[var(--color-border)] md:border-t-0 shadow-lg md:shadow-none">
         <Button
           onClick={handleWhatsAppOrder}
           disabled={disableOrderButton || isRedirecting}
-          className="w-full md:w-auto md:ml-4 bg-green-500 hover:bg-green-600 text-white px-6 py-3 md:py-2 rounded-md shadow"
+          className="w-full md:w-auto md:ml-4 bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 md:py-2 rounded-md shadow"
         >
           {isRedirecting ? "Redirecting..." : buttonTitle}
         </Button>

@@ -14,12 +14,12 @@ export default function CategoriesSection() {
   const [active, setActive] = useState(5);
 
   return (
-    <section className="w-full px-4 py-12 md:py-16 bg-gray-50">
+    <section className="w-full px-4 py-12 md:py-16 bg-[var(--color-card)]">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[var(--color-foreground)]">
           Shop By Category
         </h2>
-        <p className="text-center text-gray-600 mb-12">
+        <p className="text-center text-[var(--color-muted-foreground)] mb-12">
           Browse our curated selection of fresh fruits and products
         </p>
         
@@ -32,8 +32,8 @@ export default function CategoriesSection() {
                 className={`
                   flex flex-col items-center justify-center m-auto
                   w-20 h-20
-                  bg-white shadow-md transition transform hover:scale-105 active:scale-95
-                  ${active === i ? "ring-2 ring-green-500" : ""}
+                  bg-[var(--color-background)] shadow-md transition transform hover:scale-105 active:scale-95
+                  ${active === i ? "ring-2 ring-brand-500" : ""}
                   
                   rounded-full 
                   sm:rounded-2xl sm:w-32 sm:h-28
@@ -43,7 +43,7 @@ export default function CategoriesSection() {
                   {cat.icon}
                 </span>
               </Link>
-              <div className="text-sm sm:text-base mt-2 text-center font-medium text-gray-900">
+              <div className="text-sm sm:text-base mt-2 text-center font-medium text-[var(--color-foreground)]">
                 {cat.name}
               </div>
             </div>

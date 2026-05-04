@@ -6,7 +6,7 @@ interface ProductTagProps {
 
 export const ProductTag = ({ label, color = "green" }: ProductTagProps) => {
   const colorMap = {
-    green: "bg-green-500",
+    green: "bg-brand-500",
     blue: "bg-blue-500",
     red: "bg-red-500",
   };

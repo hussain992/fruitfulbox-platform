@@ -10,7 +10,7 @@ interface ProductImageProps {
 
 export default function ProductImage({ image, title, category }: ProductImageProps) {
   return (
-    <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-lg">
+    <div className="relative aspect-square rounded-2xl overflow-hidden bg-[var(--color-card)] shadow-lg">
       <Image
         src={image}
         alt={title ?? "Product Image"}
@@ -21,7 +21,7 @@ export default function ProductImage({ image, title, category }: ProductImagePro
       {/* Category Badge */}
       {category && (
         <div className="absolute top-4 left-4">
-          <span className="bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-sm capitalize">
+          <span className="bg-white/90 backdrop-blur-sm text-[var(--color-muted-foreground)] text-xs font-medium px-3 py-1.5 rounded-full shadow-sm capitalize">
             {category}
           </span>
         </div>

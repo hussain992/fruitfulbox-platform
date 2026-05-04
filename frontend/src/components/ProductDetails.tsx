@@ -102,14 +102,14 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
     <>
       <ServiceNotice />
       <main className="max-w-6xl mx-auto py-6 sm:py-16 px-4">
-        <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-          <Link href="/" className="hover:text-green-600 transition-colors">Home</Link>
+        <nav className="flex items-center gap-2 text-sm text-[var(--color-muted-foreground)] mb-6">
+          <Link href="/" className="hover:text-brand-700 transition-colors">Home</Link>
           <span>/</span>
-          <Link href={`/${product.category}`} className="hover:text-green-600 transition-colors capitalize">
+          <Link href={`/${product.category}`} className="hover:text-brand-700 transition-colors capitalize">
             {product.category}
           </Link>
           <span>/</span>
-          <span className="text-gray-800 truncate">{product.title}</span>
+          <span className="text-[var(--color-foreground)] truncate">{product.title}</span>
         </nav>
 
         <AnimatePresence mode="wait">
@@ -132,11 +132,11 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
               >
-                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+                <h1 className="text-3xl sm:text-4xl font-bold text-[var(--color-foreground)] mb-3">
                   {product.title}
                 </h1>
                 
-                <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                <p className="text-[var(--color-muted-foreground)] text-lg leading-relaxed mb-6">
                   {product.description}
                 </p>
 
@@ -163,10 +163,10 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
                 )}
 
                 {product.isAvailable && (
-                  <div className="bg-gray-50 rounded-xl p-4 mb-6">
+                  <div className="bg-[var(--color-card)] rounded-xl p-4 mb-6">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-600">Total Price</span>
-                      <span className="text-2xl font-bold text-green-600">
+                      <span className="text-[var(--color-muted-foreground)]">Total Price</span>
+                      <span className="text-2xl font-bold text-brand-700">
                         {formattedTotal}
                       </span>
                     </div>
@@ -201,7 +201,7 @@ const ProductDetails: React.FC<{ category: string; slug: string }> = ({
         <div className="mt-12 text-center">
           <Link
             href={`/${product.category}`}
-            className="inline-flex items-center gap-2 text-gray-500 hover:text-green-600 transition-colors"
+            className="inline-flex items-center gap-2 text-[var(--color-muted-foreground)] hover:text-brand-700 transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5" />

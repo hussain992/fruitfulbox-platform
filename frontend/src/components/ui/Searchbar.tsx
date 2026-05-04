@@ -58,25 +58,25 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
             value={query}
             onChange={handleChange}
             placeholder="Search fruits..."
-            className="w-full px-4 py-2 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full px-4 py-2 pr-12 border border-[var(--color-border)] rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500"
           />
           {query && (
             <button
               type="button"
               onClick={clearSearch}
-              className="absolute right-12 text-gray-400 hover:text-gray-600"
+              className="absolute right-12 text-[var(--color-muted)] hover:text-[var(--color-muted-foreground)]"
             >
               <X size={18} />
             </button>
           )}
           <button
             type="submit"
-            className="absolute right-3 text-green-600 hover:text-green-700"
+            className="absolute right-3 text-brand-700 hover:text-brand-800"
           >
             <Search size={18} />
           </button>
           {filteredProducts.length > 0 && (
-            <div className="absolute left-0 bg-white right-0 top-5 mt-5 z-10 w-full">
+            <div className="absolute left-0 bg-[var(--color-card)] right-0 top-5 mt-5 z-10 w-full">
               <ProductList products={filteredProducts} />
             </div>
           )}
@@ -93,25 +93,25 @@ export default function SearchBar({ isMobile = false }: SearchBarProps) {
           value={query}
           onChange={handleChange}
           placeholder="Search fruits..."
-          className="px-4 py-2 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 w-full"
+          className="px-4 py-2 pr-12 border border-[var(--color-border)] rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 w-full"
         />
         {query && (
           <button
             type="button"
             onClick={clearSearch}
-            className="absolute right-12 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            className="absolute right-12 top-1/2 -translate-y-1/2 text-[var(--color-muted)] hover:text-[var(--color-muted-foreground)]"
           >
             <X size={18} />
           </button>
         )}
         <button
           type="submit"
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-green-600 hover:text-green-700"
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-700 hover:text-brand-800"
         >
           <Search size={18} />
         </button>
         {query && filteredProducts.length > 0 && (
-          <div className="absolute bg-white rounded-lg shadow-lg z-10 w-full">
+          <div className="absolute bg-[var(--color-card)] rounded-lg shadow-lg z-10 w-full">
             <ProductList products={filteredProducts} />
           </div>
         )}

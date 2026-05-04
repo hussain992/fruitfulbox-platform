@@ -95,7 +95,10 @@ export default function RootLayout({
         <link rel="canonical" href="https://fruitfulbox.vercel.app" />
       </Head>
       <body
-        className={cn("min-h-screen bg-white text-gray-800", inter.className)}
+        className={cn(
+          "min-h-screen bg-[var(--color-background)] text-[var(--color-foreground)]",
+          inter.className,
+        )}
       >
         <Header />
         <main className="flex-1">{children}</main>

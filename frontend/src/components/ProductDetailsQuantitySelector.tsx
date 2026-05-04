@@ -11,8 +11,8 @@ interface QuantitySelectorProps {
 export default function QuantitySelector({ quantity, onChange }: QuantitySelectorProps) {
   return (
     <div className="flex items-center gap-3">
-      <span className="text-sm font-medium text-gray-600">Quantity</span>
-      <div className="flex items-center gap-1 bg-gray-50 rounded-lg p-1">
+      <span className="text-sm font-medium text-[var(--color-muted-foreground)]">Quantity</span>
+      <div className="flex items-center gap-1 bg-[var(--color-card)] rounded-lg p-1">
         <Button
           variant="ghost"
           size="icon"
@@ -45,7 +45,7 @@ export default function QuantitySelector({ quantity, onChange }: QuantitySelecto
           </svg>
         </Button>
       </div>
-      <span className="text-sm text-gray-500">box(es)</span>
+      <span className="text-sm text-[var(--color-muted)]">box(es)</span>
     </div>
   );
 }

@@ -23,10 +23,10 @@ export default function ProductPrice({ discounted, original }: ProductPriceProps
   
   return (
     <div className="flex items-baseline gap-3">
-      <span className="text-3xl font-bold text-green-600">{discounted}</span>
+      <span className="text-3xl font-bold text-brand-700">{discounted}</span>
       {original && discounted !== original && (
         <>
-          <span className="text-lg text-gray-400 line-through">{original}</span>
+          <span className="text-lg text-[var(--color-muted)] line-through">{original}</span>
           {discount > 0 && (
             <span className="bg-red-100 text-red-600 text-xs font-semibold px-2 py-1 rounded-full">
               {discount}% OFF

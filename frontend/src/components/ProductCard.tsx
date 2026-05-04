@@ -60,9 +60,9 @@ export default function ProductCard({
       onClick={(e) => handleNavigation(e, false)}
       className="cursor-pointer h-full group"
     >
-      <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+      <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
         {/* Image Container */}
-        <div className="relative w-full aspect-square overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="relative w-full aspect-square overflow-hidden bg-[var(--color-background)]">
           {/* Discount Badge */}
           {discountPercentage && (
             <div className="absolute top-1 right-1 bg-red-500 text-white text-xs font-bold p-1 rounded-full z-10">
@@ -93,13 +93,13 @@ export default function ProductCard({
         {/* Content Container */}
         <div className="p-2 md:p-4 flex flex-col flex-grow">
           {/* Title */}
-          <h3 className="text-base md:text-lg font-bold text-gray-900 line-clamp-2 group-hover:text-green-600 transition-colors">
+          <h3 className="text-base md:text-lg font-bold text-[var(--color-foreground)] line-clamp-2 group-hover:text-brand-700 transition-colors">
             {title}
           </h3>
 
           {/* Description */}
           {description && (
-            <p className="text-sm text-gray-600 line-clamp-2 mb-3">
+            <p className="text-sm text-[var(--color-muted-foreground)] line-clamp-2 mb-3">
               {description}
             </p>
           )}
@@ -107,11 +107,11 @@ export default function ProductCard({
           {/* Pricing */}
           {price && (
             <div className="flex items-center gap-2 mb-4">
-              <div className="text-lg md:text-xl font-bold text-gray-900">
+              <div className="text-lg md:text-xl font-bold text-[var(--color-foreground)]">
                 {price.discounted}
               </div>
               {price.discounted && (
-                <div className="text-sm text-gray-500 line-through">
+                <div className="text-sm text-[var(--color-muted-foreground)] line-through">
                   {price.original}
                 </div>
               )}
@@ -121,7 +121,7 @@ export default function ProductCard({
           {/* Button */}
           <Button
             disabled={isAvailable === false}
-            className="mt-auto w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg transition-colors"
+            className="mt-auto w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-2 rounded-lg transition-colors"
             onClick={(e) => {
               e.stopPropagation();
               handleNavigation(e, true);

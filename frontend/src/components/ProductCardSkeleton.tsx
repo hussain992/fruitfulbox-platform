@@ -1,11 +1,11 @@
 export const ProductCardSkeleton: React.FC = () => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden animate-pulse">
-      <div className="w-full h-40 bg-gray-300"></div>
+    <div className="bg-[var(--color-card)] rounded-lg shadow-md overflow-hidden animate-pulse">
+      <div className="w-full h-40 bg-[var(--color-muted)]"></div>
       <div className="p-4">
-        <div className="h-4 bg-gray-300 rounded mb-2"></div>
-        <div className="h-4 bg-gray-300 rounded w-3/4 mb-3"></div>
-        <div className="h-8 bg-gray-300 rounded"></div>
+        <div className="h-4 bg-[var(--color-muted)] rounded mb-2"></div>
+        <div className="h-4 bg-[var(--color-muted)] rounded w-3/4 mb-3"></div>
+        <div className="h-8 bg-[var(--color-muted)] rounded"></div>
       </div>
     </div>
   );

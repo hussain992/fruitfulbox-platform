@@ -27,11 +27,11 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute left-0 right-0 z-50 md:hidden border-t border-amber-200 bg-[#fff8df] shadow-xl"
+            className="absolute left-0 right-0 z-50 md:hidden border-t border-[var(--color-border)] bg-[var(--color-card)] shadow-xl"
           >
             <div className="space-y-2 px-4 py-3">
-              <div className="rounded-lg border border-amber-200 bg-white/60 p-2 text-xs text-stone-700">
-                <div className="flex items-start gap-1.5 font-semibold text-amber-800">
+              <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-2 text-xs text-[var(--color-muted-foreground)]">
+                <div className="flex items-start gap-1.5 font-semibold text-brand-700">
                   <Sparkles className="h-3.5 w-3.5 mt-0.5 flex-shrink-0" />
                   <span>Mango season - browse & order on WhatsApp</span>
                 </div>
@@ -43,7 +43,7 @@ export default function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block rounded-lg px-3 py-2 text-xs font-medium text-stone-700 transition hover:bg-white/60 hover:text-amber-800"
+                    className="block rounded-lg px-3 py-2 text-xs font-medium text-[var(--color-muted-foreground)] transition hover:bg-[var(--color-card)] hover:text-brand-700"
                   >
                     {link.label}
                   </Link>
@@ -69,10 +69,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-[-36px] z-50 border-b border-amber-200 bg-[linear-gradient(180deg,_rgba(255,248,223,0.98)_0%,_rgba(255,253,244,0.97)_100%)] shadow-[0_10px_35px_rgba(120,53,15,0.08)] backdrop-blur">
-      <div className="border-b border-amber-200 bg-[linear-gradient(90deg,_#fff2b4_0%,_#ffd66b_52%,_#ffefbc_100%)] px-4 py-1.5 text-xs text-stone-800 md:py-2 md:text-sm">
+      <div className="border-b border-[var(--color-border)] bg-[var(--color-card)] px-4 py-1.5 text-xs text-[var(--color-muted-foreground)] md:py-2 md:text-sm">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-3 md:gap-x-5 gap-y-0.5 md:gap-y-1 font-medium">
           <span className="inline-flex items-center gap-1.5 md:gap-2">
-            <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-amber-800 flex-shrink-0" />
+            <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-brand-700 flex-shrink-0" />
             <span className="hidden sm:inline">Mango season specials now on the homepage</span>
             <span className="sm:hidden">Mango season live</span>
           </span>
@@ -101,7 +101,7 @@ export default function Header() {
             </div>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="rounded-xl border border-amber-200 bg-white/90 p-2 text-stone-700 transition hover:text-amber-700"
+              className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-2 text-[var(--color-muted-foreground)] transition hover:text-brand-700"
               aria-label="Toggle navigation menu"
             >
               {isOpen ? <X size={22} /> : <Menu size={22} />}
@@ -126,17 +126,17 @@ export default function Header() {
           </div>
 
           <div className="flex items-center justify-center gap-4">
-            <div className="hidden lg:flex items-center gap-5 text-sm font-medium text-stone-600">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-stone-700 shadow-sm">
-                <MapPin className="h-4 w-4 text-amber-700" />
+            <div className="hidden lg:flex items-center gap-5 text-sm font-medium text-[var(--color-muted-foreground)]">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[var(--color-card)] px-3 py-2 text-[var(--color-muted-foreground)] shadow-sm">
+                <MapPin className="h-4 w-4 text-brand-700" />
                 Pune
               </span>
-              <nav className="flex items-center gap-1 rounded-full border border-amber-200 bg-white/80 p-1 shadow-sm">
+              <nav className="flex items-center gap-1 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] p-1 shadow-sm">
                 {links.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="rounded-full px-4 py-2 text-sm font-medium text-stone-700 transition hover:bg-amber-100 hover:text-amber-900"
+                    className="rounded-full px-4 py-2 text-sm font-medium text-[var(--color-muted-foreground)] transition hover:bg-[var(--color-card)] hover:text-brand-700"
                   >
                     {link.label}
                   </Link>
@@ -154,7 +154,7 @@ export default function Header() {
               href="https://wa.me/7558535953"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-stone-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-stone-800"
+              className="inline-flex items-center gap-2 rounded-full bg-brand-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-800"
             >
               <MessageCircle size={16} />
               Order Mangoes
