@@ -44,17 +44,18 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 // Server-side data fetching
 async function getProducts(category: string): Promise<Product[]> {
   try {
-    console.log(`Fetching products for category: ${category}`);
+    console.log(`Fetching products url: ${API_BASE_URL}/${category}`);
     const res = await fetch(`${API_BASE_URL}/${category}`, {
       next: { revalidate: 60 }, // Revalidate every 60 seconds
     });
-
+    console.log('response status:', res);
     if (!res.ok) {
       console.error(`Failed to fetch products: ${res.status}`);
       return [];
     }
 
     const data = await res.json();
+    console.log(`data for category "${category}":`, data);
     return data?.docs || data || [];
   } catch (error) {
     console.error(`Error fetching products for category "${category}":`, error);
