@@ -1,19 +1,26 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DetailsDialog } from "./DetailsDialog";
 import { useCaptureUTM } from "@/hooks/useCaptureUTM";
 import { useDeviceType } from "@/hooks/useDeviceType";
 import FallbackOrderOptions from "./FallbackOrderOptions";
+import useStore from "@/lib/store";
+import { Product } from "@/types";
+import { parsePrice, formatCurrency } from "./ProductDetails.utils";
 
 interface Props {
   title?: string;
   totalPrice: string;
   isAvailable?: boolean; // Optional prop to indicate availability
+  quantity?: string;
+  product?: Product | null;
 }
 
-const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
+const OrderDetails: React.FC<Props> = ({ totalPrice, isAvailable, quantity, product }) => {
+  const orderItems = useStore((state) => state.orderItems);
+  const clearOrderItems = useStore((state) => state.clearOrderItems);
   const [userDetails, setUserDetails] = useState({
     selectedDate: "",
     flatNo: "",
@@ -27,6 +34,25 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
   const { isMobile } = useDeviceType(); // Detect if device is mobile or desktop
   const searchParams = useSearchParams();
   const isBuyNow = searchParams.get("action") === "buy-now";
+
+  const currentItems = useMemo(
+    () =>
+      orderItems.length > 0
+        ? orderItems
+        : product
+        ? [{ ...product, quantity: Number(quantity || "1") }]
+        : [],
+    [orderItems, product, quantity],
+  );
+
+  const orderItemCount = currentItems.reduce((sum, item) => sum + item.quantity, 0);
+  const totalAmount = currentItems.reduce((sum, item) => {
+    const price = parsePrice(item.price.discounted ?? item.price.original);
+    return sum + price * item.quantity;
+  }, 0);
+
+  const formattedOrderTotal = formatCurrency(totalAmount);
+
   useEffect(() => {
     if (isBuyNow) {
       setOpen(true);
@@ -47,15 +73,17 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
   const performWhatsAppRedirect = useCallback(() => {
     const addr = `\n🏠 Address: Flat no ${userDetails.flatNo}, ${
       userDetails.wing
-    } ${userDetails.wing && "wing,"} ${
-      userDetails.society && userDetails.society
-    }`;
+    } ${userDetails.wing ? "wing," : ""} ${userDetails.society || ""}`;
     const source = localStorage.getItem("utm_source") || "direct";
-    const message = `Hi, I'm interested in buying:\n\n🥭 ${title}\n💰 Total Price: ${totalPrice} 
-      ${
-        userDetails.selectedDate &&
-        `\n📅 Preferred Delivery: ${userDetails.selectedDate}`
-      } ${addr && addr} ${source}`;
+
+    const orderLines = currentItems.map((item) => {
+      const unitPrice = item.price.discounted ?? item.price.original;
+      return `- ${item.quantity} x ${item.title} (${unitPrice})`;
+    });
+
+    const message = `Hi, I'm interested in buying:\n\n${orderLines.join("\n")}\n\nTotal: ${formattedOrderTotal}${
+      userDetails.selectedDate ? `\n📅 Preferred Delivery: ${userDetails.selectedDate}` : ""
+    }${addr}\nSource: ${source}`;
 
     setMessageText(message);
     setIsRedirecting(true);
@@ -63,23 +91,19 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
     const encodedMessage = encodeURIComponent(message);
     const phoneNumber = "917558535953";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    // console.log("WhatsApp URL: ", whatsappUrl);
 
-    // Show fallback options only on desktop, after a delay
     if (!isMobile) {
       setTimeout(() => {
         setIsRedirecting(false);
         setShowFallback(true);
       }, 500);
     } else {
-      // On mobile, just hide the redirecting modal
       setTimeout(() => {
         setIsRedirecting(false);
-        // Open WhatsApp (works on mobile for app, desktop for web)
         window.open(whatsappUrl, "_blank");
       }, 500);
     }
-  }, [userDetails, title, totalPrice, isMobile]);
+  }, [currentItems, formattedOrderTotal, isMobile, userDetails]);
 
   useEffect(() => {
     if (userDetails?.flatNo && userDetails?.society) {
@@ -87,25 +111,66 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
     }
   }, [performWhatsAppRedirect, userDetails]);
 
-  const buttonTitle = isAvailable
+  const canOrder = orderItems.length > 0 || Boolean(isAvailable);
+  const buttonTitle = orderItems.length > 0
+    ? `Order ${orderItemCount} item${orderItemCount > 1 ? "s" : ""} on WhatsApp for ${formattedOrderTotal}`
+    : isAvailable
     ? `Order on WhatsApp for ${totalPrice}`
     : "Out of Stock";
-  const disableOrderButton = !isAvailable;
+  const disableOrderButton = !canOrder;
+
   return (
     <>
       <div className="mb-4"></div>
-      {isAvailable && (
+      {(orderItems.length > 0 || isAvailable) && (
         <DetailsDialog
           getDetails={(details) => {
             setUserDetails(details);
-            // Trigger WhatsApp redirect after details are set
-            // setTimeout(() => performWhatsAppRedirect(), 500);
           }}
           defaultOpen={open}
           closeDialog={() => setOpen(false)}
         />
       )}
-      {/* Redirect Message */}
+
+      {orderItems.length > 0 && (
+        <div className="mb-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-4">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p className="font-semibold text-[var(--color-foreground)]">Order list</p>
+              <p className="text-sm text-[var(--color-muted-foreground)]">
+                {orderItemCount} item{orderItemCount > 1 ? "s" : ""} added
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={clearOrderItems}
+              className="text-sm text-brand-600 hover:text-brand-700"
+            >
+              Clear
+            </button>
+          </div>
+          <ul className="mt-3 space-y-2">
+            {orderItems.map((item) => {
+              const itemUnitPrice = item.price.discounted ?? item.price.original;
+              const itemTotal = formatCurrency(parsePrice(itemUnitPrice) * item.quantity);
+              return (
+                <li key={item.slug} className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-medium text-[var(--color-foreground)]">
+                      {item.quantity} x {item.title}
+                    </p>
+                    <p className="text-xs text-[var(--color-muted-foreground)]">
+                      {itemUnitPrice} each
+                    </p>
+                  </div>
+                  <span className="text-sm font-semibold text-brand-700">{itemTotal}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+
       {isRedirecting && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-[var(--color-card)] rounded-lg shadow-lg p-6 text-center">
@@ -131,17 +196,15 @@ const OrderDetails: React.FC<Props> = ({ title, totalPrice, isAvailable }) => {
         </div>
       )}
 
-      {/* Fallback Options Modal - Only show on desktop */}
       {!isMobile && (
         <FallbackOrderOptions
           isOpen={showFallback}
           messageText={messageText}
           onClose={() => setShowFallback(false)}
           phoneNumber="917558535953"
-          // whatsappweburl={}
         />
       )}
-      {/* Order Button - Sticky on Mobile, Inline on Desktop */}
+
       <div className="fixed bottom-0 left-0 right-0 z-50 md:static bg-[var(--color-card)] px-4 py-3 md:p-0 border-t border-[var(--color-border)] md:border-t-0 shadow-lg md:shadow-none">
         <Button
           onClick={handleWhatsAppOrder}
