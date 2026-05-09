@@ -1,5 +1,6 @@
 // app/sitemap.xml/route.ts
 
+import { Product } from '@/types';
 import type { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -27,20 +28,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Generate dynamic routes for each category
     const fruitsRoutes = fruits
-      .filter((product: any) => product.slug)
-      .map((product: any) => `/fruits/${product.slug}`);
+      .filter((product: Product) => product.slug)
+      .map((product: Product) => `/fruits/${product.slug}`);
 
     const jamsRoutes = jams
-      .filter((product: any) => product.slug)
-      .map((product: any) => `/jams/${product.slug}`);
+      .filter((product: Product) => product.slug)
+      .map((product: Product) => `/jams/${product.slug}`);
 
     const cutFruitsRoutes = cutFruits
-      .filter((product: any) => product.slug)
-      .map((product: any) => `/cut_fruits/${product.slug}`);
+      .filter((product: Product) => product.slug)
+      .map((product: Product) => `/cut_fruits/${product.slug}`);
 
     const boxesRoutes = boxes
-      .filter((product: any) => product.slug)
-      .map((product: any) => `/boxes/${product.slug}`);
+      .filter((product: Product) => product.slug)
+      .map((product: Product) => `/boxes/${product.slug}`);
 
     const urls = [...staticRoutes, ...fruitsRoutes, ...jamsRoutes, ...cutFruitsRoutes, ...boxesRoutes];
 

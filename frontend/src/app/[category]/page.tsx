@@ -45,9 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 async function getProducts(category: string): Promise<Product[]> {
   try {
     console.log(`Fetching products url: ${API_BASE_URL}/${category}`);
-    const res = await fetch(`${API_BASE_URL}/${category}`, {
-      next: { revalidate: 60 }, // Revalidate every 60 seconds
-    });
+    const res = await fetch(`${API_BASE_URL}/${category}`);
     console.log('response status:', res);
     if (!res.ok) {
       console.error(`Failed to fetch products: ${res.status}`);

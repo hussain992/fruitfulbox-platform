@@ -1,7 +1,7 @@
 import ProductDetails from '@/components/ProductDetails';
 // import { getProductsByCategory } from '@/lib/utils';
 import type { Metadata } from 'next'
-import {use} from 'react';
+
 type Props = {
   params: Promise<{ category: string, slug: string }>,
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
@@ -64,20 +64,13 @@ export async function generateMetadata(
     };
   }
 }
- 
-const ProductDetailPage: React.FC<{ params: Promise<{ category: string, slug: string }> }> = ({
-  params
-}) => {
-  const resolvedParams = use(params);
-  const { category, slug } = resolvedParams;
-  // const products = use(getProductsByCategory(category));
 
-  // const product = products.find((p: {slug: string}) => p.slug === slug);
+export default async function ProductDetailPage({ params }: Props) {
+  const { slug } = await params;
+
   return (
     <div>
-      <ProductDetails category={category} slug={slug}/>
+      <ProductDetails slug={slug} />
     </div>
   );
-};
-
-export default ProductDetailPage;
+}

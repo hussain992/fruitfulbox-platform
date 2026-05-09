@@ -24,7 +24,7 @@ export const useCachedData = <T,>(
     setIsLoading(true);
     // console.log('api called again');
     try {
-      const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+      const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_CLIENT;
       const newData = await fetch(`${apiBaseUrl}/${key}`).then((res) =>
         res.json(),
       );
