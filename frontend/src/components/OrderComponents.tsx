@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DetailsDialog } from "./DetailsDialog";
 import { useCaptureUTM } from "@/hooks/useCaptureUTM";
@@ -21,13 +21,10 @@ interface Props {
 const OrderDetails: React.FC<Props> = ({ totalPrice, isAvailable, quantity, product }) => {
   const orderItems = useStore((state) => state.orderItems);
   const clearOrderItems = useStore((state) => state.clearOrderItems);
-  const [userDetails, setUserDetails] = useState({
-    selectedDate: "",
-    flatNo: "",
-    wing: "",
-    society: "",
-  });
+  const userDetails = useStore((state) => state.deliveryDetails);
+  const setUserDetails = useStore((state) => state.setDeliveryDetails);
   const [open, setOpen] = useState(false); // State to control the dialog open/close
+  const hasHydratedDetails = useRef(false);
   const [isRedirecting, setIsRedirecting] = useState(false); // State to show redirect message
   const [showFallback, setShowFallback] = useState(false); // State to show fallback options
   const [messageText, setMessageText] = useState(""); // Store the message for fallback
@@ -63,17 +60,15 @@ const OrderDetails: React.FC<Props> = ({ totalPrice, isAvailable, quantity, prod
 
   // Function to handle WhatsApp order
   const handleWhatsAppOrder = () => {
-    if (userDetails.flatNo == "") {
       setOpen(true);
-    } else {
-      performWhatsAppRedirect();
-    }
+
   };
 
-  const performWhatsAppRedirect = useCallback(() => {
-    const addr = `\n🏠 Address: Flat no ${userDetails.flatNo}, ${
-      userDetails.wing
-    } ${userDetails.wing ? "wing," : ""} ${userDetails.society || ""}`;
+  const performWhatsAppRedirect = useCallback((details?: typeof userDetails) => {
+    const currentDetails = details ?? userDetails;
+    const addr = `\n🏠 Address: Flat no ${currentDetails.flatNo}, ${
+      currentDetails.wing
+    } ${currentDetails.wing ? "wing," : ""} ${currentDetails.society || ""}`;
     const source = localStorage.getItem("utm_source") || "direct";
 
     const orderLines = currentItems.map((item) => {
@@ -106,10 +101,11 @@ const OrderDetails: React.FC<Props> = ({ totalPrice, isAvailable, quantity, prod
   }, [currentItems, formattedOrderTotal, isMobile, userDetails]);
 
   useEffect(() => {
-    if (userDetails?.flatNo && userDetails?.society) {
-      performWhatsAppRedirect();
+    if (!hasHydratedDetails.current) {
+      hasHydratedDetails.current = true;
+      return;
     }
-  }, [performWhatsAppRedirect, userDetails]);
+  }, []);
 
   const canOrder = orderItems.length > 0 || Boolean(isAvailable);
   const buttonTitle = orderItems.length > 0
@@ -126,6 +122,7 @@ const OrderDetails: React.FC<Props> = ({ totalPrice, isAvailable, quantity, prod
         <DetailsDialog
           getDetails={(details) => {
             setUserDetails(details);
+            performWhatsAppRedirect(details);
           }}
           defaultOpen={open}
           closeDialog={() => setOpen(false)}

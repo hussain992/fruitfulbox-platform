@@ -15,45 +15,38 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getNextDeliveryDates(count = 3) {
-  const today = new Date();
-  const deliveryDays: string[] = [];
+  const now = new Date();
+  const currentDate = new Date(now);
+  currentDate.setHours(0, 0, 0, 0);
+
+  const deliveryDays: Array<{ label: string; date: Date; daysAhead: number }> = [];
   const targetDays = [3, 6, 0]; // Wednesday (3), Saturday (6), Sunday (0)
+  const candidate = new Date(currentDate);
 
   while (deliveryDays.length < count) {
-    const testDate = new Date(today);
-    testDate.setDate(today.getDate());
-    const day = testDate.getDay();
+    const day = candidate.getDay();
+    const isToday = candidate.getTime() === currentDate.getTime();
+    const isMorning = now.getHours() < 12;
 
-    if (targetDays.includes(day)) {
-      const weekday = testDate.toLocaleDateString("en-IN", {
+    if (targetDays.includes(day) && (!isToday || isMorning)) {
+      const weekday = candidate.toLocaleDateString("en-IN", {
         weekday: "long",
       });
-      const dayMonth = testDate.toLocaleDateString("en-IN", {
+      const dayMonth = candidate.toLocaleDateString("en-IN", {
         day: "numeric",
         month: "short",
       });
       const formatted = `${weekday} (${dayMonth})`;
-      const now = new Date();
-      const currentDay = now.toLocaleDateString("en-IN", {
-        day: "numeric",
-        month: "short",
-      });
-      const isMorning = now.getHours() < 12;
-      const isSameDay = dayMonth === currentDay;
+      const daysAhead = Math.round((candidate.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24));
 
-      if (isSameDay) {
-        if (isMorning) {
-          // If it's morning, add today as the first delivery day
-          deliveryDays.unshift(formatted);
-        }
-      } else {
-        if (!deliveryDays.includes(formatted)) {
-          deliveryDays.push(formatted);
-        }
-      }
+      deliveryDays.push({
+        label: formatted,
+        date: new Date(candidate),
+        daysAhead,
+      });
     }
 
-    today.setDate(today.getDate() + 1);
+    candidate.setDate(candidate.getDate() + 1);
   }
 
   return deliveryDays;
